@@ -1,0 +1,52 @@
+@value width_container_1,padding_container,color_header_font,color_nav,height_header,fontSize_header from "../../common/common.css";
+
+.header {
+  color: color_header_font;
+  background-color: color_nav;
+  border-bottom: 1px solid color_header_font;
+  height: height_header;
+  font-size: fontSize_header;
+}
+
+.container {
+  max-width: width_container_1;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  align-items: center;
+  padding: padding_container;
+}
+
+.info {
+  display: flex;
+  margin-left: 4rem;
+}
+.info li {
+  padding: 0 0.8rem;
+}
+.info button {
+  padding: 0 0.8rem;
+}
+.nav {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav a {
+  color: color_header_font;
+  padding: 0 0.7rem;
+}
+
+.logo {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .header {
+    font-size: 1rem;
+  }
+  .info {
+    display: none;
+  }
+}

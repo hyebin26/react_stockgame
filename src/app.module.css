@@ -1,0 +1,7 @@
+@value color_background, color_nav from "./common/common.css";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: color_background;
+}

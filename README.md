@@ -1,4 +1,3 @@
 ## Stock Game
 
-1. add react router
-2. add header
+1. add main section

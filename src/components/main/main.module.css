@@ -1,0 +1,14 @@
+@value width_container_1,padding_container,height_main from "../../common/common.css";
+
+.main {
+  max-width: width_container_1;
+  height: height_main;
+  margin: 2rem auto;
+  padding: padding_container;
+}
+.container {
+  background-color: rgb(58, 58, 58);
+  height: 100%;
+  width: 100%;
+  display: flex;
+}

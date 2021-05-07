@@ -2,6 +2,7 @@
 @value width_item_1 900px;
 
 @value height_header 70px;
+@value height_main 280px;
 
 @value padding_container 0 2rem;
 
@@ -13,4 +14,4 @@
 @value color_item_box rgb(225,225,225);
 @value color_header_font rgba(255, 255, 255, 0.53);
 
-@value fontSize_header 1.2em;
+@value fontSize_header 1.1em;

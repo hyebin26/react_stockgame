@@ -1,0 +1,6 @@
+@value color_header_font,padding_container from "../../common/common.css";
+
+.container {
+  flex: 1 1 65%;
+  border-right: 1px solid color_header_font;
+}

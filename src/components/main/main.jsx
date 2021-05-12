@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../header/header";
 import MainChart from "../main_chart/mainChart";
-import MainContents from "../main_contents/mainContents";
+import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
 
 const Main = (props) => {
@@ -11,7 +11,7 @@ const Main = (props) => {
       <section className={styles.main}>
         <div className={styles.container}>
           <MainChart />
-          <MainContents />
+          <MainTrading />
         </div>
       </section>
     </>

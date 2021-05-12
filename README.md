@@ -1,3 +1,3 @@
 ## Stock Game
 
-1. add main section
+1. add chart.js and chart

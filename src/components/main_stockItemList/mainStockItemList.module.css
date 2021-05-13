@@ -1,0 +1,18 @@
+@value color_itemColor from "../../common/common.css";
+
+.itemContainer {
+  background-color: rgb(50, 50, 50);
+  width: 31%;
+  border-radius: 1.4%;
+  color: rgba(238, 238, 238);
+  padding: 0.8rem 0.5rem;
+  display: flex;
+}
+.iconContainer {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+.textContainer {
+  padding-left: 0.5rem;
+}

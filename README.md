@@ -1,4 +1,4 @@
 ## Stock Game
 
-1. change resetBtn
-2. add stockItem
+1. add stockItem and stockItemList
+2. border in header remove 

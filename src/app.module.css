@@ -1,7 +1,7 @@
 @value color_background, color_nav from "./common/common.css";
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: color_background;
 }

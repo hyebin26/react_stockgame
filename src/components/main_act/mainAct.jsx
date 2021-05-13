@@ -8,7 +8,7 @@ const MainAct = (props) => {
     <>
       <p className={styles.title}>{title}</p>
       <div className={styles.itemContainer}>
-        <p>매수가격</p>
+        <p>{title}가격</p>
         <input type="number" value="2000" />
       </div>
       <div className={styles.itemContainer}>

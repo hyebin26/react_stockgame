@@ -1,0 +1,14 @@
+.oneBtn,
+.threeBtn {
+  border: none;
+  padding: 0 0.5rem;
+  margin: 0 0.6rem;
+  cursor: pointer;
+}
+
+.oneBtn {
+  background-color: rgb(44, 62, 80);
+}
+.threeBtn {
+  background-color: rgb(230, 126, 34);
+}

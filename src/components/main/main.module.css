@@ -3,7 +3,8 @@
 .main {
   max-width: width_container_1;
   height: height_main;
-  margin: 2rem auto;
+  margin: 0 auto;
+  margin-top: 2rem;
   padding: padding_container;
   border-bottom: 1px solid color_header_font;
 }

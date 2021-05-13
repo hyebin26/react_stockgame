@@ -3,7 +3,6 @@
 .header {
   color: color_header_font;
   background-color: color_nav;
-  border-bottom: 1px solid color_header_font;
   height: height_header;
   font-size: fontSize_header;
 }

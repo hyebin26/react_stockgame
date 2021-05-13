@@ -1,6 +1,7 @@
 import { faDizzy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Nav from "../nav/nav";
 import styles from "./header.module.css";
 
 const Header = (props) => {
@@ -12,20 +13,10 @@ const Header = (props) => {
         <ul className={styles.info}>
           <li>day 3</li>
           <li>현재 이익률 10%</li>
+          <button className={styles.nextBtn}>Next day</button>
         </ul>
         <ul className={styles.nav}>
-          <li>
-            <a href="#">힌트저장소</a>
-          </li>
-          <li>
-            <a href="#">거래소</a>
-          </li>
-          <li>
-            <a href="#">투자내역</a>
-          </li>
-          <li>
-            <a href="#">로그아웃</a>
-          </li>
+          <Nav />
         </ul>
       </div>
     </header>

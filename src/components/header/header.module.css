@@ -34,12 +34,18 @@
 
 .nav a {
   color: color_header_font;
-  padding: 0 0.7rem;
+  margin-left: 1.4rem;
 }
 
 .logo {
   color: white;
   padding-left: 0.2rem;
+}
+.nextBtn {
+  background-color: rgb(46, 172, 174);
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {

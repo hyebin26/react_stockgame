@@ -1,3 +1,4 @@
 ## Stock Game
 
-1. change main_trading UI
+1. change resetBtn
+2. add stockItem

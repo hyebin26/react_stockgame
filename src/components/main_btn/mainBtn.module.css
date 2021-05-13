@@ -1,4 +1,4 @@
-@value color_blue_btn,color_red_btn from "../../common/common.css";
+@value color_blue_btn,color_red_btn,color_white from "../../common/common.css";
 
 .buyBtn,
 .sellBtn {
@@ -9,6 +9,7 @@
   padding: 0.1rem 0;
   position: absolute;
   bottom: 0;
+  color: color_white;
 }
 
 .buyBtn {

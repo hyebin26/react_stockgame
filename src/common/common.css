@@ -14,5 +14,7 @@
 @value color_item_box rgb(225,225,225);
 @value color_header_font rgba(255, 255, 255, 0.53);
 @value color_white rgb(238, 238, 238);
+@value color_container rgb(58, 58, 58);
+@value color_resetBtn rgb(80, 80, 80);
 
 @value fontSize_header 1.1em;

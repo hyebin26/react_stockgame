@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import MainChart from "../main_chart/mainChart";
 import MainTrading from "../main_trading/mainTrading";
+import StockItem from "../main_stockItem/mainStockItem";
 import styles from "./main.module.css";
 
 const Main = (props) => {
@@ -13,6 +14,9 @@ const Main = (props) => {
           <MainChart />
           <MainTrading />
         </div>
+      </section>
+      <section className={styles.main}>
+        <StockItem />
       </section>
     </>
   );

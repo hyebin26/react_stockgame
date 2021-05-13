@@ -1,3 +1,4 @@
 ## Stock Game
 
-1. add nextdayBtn
+1. delete reset btn
+2. add mainPerBtn

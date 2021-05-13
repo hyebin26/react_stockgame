@@ -1,5 +1,6 @@
 import React from "react";
 import MainBtn from "../main_btn/mainBtn";
+import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainAct.module.css";
 
 const MainAct = (props) => {
@@ -18,7 +19,7 @@ const MainAct = (props) => {
       <div className={styles.itemContainer}>
         <p>주문총액</p>
         <input type="number" />
-        <button className={styles.reset}>초기화</button>
+        <MainPerBtn />
       </div>
       <div className={styles.itemContainer}>
         <MainBtn title={title} />

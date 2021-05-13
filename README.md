@@ -1,4 +1,3 @@
 ## Stock Game
 
-1. rename main_contents to main_trading
-2. add main_trading
+1. change main_trading UI

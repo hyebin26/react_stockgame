@@ -1,4 +1,14 @@
+@value color_white from "../../common/common.css";
+
 .container {
   flex: 1 1 35%;
-  padding-right: 2rem;
+  display: flex;
+  color: color_white;
+  padding: 0.4rem 0;
+}
+.buy,
+.sell {
+  flex: 1 1 50%;
+  margin: 0 1rem;
+  position: relative;
 }

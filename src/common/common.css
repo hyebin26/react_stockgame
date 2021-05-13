@@ -13,5 +13,6 @@
 @value color_hint_btn rgb(0,0,0);
 @value color_item_box rgb(225,225,225);
 @value color_header_font rgba(255, 255, 255, 0.53);
+@value color_white rgb(238, 238, 238);
 
 @value fontSize_header 1.1em;

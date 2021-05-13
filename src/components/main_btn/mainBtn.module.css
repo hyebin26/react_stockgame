@@ -1,0 +1,19 @@
+@value color_blue_btn,color_red_btn from "../../common/common.css";
+
+.buyBtn,
+.sellBtn {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0.1rem 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.buyBtn {
+  background-color: color_blue_btn;
+}
+.sellBtn {
+  background-color: color_red_btn;
+}

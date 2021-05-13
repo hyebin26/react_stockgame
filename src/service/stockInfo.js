@@ -68,7 +68,7 @@ const oneDay = [
 ];
 
 const user = {
-  current: "Hyebin",
+  current: "token",
   money: 10000000,
   haveStock: {
     lebel: "H전자",

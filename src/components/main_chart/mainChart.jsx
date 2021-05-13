@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./mainChart.module.css";
 import { Line } from "react-chartjs-2";
 import { useState } from "react/cjs/react.development";

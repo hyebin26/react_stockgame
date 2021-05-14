@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. add sweetalert
+1. build percent js
 
 ### next to do
 

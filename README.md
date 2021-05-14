@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. add redux toolkit and buy.js
+1. add sweetalert
 
 ### next to do
 

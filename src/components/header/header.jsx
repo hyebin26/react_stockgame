@@ -1,10 +1,25 @@
 import { faDizzy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import swal from "@sweetalert/with-react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 
 const Header = (props) => {
+  const handleNextBtn = () => {
+    swal({
+      text: "다음 스테이지로 넘아가겠습니까?",
+      icon: "success",
+      buttons: true,
+    }) //
+      .then((agree) => {
+        if (agree) {
+          console.log("Good");
+        } else {
+          console.log("noob");
+        }
+      });
+  };
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -13,7 +28,9 @@ const Header = (props) => {
         <ul className={styles.info}>
           <li>day 3</li>
           <li>현재 이익률 10%</li>
-          <button className={styles.nextBtn}>Next day</button>
+          <button className={styles.nextBtn} onClick={handleNextBtn}>
+            Next day
+          </button>
         </ul>
         <ul className={styles.nav}>
           <Nav />

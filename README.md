@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. build percent js
+1. fix percent.js
 
 ### next to do
 

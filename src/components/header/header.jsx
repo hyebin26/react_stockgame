@@ -4,6 +4,7 @@ import React from "react";
 import swal from "@sweetalert/with-react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
+import { handlePercent } from "../../service/percent";
 
 const Header = (props) => {
   const handleNextBtn = () => {
@@ -11,14 +12,16 @@ const Header = (props) => {
       text: "다음 스테이지로 넘아가겠습니까?",
       icon: "success",
       buttons: true,
-    }) //
-      .then((agree) => {
-        if (agree) {
-          console.log("Good");
-        } else {
-          console.log("noob");
-        }
-      });
+    }).then((agree) => {
+      if (agree) {
+        const stockPer = handlePercent();
+        const currentPrice = Math.floor(150000 * (1 + stockPer / 100));
+        console.log("전일대비", stockPer);
+        console.log("현재가격", currentPrice);
+      } else {
+        console.log("noob");
+      }
+    });
   };
   return (
     <header className={styles.header}>

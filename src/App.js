@@ -43,7 +43,7 @@ const hello = () => {
   });
 };
 hello();
-stocks.map((item) => console.log(item));
+// stocks.map((item) => console.log(item));
 
 function App() {
   return (

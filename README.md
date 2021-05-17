@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. fix percent.js
+1. fix mainPerBtn
 
 ### next to do
 

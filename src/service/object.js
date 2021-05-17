@@ -1,13 +1,14 @@
-const users = {
+export const users = {
   token: {
+    currentDay: 1,
     money: 1000000,
     haveStock: {},
     haveHint: {},
   },
   token2: {},
 };
-const stocks = {
-  oneday: [
+export const stocks = {
+  1: [
     {
       lebel: "H전자",
       data: 15000,

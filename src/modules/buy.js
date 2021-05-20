@@ -2,22 +2,25 @@ import { createSlice } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { users, stocks } from "./object";
 
-export const tradeSlice = createSlice({
-  name: "trade",
+export const buySlice = createSlice({
+  name: "buy",
   initialState: {
     user: localStorage.getItem("token"),
     hasMoney: users[localStorage.getItem("token")].money,
+    day: users[localStorage.getItem("token")].currentDay,
     clickedStockPrice:
       stocks[users[localStorage.getItem("token")].currentDay][0].data,
     clickedTotal: 0,
     clickedAmount: 0,
-    day: users[localStorage.getItem("token")].currentDay,
+    clickedLebel: "H전자",
   },
   reducers: {
     handlePerBtn: (state, action) => {
       const percent = action.payload;
-      state.clickedTotal = state.hasMoney * (percent / 100);
-      state.clickedAmount = state.clickedTotal / state.clickedStockPrice;
+      state.clickedAmount = Math.floor(
+        (state.hasMoney * (percent / 100)) / state.clickedStockPrice
+      );
+      state.clickedTotal = state.clickedAmount * state.clickedStockPrice;
     },
     handleClickedStocks: (state, action) => {
       const { lebel } = action.payload;
@@ -65,6 +68,23 @@ export const tradeSlice = createSlice({
       state.clickedAmount = clickedAmount;
       state.clickedTotal = clickedAmount * state.clickedStockPrice;
     },
+    clickBuyBtn: (state) => {
+      const price = state.clickedStockPrice;
+      const amount = state.clickedAmount;
+      const lebel = state.clickedLebel;
+      if (state.hasMoney >= amount * price) {
+        state.hasMoney = state.hasMoney - price * amount;
+        users[state.user].haveStock.push({ lebel, price, amount });
+        users[state.user].money = state.hasMoney - price;
+        swal({ title: "매수성공", icon: "success" });
+        state.clickedAmount = 0;
+        state.clickedTotal = 0;
+      } else {
+        swal({ title: "돈이 부족해요!", icon: "warning" });
+        state.clickedAmount = 0;
+        state.clickedTotal = 0;
+      }
+    },
   },
 });
 
@@ -72,11 +92,11 @@ export const {
   handlePerBtn,
   handleClickedStocks,
   handleDefault,
-  clickTradeBtn,
   changeAmount,
-} = tradeSlice.actions;
+  clickBuyBtn,
+} = buySlice.actions;
 
-export default tradeSlice.reducer;
+export default buySlice.reducer;
 
 // haveMoney token으로 아이디를 불러와야함
 // stockPrice => 동적으로 그 정보를 가져오는 방법 // 클릭하면 정보가 title이 lebel로 가게?

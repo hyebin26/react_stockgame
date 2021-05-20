@@ -1,16 +1,16 @@
 import React from "react";
-import MainAct from "../main_act/mainAct";
-import MainBtn from "../main_btn/mainBtn";
+import MainBuySection from "../main_buySection/mainBuySection";
+import MainSellSection from "../main_sellSection/mainSellSection";
 import styles from "./mainTrading.module.css";
 
 const MainTrading = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.buy}>
-        <MainAct title={"매수"} />
+        <MainBuySection />
       </div>
       <div className={styles.sell}>
-        <MainAct title={"매도"} />
+        <MainSellSection />
       </div>
     </div>
   );

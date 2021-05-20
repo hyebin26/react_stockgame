@@ -3,7 +3,7 @@ export const stock = {
   datasets: [
     {
       label: "H전자",
-      data: [6500],
+      data: [15000, 17000, 20000, 21000, 15000],
       borderColor: "rgb(75, 192, 192)",
       backgroundColor: "rgb(75, 192, 192)",
       tension: 0,

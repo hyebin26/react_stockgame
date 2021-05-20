@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import tradeReducer from "./trade";
+import buyReducer from "./buy";
 
 export default configureStore({
-  reducer: { trade: tradeReducer },
+  reducer: { buy: buyReducer },
 });

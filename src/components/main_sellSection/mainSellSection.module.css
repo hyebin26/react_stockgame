@@ -1,0 +1,16 @@
+@value color_resetBtn,color_white from "../../common/common.css";
+
+.itemContainer {
+  padding: 0.3rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.reset {
+  margin-top: 0.3rem;
+  background-color: color_resetBtn;
+  color: color_white;
+  border: none;
+  padding: 0.1rem 0;
+  cursor: pointer;
+}

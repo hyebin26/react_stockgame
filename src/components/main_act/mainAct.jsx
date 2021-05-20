@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainAct.module.css";
-import { users } from "../../service/object";
+import { users } from "../../modules/object";
 import { stock } from "../../service/chart_data";
 import { useState } from "react/cjs/react.development";
 
 const MainAct = (props) => {
   const title = props.title;
-  const currentPrice = stock.datasets[0].data[0];
+  const currentPrice = stock.datasets.map((item) => {
+    if ("H전자" === item.label) {
+      return item.data[0];
+    }
+  });
   const [amount, setAmount] = useState();
   const [total, setTotal] = useState();
   const handleAmount = (e) => {

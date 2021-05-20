@@ -2,7 +2,13 @@ export const users = {
   token: {
     currentDay: 1,
     money: 1000000,
-    haveStock: {},
+    haveStock: [
+      {
+        lebel: "H전자",
+        amount: 5,
+        price: 15000,
+      },
+    ],
     haveHint: {},
   },
   token2: {},
@@ -22,5 +28,5 @@ export const stocks = {
       nextSmallHint: "떨어질까 말까",
     },
   ],
-  twoday: {},
+  2: {},
 };

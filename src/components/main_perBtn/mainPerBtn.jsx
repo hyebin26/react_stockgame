@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./mainPerBtn.module.css";
-import { users } from "../../service/object";
+import { users } from "../../modules/object";
 import { useState } from "react/cjs/react.development";
 
 const MainPerBtn = (props) => {
@@ -10,11 +10,9 @@ const MainPerBtn = (props) => {
     const perText = e.target.innerText;
     const replacePerText = parseInt(perText.replace(/[^0-9]/g, ""));
 
-    setCurrentMoney((current) => {
-      const realCurrent = money * (replacePerText / 100);
-      return realCurrent;
-    });
+    setCurrentMoney(() => money * (replacePerText / 100));
   };
+
   return (
     <div className={styles.container}>
       <button onClick={handlePerBtn}>0%</button>

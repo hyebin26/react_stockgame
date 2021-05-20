@@ -1,8 +1,8 @@
 ## Stock Game
 
-1. fix mainPerBtn
+1. add trade.js
+2. add handle tradeBtn, perBtn, default, handleClickedStocks
 
 ### next to do
 
 1. make stock server
-2. make toolkit buy module

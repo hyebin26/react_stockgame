@@ -1,10 +1,10 @@
 import { faDizzy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import swal from "@sweetalert/with-react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { handlePercent } from "../../service/percent";
+import swal from "sweetalert";
 
 const Header = (props) => {
   const handleNextBtn = () => {

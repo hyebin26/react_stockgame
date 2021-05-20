@@ -1,7 +1,6 @@
 ## Stock Game
 
-1. add trade.js
-2. add handle tradeBtn, perBtn, default, handleClickedStocks
+1. implementation onHandlePerBtn,onChangeAmount,onChangeTotal
 
 ### next to do
 

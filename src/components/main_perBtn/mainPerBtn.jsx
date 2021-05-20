@@ -2,25 +2,26 @@ import React from "react";
 import styles from "./mainPerBtn.module.css";
 import { users } from "../../modules/object";
 import { useState } from "react/cjs/react.development";
+import { useDispatch, useSelector } from "react-redux";
+import { handlePerBtn } from "../../modules/trade";
 
 const MainPerBtn = (props) => {
-  const money = users.token.money;
-  const [currentMoney, setCurrentMoney] = useState(money);
-  const handlePerBtn = (e) => {
-    const perText = e.target.innerText;
-    const replacePerText = parseInt(perText.replace(/[^0-9]/g, ""));
+  const dispatch = useDispatch();
 
-    setCurrentMoney(() => money * (replacePerText / 100));
+  const onHandlePerBtn = (e) => {
+    const btnVal = e.target.innerText;
+    const regex = /[^0-9]/g;
+    const result = btnVal.replace(regex, "");
+    dispatch(handlePerBtn(result));
   };
 
   return (
     <div className={styles.container}>
-      <button onClick={handlePerBtn}>0%</button>
-      <button onClick={handlePerBtn}>25%</button>
-      <button onClick={handlePerBtn}>50%</button>
-      <button onClick={handlePerBtn}>75%</button>
-      <button onClick={handlePerBtn}>100%</button>
-      <h2>{currentMoney}</h2>
+      <button onClick={onHandlePerBtn}>0%</button>
+      <button onClick={onHandlePerBtn}>25%</button>
+      <button onClick={onHandlePerBtn}>50%</button>
+      <button onClick={onHandlePerBtn}>75%</button>
+      <button onClick={onHandlePerBtn}>100%</button>
     </div>
   );
 };

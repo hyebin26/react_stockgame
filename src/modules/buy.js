@@ -15,7 +15,7 @@ export const buySlice = createSlice({
     clickedLebel: "H전자",
   },
   reducers: {
-    handlePerBtn: (state, action) => {
+    clickBuyPerBtn: (state, action) => {
       const percent = action.payload;
       state.clickedAmount = Math.floor(
         (state.hasMoney * (percent / 100)) / state.clickedStockPrice
@@ -89,7 +89,7 @@ export const buySlice = createSlice({
 });
 
 export const {
-  handlePerBtn,
+  clickBuyPerBtn,
   handleClickedStocks,
   handleDefault,
   changeAmount,

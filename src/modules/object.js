@@ -13,20 +13,15 @@ export const users = {
   },
   token2: {},
 };
-export const stocks = {
-  1: [
-    {
-      lebel: "H전자",
-      data: 15000,
-      nextBigHint: "아마도 급등할 것입니다.",
-      nextSmallHint: "급등할수도?",
-    },
-    {
-      lebel: "Q반도체",
-      data: 2000,
-      nextBigHint: "떨어질거같아",
-      nextSmallHint: "떨어질까 말까",
-    },
-  ],
-  2: {},
-};
+
+export const stocks = [
+  { label: "H전자", price: [15000] },
+  { label: "C엔터", price: [13000] },
+  { label: "J반도체", price: [8000] },
+  { label: "S바이오", price: [3000] },
+  { label: "K엔터", price: [9500] },
+  { label: "A바이오", price: [5500] },
+  { label: "L전자", price: [4000] },
+  { label: "S반도체", price: [11000] },
+  { label: "Q항공사", price: [10000] },
+];

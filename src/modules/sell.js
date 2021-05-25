@@ -8,8 +8,7 @@ const sellSlice = createSlice({
     user: localStorage.getItem("token"),
     hasMoney: users[localStorage.getItem("token")].money,
     day: users[localStorage.getItem("token")].currentDay,
-    clickedStockPrice:
-      stocks[users[localStorage.getItem("token")].currentDay][0].data,
+    clickedStockPrice: stocks[0].price[0],
     clickedTotal: 0,
     clickedAmount: 0,
     clickedLebel: "H전자",

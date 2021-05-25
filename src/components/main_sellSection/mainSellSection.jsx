@@ -17,7 +17,6 @@ const MainSellSection = (props) => {
     dispatch(changeSellAmount(e.target.value));
   };
   const onChangeTotal = (e) => {};
-  console.log(state);
   return (
     <>
       <p className={styles.title}>매도</p>

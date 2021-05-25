@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./mainPerBtn.module.css";
 import { users } from "../../modules/object";
 import { useState } from "react/cjs/react.development";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { clickBuyPerBtn } from "../../modules/buy";
 import { clickPerSellBtn } from "../../modules/sell";
 

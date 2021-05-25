@@ -31,16 +31,36 @@ const sellSlice = createSlice({
       state.clickedAmount = amount;
       state.clickedTotal = state.clickedStockPrice * amount;
     },
-    clickSellBtn: (state, action) => {
-      // 같은 lebel을 가진 stock이존재하는지 확인 
-      // 갯수가 item.amount 보다 작거나 같을 시 판매 
-      // hasMoney + 
-      // haveStock에서 amount만큼 삭제 
-      // haveStock과 amount양이 같을 시 haveStock에서 삭제
+    clickSellBtn: (state) => {
+      const currentUser = users[state.user];
+      currentUser.haveStock.map((item, index) => {
+        if (item.lebel === state.clickedLebel) {
+          if (item.amount === state.clickedAmount) {
+            currentUser.haveStock.splice(index, 1);
+            state.hasMoney += state.clickedTotal;
+            state.clickedAmount = 0;
+            state.clickedTotal = 0;
+            return swal({ title: "판매를 성공하였습니다.", icon: "success" });
+          } else if (item.amount > state.clickedAmount) {
+            item.amount -= state.clickedAmount;
+            state.hasMoney += state.clickedTotal;
+            return swal({ title: "판매를 성공하였습니다.", icon: "success" });
+          } else if (item.amount < state.clickedAmount) {
+            return swal({
+              title: "갯수를 다시 설정해주세요!",
+              icon: "warning",
+            });
+          }
+        } //
+        else {
+          return swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
+        }
+      });
     },
   },
 });
 
-export const { changeSellAmount, clickPerSellBtn } = sellSlice.actions;
+export const { changeSellAmount, clickPerSellBtn, clickSellBtn } =
+  sellSlice.actions;
 
 export default sellSlice.reducer;

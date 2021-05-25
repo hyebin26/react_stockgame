@@ -5,5 +5,4 @@
 
 ### next to do
 
-1. add sell.js
-2. change stock section folder name
+1. clickSellBtn 구현하기

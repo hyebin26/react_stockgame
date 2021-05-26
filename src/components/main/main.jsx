@@ -15,7 +15,7 @@ const Main = (props) => {
           <MainTrading />
         </div>
       </section>
-      <section className={styles.main}>
+      <section className={styles.mainItemContainer}>
         <StockItem />
       </section>
     </>

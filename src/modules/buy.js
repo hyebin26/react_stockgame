@@ -96,7 +96,3 @@ export const {
 } = buySlice.actions;
 
 export default buySlice.reducer;
-
-// haveMoney token으로 아이디를 불러와야함
-// stockPrice => 동적으로 그 정보를 가져오는 방법 // 클릭하면 정보가 title이 lebel로 가게?
-// totalMoney, amount

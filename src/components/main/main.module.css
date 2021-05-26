@@ -14,3 +14,10 @@
   width: 100%;
   display: flex;
 }
+.mainItemContainer {
+  max-width: width_container_1;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: padding_container;
+  border-bottom: 1px solid color_header_font;
+}

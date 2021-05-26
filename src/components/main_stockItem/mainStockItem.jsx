@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import MainStockItemList from "../main_stockItemList/mainStockItemList";
 import styles from "./mainStockItem.module.css";
-
-const data = [
-  { name: "H전자", price: [8000] },
-  { name: "C엔터", price: [4000] },
-  { name: "K반도체", price: [15000] },
-];
+import { stocks } from "../../modules/object";
 
 const StockItem = (props) => {
+  const [currentStocks, setCurrentStocks] = useState(stocks);
   return (
     <ul className={styles.container}>
-      {data.map((item) => (
-        <MainStockItemList name={item.name} price={item.price} />
+      {currentStocks.map((item) => (
+        <MainStockItemList
+          label={item.label}
+          price={item.price}
+          icon={item.icon}
+        />
       ))}
     </ul>
   );

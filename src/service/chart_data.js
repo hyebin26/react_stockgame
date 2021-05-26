@@ -3,7 +3,7 @@ export const stock = {
   datasets: [
     {
       label: "H전자",
-      data: [15000, 17000, 20000, 21000, 15000],
+      data: [15000],
       borderColor: "rgb(75, 192, 192)",
       backgroundColor: "rgb(75, 192, 192)",
       tension: 0,
@@ -27,4 +27,5 @@ export const options = {
     },
   },
 };
-// cursor : pointer / transition : 속도 더 빠르게
+//클릭 시 라벨 변경
+// data는 ?

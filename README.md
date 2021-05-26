@@ -1,6 +1,5 @@
 ## Stock Game
-1. changes stocks of object.js
 
+1. add item.js
 
 ### next to do
-1. click하면 lebel바뀌게 

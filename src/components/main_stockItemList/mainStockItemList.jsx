@@ -1,19 +1,24 @@
-import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { clickLabel } from "../../modules/item";
 import MainHintBtn from "../main_hintBtn/mainHintBtn";
 import styles from "./mainStockItemList.module.css";
 
 const MainStockItemList = (props) => {
-  const { price, name } = props;
+  const { price, label, icon } = props;
+  const dispatch = useDispatch();
+  const onClickLabel = () => {
+    dispatch(clickLabel(label));
+  };
   return (
-    <li className={styles.itemContainer}>
+    <li className={styles.itemContainer} onClick={onClickLabel}>
       <div className={styles.iconContainer}>
-        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={icon} />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>
-          <span>{name}</span>
+          <span className={styles.hintTitle}>{label}</span>
           <MainHintBtn hintPoint={3} />
           <MainHintBtn hintPoint={1} />
         </div>

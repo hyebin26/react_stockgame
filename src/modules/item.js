@@ -15,12 +15,9 @@ export const itemSlice = createSlice({
       state.stock.datasets[0].label = action.payload;
       //stocks에 같은 라벨을 가진 price를 푸시한다.
       const price = [];
-      console.log(stocks);
       stocks.map((item) => {
         if (item.label === action.payload) {
-          for (let i = 0; i <= state.day; i++) {
-            price.push(item.price[i]);
-          }
+          item.price.map((item2) => price.push(item2));
         }
       });
       state.stock.datasets[0].data = price;
@@ -31,5 +28,3 @@ export const itemSlice = createSlice({
 export const { clickLabel } = itemSlice.actions;
 
 export default itemSlice.reducer;
-
-//바껴야 하는 것은 chat_data

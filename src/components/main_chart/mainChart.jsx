@@ -21,9 +21,7 @@ const MainChart = (props) => {
   };
   useEffect(() => {
     setData(stock);
-    console.log(stock);
   }, [stock]);
-  // import 한 stock의 값이 변경되면 리렌더링되게
   return (
     <div className={styles.container}>
       <Line height={100} width={100} data={data} options={options} />

@@ -72,9 +72,15 @@ export const buySlice = createSlice({
       const amount = state.clickedAmount;
       const lebel = state.clickedLebel;
       if (state.hasMoney >= amount * price) {
+        users[state.user].money = state.hasMoney - price * amount;
         state.hasMoney = state.hasMoney - price * amount;
-        users[state.user].haveStock.push({ lebel, price, amount });
-        users[state.user].money = state.hasMoney - price;
+        users[state.user].haveStock.map((item) => {
+          if (item.lebel === lebel) {
+            item.amount += amount;
+          } else {
+            users[state.user].haveStock.push({ lebel, price, amount });
+          }
+        });
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;

@@ -16,7 +16,7 @@ export const users = {
     money: 1000000,
     haveStock: [
       {
-        lebel: "H전자",
+        label: "H전자",
         amount: 5,
         price: 15000,
       },

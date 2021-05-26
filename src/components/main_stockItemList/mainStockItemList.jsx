@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { clickLabel } from "../../modules/item";
+import { clickLabel } from "../../modules/main";
 import MainHintBtn from "../main_hintBtn/mainHintBtn";
 import styles from "./mainStockItemList.module.css";
 

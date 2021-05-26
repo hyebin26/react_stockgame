@@ -1,14 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./mainBtn.module.css";
-import { clickBuyBtn } from "../../modules/buy";
-import { clickSellBtn } from "../../modules/sell";
+import { clickBuyBtn, clickSellBtn } from "../../modules/main";
 import swal from "sweetalert";
 
 const MainBtn = (props) => {
   const title = props.title;
-  const { clickedAmount } = useSelector((state) => state.buy);
-  const sellClickedAmount = useSelector((state) => state.sell.clickedAmount);
+  const { clickedAmount } = useSelector((state) => state.main);
+  const sellClickedAmount = useSelector(
+    (state) => state.main.sellClickedAmount
+  );
   const dispatch = useDispatch();
   const onClickBuyBtn = () => {
     if (clickedAmount === 0)

@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./mainPerBtn.module.css";
-import { users } from "../../modules/object";
-import { useState } from "react/cjs/react.development";
 import { useDispatch } from "react-redux";
-import { clickBuyPerBtn } from "../../modules/buy";
-import { clickPerSellBtn } from "../../modules/sell";
+import { clickBuyPerBtn, clickPerSellBtn } from "../../modules/main";
 
 const MainPerBtn = ({ title }) => {
   const dispatch = useDispatch();
@@ -23,11 +20,21 @@ const MainPerBtn = ({ title }) => {
 
   return (
     <div className={styles.container}>
-      <button onClick={title ? onClickSellBtn : onClickBuyBtn}>0%</button>
-      <button onClick={title ? onClickSellBtn : onClickBuyBtn}>25%</button>
-      <button onClick={title ? onClickSellBtn : onClickBuyBtn}>50%</button>
-      <button onClick={title ? onClickSellBtn : onClickBuyBtn}>75%</button>
-      <button onClick={title ? onClickSellBtn : onClickBuyBtn}>100%</button>
+      <button onClick={title === "매도" ? onClickSellBtn : onClickBuyBtn}>
+        0%
+      </button>
+      <button onClick={title === "매도" ? onClickSellBtn : onClickBuyBtn}>
+        25%
+      </button>
+      <button onClick={title === "매도" ? onClickSellBtn : onClickBuyBtn}>
+        50%
+      </button>
+      <button onClick={title === "매도" ? onClickSellBtn : onClickBuyBtn}>
+        75%
+      </button>
+      <button onClick={title === "매도" ? onClickSellBtn : onClickBuyBtn}>
+        100%
+      </button>
     </div>
   );
 };

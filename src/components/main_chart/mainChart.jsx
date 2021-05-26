@@ -6,7 +6,7 @@ import { options } from "../../service/chart_data";
 import { useSelector } from "react-redux";
 
 const MainChart = (props) => {
-  const stock = useSelector((state) => state.item.stock);
+  const stock = useSelector((state) => state.main.chartStock);
   const [data, setData] = useState(stock);
   const handleAddBtn = () => {
     setData((state) => ({

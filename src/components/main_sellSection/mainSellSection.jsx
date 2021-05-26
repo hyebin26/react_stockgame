@@ -3,15 +3,13 @@ import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainSellSection.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeAmount } from "../../modules/buy";
-import { changeSellAmount } from "../../modules/sell";
+import { changeSellAmount } from "../../modules/main";
 
 const MainSellSection = (props) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.sell);
-  const { clickedStockPrice, clickedAmount, clickedTotal } = useSelector(
-    (state) => state.sell
-  );
+  const { clickedStockPrice, sellClickedAmount, sellClickedTotal } =
+    useSelector((state) => state.main);
 
   const onChangeAmount = (e) => {
     dispatch(changeSellAmount(e.target.value));
@@ -29,13 +27,13 @@ const MainSellSection = (props) => {
         <input
           type="number"
           min="0"
-          value={clickedAmount}
+          value={sellClickedAmount}
           onChange={onChangeAmount}
         />
       </div>
       <div className={styles.itemContainer}>
         <p>주문총액</p>
-        <input type="text" value={clickedTotal} onChange={onChangeTotal} />
+        <input type="text" value={sellClickedTotal} onChange={onChangeTotal} />
         <MainPerBtn title="매도" />
       </div>
       <div className={styles.itemContainer}>

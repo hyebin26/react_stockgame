@@ -3,17 +3,17 @@ import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainBuySection.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeAmount } from "../../modules/buy";
-import swal from "sweetalert";
+import { changeAmount } from "../../modules/main";
 
 const MainBuySection = (props) => {
-  const clickedTotal = useSelector((state) => state.buy.clickedTotal);
-  const clickedAmount = useSelector((state) => state.buy.clickedAmount);
-  const clickedStockPrice = useSelector((state) => state.buy.clickedStockPrice);
-  console.log(clickedTotal);
+  const clickedTotal = useSelector((state) => state.main.clickedTotal);
+  const clickedAmount = useSelector((state) => state.main.clickedAmount);
+  const clickedStockPrice = useSelector(
+    (state) => state.main.clickedStockPrice
+  );
+
   const dispatch = useDispatch();
   const onChangeAmount = (e) => {
-
     dispatch(changeAmount(e.target.value));
   };
   const onChangeTotal = () => {};

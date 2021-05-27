@@ -2,6 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { users, stocks } from "./object";
+import Database from "../service/database";
+
+const database = new Database();
 
 export const mainSlice = createSlice({
   name: "main",
@@ -117,8 +120,18 @@ export const mainSlice = createSlice({
         }
       });
     },
-    loadUserData: () => {
-      // userdata가 존재하면 가져오기 아니면 그대로 ~_~
+    //
+    saveUserData: (state, action) => {
+      database.saveUserData(state.user, users);
+    },
+    saveStockData: (state, action) => {
+      database.saveStockData(state.user, stocks);
+    },
+    loadUserData: (state, action) => {
+      const saveLoadData = (data) => {
+        console.log(data);
+      };
+      database.loadData("user", saveLoadData);
     },
   },
 });
@@ -131,6 +144,9 @@ export const {
   clickPerSellBtn,
   changeSellAmount,
   clickSellBtn,
+  loadUserData,
+  saveUserData,
+  saveStockData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

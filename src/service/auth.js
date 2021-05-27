@@ -6,14 +6,21 @@ import {
 } from "./firebase";
 
 class Auth {
-  clickGoogle() {
-    return firebaseAuth.signInWithPopup(googleProvider);
+  clickAuth(providerName) {
+    const authProvider = this.getProvider(providerName);
+    return firebaseAuth.signInWithPopup(authProvider);
   }
-  clickFacebook() {
-    return firebaseAuth.signInWithPopup(facebookProvider);
-  }
-  clickGithub() {
-    return firebaseAuth.signInWithPopup(githubProvider);
+  getProvider(providerName) {
+    switch (providerName) {
+      case "Google":
+        return googleProvider;
+      case "Github":
+        return githubProvider;
+      case "Facebook":
+        return facebookProvider;
+      default:
+        throw new Error(`not supported provider: ${providerName}`);
+    }
   }
 }
 

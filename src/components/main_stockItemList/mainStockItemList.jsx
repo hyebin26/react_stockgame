@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { clickLabel } from "../../modules/main";
@@ -13,9 +12,7 @@ const MainStockItemList = (props) => {
   };
   return (
     <li className={styles.itemContainer} onClick={onClickLabel}>
-      <div className={styles.iconContainer}>
-        <FontAwesomeIcon icon={icon} />
-      </div>
+      <div className={styles.iconContainer}></div>
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>
           <span className={styles.hintTitle}>{label}</span>

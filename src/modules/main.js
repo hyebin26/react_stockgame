@@ -4,7 +4,7 @@ import { stock } from "../service/chart_data";
 import { users, stocks } from "./object";
 
 export const mainSlice = createSlice({
-  name: "buy",
+  name: "main",
   initialState: {
     user: localStorage.getItem("token"),
     hasMoney: users[localStorage.getItem("token")].money,

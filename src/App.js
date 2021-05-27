@@ -3,12 +3,12 @@ import Main from "./components/main/main";
 import styles from "./app.module.css";
 import Login from "./components/login/login";
 
-function App() {
+function App({ auth }) {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Login />
+          <Login auth={auth} />
         </Route>
         <Route path="/main">
           <Main />

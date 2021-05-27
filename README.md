@@ -1,7 +1,6 @@
 ## Stock Game
 
-1. add login UI
-2. add react-icons
-3. delete font-awesome
+1. add firebase, auth.js, authentication
+2. add .env
 
 ### next to do

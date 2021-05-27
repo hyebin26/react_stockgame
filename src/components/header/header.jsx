@@ -40,7 +40,9 @@ const Header = (props) => {
     <header className={styles.header}>
       <div className={styles.container}>
         <FaRegMoneyBillAlt />
-        <h2 className={styles.logo}>Stock Game</h2>
+        <Link to="/main" className={styles.logo}>
+          Stock Game
+        </Link>
         <ul className={styles.info}>
           <li>day 3</li>
           <li>현재 이익률 10%</li>

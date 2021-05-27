@@ -7,8 +7,8 @@ export const mainSlice = createSlice({
   name: "main",
   initialState: {
     user: localStorage.getItem("token"),
-    hasMoney: users[localStorage.getItem("token")].money,
-    day: users[localStorage.getItem("token")].currentDay,
+    hasMoney: users["token"].money,
+    day: users["token"].currentDay,
     clickedStockPrice: stocks[0].price[0],
     clickedTotal: 0,
     clickedAmount: 0,
@@ -57,6 +57,7 @@ export const mainSlice = createSlice({
         state.clickedTotal = 0;
       }
     },
+    //
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
       const price = [];
@@ -70,7 +71,7 @@ export const mainSlice = createSlice({
       state.clickedLebel = action.payload;
       state.clickedStockPrice = price[price.length - 1];
     },
-    //sell
+    //
     clickPerSellBtn: (state, action) => {
       const label = state.clickedLebel;
       const percent = action.payload;
@@ -115,6 +116,9 @@ export const mainSlice = createSlice({
           return swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
         }
       });
+    },
+    loadUserData: () => {
+      // userdata가 존재하면 가져오기 아니면 그대로 ~_~
     },
   },
 });

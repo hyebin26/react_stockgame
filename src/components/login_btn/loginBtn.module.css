@@ -10,8 +10,9 @@
   color: white;
   background-color: rgb(22, 140, 220);
   cursor: pointer;
+  transition: 0.5s;
 }
 .login_btn:hover {
   background-color: rgb(75, 192, 192);
-  transition: 0.5s;
+  box-shadow: -400px 0 0 0 rgba(0, 0, 0, 0.5) inset;
 }

@@ -6,6 +6,10 @@
   height: height_header;
   font-size: fontSize_header;
 }
+.header svg {
+  font-size: 1.9rem;
+  padding-right: 0.2rem;
+}
 
 .container {
   max-width: width_container_1;
@@ -15,6 +19,11 @@
   height: 100%;
   align-items: center;
   padding: padding_container;
+}
+.logo {
+  font-size: 1.4rem;
+  color: white;
+  padding-left: 0.2rem;
 }
 
 .info {
@@ -37,10 +46,6 @@
   margin-left: 1.4rem;
 }
 
-.logo {
-  color: white;
-  padding-left: 0.2rem;
-}
 .nextBtn {
   background-color: rgb(46, 172, 174);
   border: none;

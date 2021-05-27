@@ -7,10 +7,10 @@ import styles from "./main.module.css";
 
 const Main = (props) => {
   return (
-    <>
+    <div className={styles.container}>
       <Header />
-      <section className={styles.main}>
-        <div className={styles.container}>
+      <section className={styles.mainTrading}>
+        <div className={styles.trading_container}>
           <MainChart />
           <MainTrading />
         </div>
@@ -18,7 +18,7 @@ const Main = (props) => {
       <section className={styles.mainItemContainer}>
         <StockItem />
       </section>
-    </>
+    </div>
   );
 };
 

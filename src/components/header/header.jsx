@@ -1,10 +1,12 @@
-import { faDizzy } from "@fortawesome/free-regular-svg-icons";
+import { faDizzy, faFlushed } from "@fortawesome/free-regular-svg-icons";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { handlePercent } from "../../service/percent";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const handleNextBtn = () => {
@@ -23,6 +25,19 @@ const Header = (props) => {
       }
     });
   };
+  if (props.login) {
+    return (
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <FaRegMoneyBillAlt />
+          <Link to="/" className={styles.logo}>
+            Stock Game
+          </Link>
+          <h2></h2>
+        </div>
+      </header>
+    );
+  }
   return (
     <header className={styles.header}>
       <div className={styles.container}>

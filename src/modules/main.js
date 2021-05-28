@@ -9,9 +9,9 @@ const database = new Database();
 export const mainSlice = createSlice({
   name: "main",
   initialState: {
-    user: localStorage.getItem("token"),
-    hasMoney: users["token"].money,
-    day: users["token"].currentDay,
+    user: "default",
+    hasMoney: users["default"].money,
+    day: users["default"].currentDay,
     clickedStockPrice: stocks[0].price[0],
     clickedTotal: 0,
     clickedAmount: 0,
@@ -19,10 +19,13 @@ export const mainSlice = createSlice({
     sellClickedTotal: 0,
     sellClickedAmount: 0,
     clickedLebel: "H전자",
+    haveStocks: users["default"].haveStock,
+    stocks: stocks,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
       const percent = action.payload;
+      console.log(state.haveStocks, "clickTotal");
       state.clickedAmount = Math.floor(
         (state.hasMoney * (percent / 100)) / state.clickedStockPrice
       );
@@ -38,19 +41,14 @@ export const mainSlice = createSlice({
       const amount = state.clickedAmount;
       const label = state.clickedLebel;
       if (state.hasMoney >= amount * price) {
-        users[state.user].money = state.hasMoney - price * amount;
         state.hasMoney = state.hasMoney - price * amount;
-
-        users[state.user].haveStock.map((item) => {
+        state.haveStocks.map((item) => {
           if (item.label === label) {
             item.amount += amount;
           } else {
-            users[state.user].haveStock.push({ label, price, amount });
+            state.haveStocks.push({ label, price, amount });
           }
         });
-        if (users[state.user].haveStock.length === 0) {
-          users[state.user].haveStock.push({ label, price, amount });
-        }
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;
@@ -93,20 +91,28 @@ export const mainSlice = createSlice({
       state.sellClickedTotal = state.clickedStockPrice * amount;
     },
     clickSellBtn: (state) => {
-      const currentUser = users[state.user];
-      currentUser.haveStock.map((item, index) => {
+      const currentUser = state.user;
+      users[currentUser].haveStock.map((item, index) => {
         if (item.label === state.clickedLebel) {
           if (item.amount === state.sellClickedAmount) {
-            currentUser.haveStock.splice(index, 1);
+            users[currentUser].haveStock.splice(index, 1);
             state.hasMoney += state.sellClickedTotal;
             currentUser.money += state.sellClickedTotal;
             state.sellClickedAmount = 0;
             state.sellClickedTotal = 0;
+            if (currentUser === "default") {
+              users[localStorage.getItem("token")] = users.default;
+              currentUser = localStorage.getItem("token");
+            }
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
           } else if (item.amount > state.sellClickedAmount) {
             item.amount -= state.sellClickedAmount;
             currentUser.money += state.sellClickedTotal;
             state.hasMoney += state.sellClickedTotal;
+            if (currentUser === "default") {
+              users[localStorage.getItem("token")] = users.default;
+              currentUser = localStorage.getItem("token");
+            }
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
           } else if (item.amount < state.sellClickedAmount) {
             return swal({
@@ -121,17 +127,25 @@ export const mainSlice = createSlice({
       });
     },
     //
-    saveUserData: (state, action) => {
-      database.saveUserData(state.user, users);
+    onSaveUserData: (state, action) => {
+      //매수 매도 클릭 시
+      database.saveUserData(state.user, state.haveStocks);
     },
-    saveStockData: (state, action) => {
-      database.saveStockData(state.user, stocks);
+    onSaveStockData: (state, action) => {
+      // database.saveStockData(state.user, stocks);
+      // next day 클릭 시
     },
-    loadUserData: (state, action) => {
-      const saveLoadData = (data) => {
-        console.log(data);
-      };
-      database.loadData("user", saveLoadData);
+    loadData: (state, action) => {
+      // if (action.payload !== null) {
+      //   const { stocks, user } = action.payload;
+      //   state.stocks = stocks;
+      //   state.haveStocks = user.haveStock;
+      //   state.hasMoney = user.money;
+      //   state.day = user.currentDay;
+      // }
+      console.log(state.clickedTotal);
+      console.log("hello");
+      state.user = localStorage.getItem("token");
     },
   },
 });
@@ -144,9 +158,9 @@ export const {
   clickPerSellBtn,
   changeSellAmount,
   clickSellBtn,
-  loadUserData,
-  saveUserData,
+  onSaveUserData,
   saveStockData,
+  loadData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

@@ -1,18 +1,14 @@
 import { firebaseDB } from "./firebase";
 
 class Database {
-  saveUserData(userId, user) {
-    firebaseDB.ref(`users/${userId}`).set({
-      user,
-    });
+  async saveUserData(userId, user) {
+    await firebaseDB.ref(`users/${userId}/user`).set(user);
   }
-  saveStockData(userId, stocks) {
-    firebaseDB.ref(`users/${userId}`).set({
-      stocks,
-    });
+  async saveStockData(userId, stocks) {
+    await firebaseDB.ref(`users/${userId}/stocks`).set(stocks);
   }
-  loadData(userId, updateData) {
-    const dataRef = firebaseDB.ref(`users/${userId}`);
+  async loadData(userId, updateData) {
+    const dataRef = await firebaseDB.ref(`users/${userId}`);
     dataRef.on("value", (snapshot) => {
       const data = snapshot.val();
       updateData(data);

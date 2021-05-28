@@ -10,8 +10,8 @@ function App({ auth, database }) {
         <Route exact path="/">
           <Login auth={auth} />
         </Route>
-        <Route path="/main" database={database}>
-          <Main />
+        <Route path="/main">
+          <Main database={database} />
         </Route>
         <Route path="/profile">
           <Main />

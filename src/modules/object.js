@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 export const users = {
-  token: {
+  default: {
     currentDay: 1,
     money: 1000000,
     haveStock: [

@@ -6,19 +6,23 @@ import StockItem from "../main_stockItem/mainStockItem";
 import styles from "./main.module.css";
 import { useEffect } from "react/cjs/react.development";
 import { useHistory } from "react-router";
-import { useDispatch } from "react-redux";
-import { loadUserData } from "../../modules/main";
+import { useDispatch, useSelector } from "react-redux";
+import { loadData } from "../../modules/main";
 
-const Main = (props) => {
+const Main = ({ database }) => {
   const hisotry = useHistory();
   const dispatch = useDispatch();
 
+  const updateData = (data) => {
+    dispatch(loadData(data));
+  };
   useEffect(() => {
     if (!localStorage.getItem("token")) hisotry.replace("/");
   }, [localStorage.getItem("token")]);
+
   useEffect(() => {
-    dispatch(loadUserData());
-  });
+    database.loadData(localStorage.getItem("token"), updateData);
+  }, []);
   return (
     <div className={styles.container}>
       <Header />

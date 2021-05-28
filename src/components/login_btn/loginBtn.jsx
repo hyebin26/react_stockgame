@@ -6,8 +6,8 @@ const LoginBtn = ({ auth }) => {
   const hisotry = useHistory();
 
   const onClickAuth = (e) => {
-    auth.clickAuth(e.target.innerText).then((uer) => {
-      // localStorage.setItem("token", user.user.uid);
+    auth.clickAuth(e.target.innerText).then((user) => {
+      localStorage.setItem("token", user.user.uid);
       hisotry.push("/main");
     });
   };

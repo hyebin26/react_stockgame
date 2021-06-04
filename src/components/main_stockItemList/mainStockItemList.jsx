@@ -1,4 +1,5 @@
 import React from "react";
+import { FaBeer } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { clickLabel } from "../../modules/main";
 import MainHintBtn from "../main_hintBtn/mainHintBtn";
@@ -10,9 +11,10 @@ const MainStockItemList = (props) => {
   const onClickLabel = () => {
     dispatch(clickLabel(label));
   };
+  console.log(icon);
   return (
     <li className={styles.itemContainer} onClick={onClickLabel}>
-      <div className={styles.iconContainer}></div>
+      <div className={styles.iconContainer}>{icon}</div>
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>
           <span className={styles.hintTitle}>{label}</span>

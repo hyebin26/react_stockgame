@@ -147,7 +147,6 @@ export const mainSlice = createSlice({
       state.haveStocks = action.payload.user.haveStock;
       state.hasMoney = action.payload.user.money;
       state.isLoading = false;
-      console.log(current(state));
     },
   },
 });

@@ -1,21 +1,42 @@
-import React, { useState } from "react";
-import MainStockItemList from "../main_stockItemList/mainStockItemList";
+import React from "react";
 import styles from "./mainStockItem.module.css";
-import { stocks } from "../../modules/object";
+import MainStockItemList from "../main_stockItemList/mainStockItemList";
+import {
+  SiAzurefunctions,
+  SiCivicrm,
+  SiSpeakerdeck,
+  SiCoronarenderer,
+  SiBadoo,
+  SiEsea,
+  SiFDroid,
+  SiUntangle,
+  SiIcon,
+} from "react-icons/si";
 
-const StockItem = (props) => {
-  const [currentStocks, setCurrentStocks] = useState(stocks);
+const MainStockItem = ({ stocks }) => {
+  const icons = [
+    <SiAzurefunctions />,
+    <SiCivicrm />,
+    <SiSpeakerdeck />,
+    <SiCoronarenderer />,
+    <SiBadoo />,
+    <SiEsea />,
+    <SiFDroid />,
+    <SiIcon />,
+    <SiUntangle />,
+  ];
   return (
     <ul className={styles.container}>
-      {currentStocks.map((item) => (
+      {stocks.map((item, index) => (
         <MainStockItemList
           label={item.label}
           price={item.price}
-          icon={item.icon}
+          icon={icons[index]}
+          key={index}
         />
       ))}
     </ul>
   );
 };
 
-export default StockItem;
+export default MainStockItem;

@@ -4,6 +4,7 @@ import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainBuySection.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeAmount } from "../../modules/main";
+import { useEffect } from "react/cjs/react.development";
 
 const MainBuySection = (props) => {
   const clickedTotal = useSelector((state) => state.main.clickedTotal);
@@ -11,12 +12,16 @@ const MainBuySection = (props) => {
   const clickedStockPrice = useSelector(
     (state) => state.main.clickedStockPrice
   );
+  const state = useSelector((state) => state.main);
 
   const dispatch = useDispatch();
   const onChangeAmount = (e) => {
     dispatch(changeAmount(e.target.value));
   };
   const onChangeTotal = () => {};
+  useEffect(() => {
+    // selector로 가져온 값이 변경이 되어야함
+  });
   return (
     <>
       <p className={styles.title}>매수</p>

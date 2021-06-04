@@ -1,8 +1,8 @@
 import { firebaseDB } from "./firebase";
 
 class Database {
-  async saveUserData(userId, user) {
-    await firebaseDB.ref(`users/${userId}/user`).set(user);
+  async saveUserData(userId, data) {
+    await firebaseDB.ref(`users/${userId}/user`).set(data);
   }
   async saveStockData(userId, stocks) {
     await firebaseDB.ref(`users/${userId}/stocks`).set(stocks);

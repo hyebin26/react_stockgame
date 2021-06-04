@@ -1,7 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./mainBtn.module.css";
-import { clickBuyBtn, clickSellBtn, onSaveUserData } from "../../modules/main";
+import {
+  clickBuyBtn,
+  clickSellBtn,
+  onSaveUserData,
+  onSaveStockData,
+} from "../../modules/main";
 import swal from "sweetalert";
 
 const MainBtn = (props) => {
@@ -14,14 +19,15 @@ const MainBtn = (props) => {
   const onClickBuyBtn = () => {
     if (clickedAmount === 0)
       return swal({ title: "갯수를 설정해주세요!", icon: "warning" });
-    dispatch(clickBuyBtn());
+    // dispatch(clickBuyBtn());
     dispatch(onSaveUserData());
+    dispatch(onSaveStockData());
   };
   const onClickSellBtn = () => {
     if (sellClickedAmount === 0) {
       return swal({ title: "갯수를 설정해주세요!", icon: "warning" });
     }
-    dispatch(clickSellBtn());
+    // dispatch(clickSellBtn());
     dispatch(onSaveUserData());
   };
   if (title === "매수")

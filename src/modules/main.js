@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { users, stocks } from "./object";
@@ -10,8 +10,8 @@ export const mainSlice = createSlice({
   name: "main",
   initialState: {
     user: "default",
-    hasMoney: users["default"].money,
-    day: users["default"].currentDay,
+    hasMoney: 0,
+    day: 1,
     clickedStockPrice: stocks[0].price[0],
     clickedTotal: 0,
     clickedAmount: 0,
@@ -19,8 +19,9 @@ export const mainSlice = createSlice({
     sellClickedTotal: 0,
     sellClickedAmount: 0,
     clickedLebel: "H전자",
-    haveStocks: users["default"].haveStock,
-    stocks: stocks,
+    haveStocks: [],
+    stocks: [],
+    isLoading: true,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -40,15 +41,21 @@ export const mainSlice = createSlice({
       const price = state.clickedStockPrice;
       const amount = state.clickedAmount;
       const label = state.clickedLebel;
+      console.log(state.haveStocks);
       if (state.hasMoney >= amount * price) {
         state.hasMoney = state.hasMoney - price * amount;
-        state.haveStocks.map((item) => {
-          if (item.label === label) {
-            item.amount += amount;
-          } else {
-            state.haveStocks.push({ label, price, amount });
-          }
-        });
+        if (state.haveStocks !== undefined && state.haveStocks.length !== 0) {
+          console.log(state.haveStocks);
+          state.haveStocks.map((item) => {
+            if (item.label === label) {
+              item.amount += amount;
+            } else {
+              state.haveStocks.push({ label, price, amount });
+            }
+          });
+        } else {
+          state.haveStocks = { label, price, amount };
+        }
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;
@@ -128,24 +135,19 @@ export const mainSlice = createSlice({
     },
     //
     onSaveUserData: (state, action) => {
-      //매수 매도 클릭 시
-      database.saveUserData(state.user, state.haveStocks);
+      database.saveUserData(state.user, users["default"]);
     },
     onSaveStockData: (state, action) => {
-      // database.saveStockData(state.user, stocks);
-      // next day 클릭 시
+      database.saveStockData("default", stocks);
     },
-    loadData: (state, action) => {
-      // if (action.payload !== null) {
-      //   const { stocks, user } = action.payload;
-      //   state.stocks = stocks;
-      //   state.haveStocks = user.haveStock;
-      //   state.hasMoney = user.money;
-      //   state.day = user.currentDay;
-      // }
-      console.log(state.clickedTotal);
-      console.log("hello");
-      state.user = localStorage.getItem("token");
+    onLoadData: (state, action) => {
+      state.stocks = action.payload.stocks;
+      state.user = action.payload.user;
+      state.day = action.payload.user.currentDay;
+      state.haveStocks = action.payload.user.haveStock;
+      state.hasMoney = action.payload.user.money;
+      state.isLoading = false;
+      console.log(current(state));
     },
   },
 });
@@ -159,8 +161,9 @@ export const {
   changeSellAmount,
   clickSellBtn,
   onSaveUserData,
+  onSaveStockData,
   saveStockData,
-  loadData,
+  onLoadData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

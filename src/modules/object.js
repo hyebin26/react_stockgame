@@ -23,7 +23,6 @@ export const users = {
     ],
     haveHint: {},
   },
-  token2: {},
 };
 
 export const stocks = [

@@ -11,7 +11,6 @@ const MainStockItemList = (props) => {
   const onClickLabel = () => {
     dispatch(clickLabel(label));
   };
-  console.log(icon);
   return (
     <li className={styles.itemContainer} onClick={onClickLabel}>
       <div className={styles.iconContainer}>{icon}</div>

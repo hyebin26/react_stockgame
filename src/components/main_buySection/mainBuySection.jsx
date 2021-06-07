@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeAmount } from "../../modules/main";
 import { useEffect } from "react/cjs/react.development";
 
-const MainBuySection = (props) => {
+const MainBuySection = ({ database }) => {
   const clickedTotal = useSelector((state) => state.main.clickedTotal);
   const clickedAmount = useSelector((state) => state.main.clickedAmount);
   const clickedStockPrice = useSelector(
@@ -19,9 +19,7 @@ const MainBuySection = (props) => {
     dispatch(changeAmount(e.target.value));
   };
   const onChangeTotal = () => {};
-  useEffect(() => {
-    // selector로 가져온 값이 변경이 되어야함
-  });
+
   return (
     <>
       <p className={styles.title}>매수</p>
@@ -48,7 +46,7 @@ const MainBuySection = (props) => {
         <MainPerBtn />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtn title="매수" />
+        <MainBtn title="매수" database={database} />
       </div>
     </>
   );

@@ -3,14 +3,14 @@ import MainBuySection from "../main_buySection/mainBuySection";
 import MainSellSection from "../main_sellSection/mainSellSection";
 import styles from "./mainTrading.module.css";
 
-const MainTrading = (props) => {
+const MainTrading = ({ database }) => {
   return (
     <div className={styles.container}>
       <div className={styles.buy}>
-        <MainBuySection />
+        <MainBuySection database={database} />
       </div>
       <div className={styles.sell}>
-        <MainSellSection />
+        <MainSellSection database={database} />
       </div>
     </div>
   );

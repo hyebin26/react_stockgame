@@ -29,6 +29,7 @@ const Main = ({ database }) => {
 
   useEffect(() => {
     database.loadData(localStorage.getItem("token"), updateData);
+    console.log("warning");
   }, []);
 
   if (isLoading === true)
@@ -43,7 +44,7 @@ const Main = ({ database }) => {
       <section className={styles.mainTrading}>
         <div className={styles.trading_container}>
           <MainChart />
-          <MainTrading />
+          <MainTrading database={database} />
         </div>
       </section>
       <section className={styles.mainItemContainer}>

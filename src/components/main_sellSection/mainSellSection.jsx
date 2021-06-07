@@ -5,7 +5,7 @@ import styles from "./mainSellSection.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSellAmount } from "../../modules/main";
 
-const MainSellSection = (props) => {
+const MainSellSection = ({ database }) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.sell);
   const { clickedStockPrice, sellClickedAmount, sellClickedTotal } =
@@ -37,7 +37,7 @@ const MainSellSection = (props) => {
         <MainPerBtn title="매도" />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtn title="매도" />
+        <MainBtn title="매도" database={database} />
       </div>
     </>
   );

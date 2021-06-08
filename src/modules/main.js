@@ -50,10 +50,6 @@ export const mainSlice = createSlice({
         //     state.haveStocks.pop();
         //   }
         // });
-        database.saveUserData("default", {
-          day: state.day,
-          hasMoney: currentHasMoney - price * amount,
-        });
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;
@@ -63,7 +59,7 @@ export const mainSlice = createSlice({
         state.clickedTotal = 0;
       }
     },
-    //
+
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
       const price = [];
@@ -135,7 +131,6 @@ export const mainSlice = createSlice({
     onLoadData: (state, action) => {
       state.stocks = action.payload.stocks;
       state.day = action.payload.user.day;
-      // state.haveStocks = action.payload.user.haveStocks;
       state.hasMoney = action.payload.user.hasMoney;
       state.user = localStorage.getItem("token");
       state.isLoading = false;

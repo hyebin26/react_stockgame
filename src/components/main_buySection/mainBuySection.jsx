@@ -1,25 +1,9 @@
 import React from "react";
-import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainBuySection.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { changeAmount } from "../../modules/main";
-import { useEffect } from "react/cjs/react.development";
+import MainBtnContainer from "../../containers/main_btnCotaniner/mainBtnContainer";
 
 const MainBuySection = ({ database }) => {
-  const clickedTotal = useSelector((state) => state.main.clickedTotal);
-  const clickedAmount = useSelector((state) => state.main.clickedAmount);
-  const clickedStockPrice = useSelector(
-    (state) => state.main.clickedStockPrice
-  );
-  const state = useSelector((state) => state.main);
-
-  const dispatch = useDispatch();
-  const onChangeAmount = (e) => {
-    dispatch(changeAmount(e.target.value));
-  };
-  const onChangeTotal = () => {};
-
   return (
     <>
       <p className={styles.title}>매수</p>
@@ -46,7 +30,7 @@ const MainBuySection = ({ database }) => {
         <MainPerBtn />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtn title="매수" database={database} />
+        <MainBtnContainer title="매수" database={database} />
       </div>
     </>
   );

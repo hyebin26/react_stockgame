@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Main from "./components/main/main";
 import styles from "./app.module.css";
 import Login from "./components/login/login";
+import MainContainer from "./containers/mainContainer/mainContainer";
 
 function App({ auth, database }) {
   return (
@@ -11,7 +12,7 @@ function App({ auth, database }) {
           <Login auth={auth} />
         </Route>
         <Route path="/main">
-          <Main database={database} />
+          <MainContainer database={database} />
         </Route>
         <Route path="/profile">
           <Main />

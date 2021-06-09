@@ -1,7 +1,6 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
-import { users } from "./object";
 
 export const mainSlice = createSlice({
   name: "main",
@@ -83,7 +82,7 @@ export const mainSlice = createSlice({
     clickPerSellBtn: (state, action) => {
       const label = state.clickedLebel;
       const percent = action.payload;
-      const hasStock = users[state.user].haveStock;
+      const hasStock = state.haveStocks;
       hasStock.map((item) => {
         if (item.label === label) {
           state.sellClickedAmount = Math.ceil(item.amount * (percent / 100));
@@ -98,19 +97,22 @@ export const mainSlice = createSlice({
       state.sellClickedTotal = state.clickedStockPrice * amount;
     },
     clickSellBtn: (state) => {
+      const cellClickedAmount = parseInt(state.sellClickedAmount);
       state.haveStocks.map((item, index) => {
         if (item.label === state.clickedLebel) {
-          if (item.amount === state.sellClickedAmount) {
+          if (item.amount === cellClickedAmount) {
             state.haveStocks.splice(index, 1);
             state.hasMoney += state.sellClickedTotal;
             state.sellClickedAmount = 0;
             state.sellClickedTotal = 0;
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
-          } else if (item.amount > state.sellClickedAmount) {
-            item.amount -= state.sellClickedAmount;
+          } else if (item.amount > cellClickedAmount) {
+            item.amount -= cellClickedAmount;
             state.hasMoney += state.sellClickedTotal;
+            state.sellClickedAmount = 0;
+            state.sellClickedTotal = 0;
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
-          } else if (item.amount < state.sellClickedAmount) {
+          } else if (item.amount < cellClickedAmount) {
             return swal({
               title: "갯수를 다시 설정해주세요!",
               icon: "warning",

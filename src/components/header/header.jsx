@@ -1,10 +1,11 @@
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { handlePercent } from "../../service/percent";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = (props) => {
   const handleNextBtn = () => {
@@ -23,6 +24,7 @@ const Header = (props) => {
       }
     });
   };
+
   if (props.login) {
     return (
       <header className={styles.header}>

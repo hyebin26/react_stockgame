@@ -14,7 +14,9 @@ const Main = ({ database }) => {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.main);
 
-  const updateDefaultData = (data) => dispatch(onLoadData(data));
+  const updateDefaultData = (data) => {
+    dispatch(onLoadData(data));
+  };
   const updateData = (data) => {
     if (data === null) {
       database.loadData("default", updateDefaultData);

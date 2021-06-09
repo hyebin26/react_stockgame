@@ -6,8 +6,14 @@ import swal from "sweetalert";
 
 const MainBtn = (props) => {
   const title = props.title;
-  const { clickedAmount, day, hasMoney, haveStocks, sellClickedAmount } =
-    useSelector((state) => state.main);
+  const {
+    clickedAmount,
+    day,
+    hasMoney,
+    haveStocks,
+    sellClickedAmount,
+    stocks,
+  } = useSelector((state) => state.main);
 
   const dispatch = useDispatch();
   const onClickBuyBtn = () => {
@@ -26,8 +32,9 @@ const MainBtn = (props) => {
     props.database.saveUserData(localStorage.getItem("token"), {
       day,
       hasMoney,
-      haveStocks,
+      haveStocks: haveStocks.length === 0 ? [0] : haveStocks,
     });
+    props.database.saveStockData(localStorage.getItem("token"), stocks);
   }, [haveStocks, hasMoney, day]);
 
   if (title === "매수")

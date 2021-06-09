@@ -6,19 +6,14 @@ import swal from "sweetalert";
 
 const MainBtn = (props) => {
   const title = props.title;
-  const { clickedAmount, day, hasMoney, haveStocks } = useSelector(
-    (state) => state.main
-  );
-  const sellClickedAmount = useSelector(
-    (state) => state.main.sellClickedAmount
-  );
+  const { clickedAmount, day, hasMoney, haveStocks, sellClickedAmount } =
+    useSelector((state) => state.main);
 
   const dispatch = useDispatch();
   const onClickBuyBtn = () => {
     if (clickedAmount === 0)
       return swal({ title: "갯수를 설정해주세요!", icon: "warning" });
     dispatch(clickBuyBtn());
-    console.log(hasMoney, "click");
   };
   const onClickSellBtn = () => {
     if (sellClickedAmount === 0) {
@@ -29,8 +24,12 @@ const MainBtn = (props) => {
   };
 
   useEffect(() => {
-    console.log("effect", hasMoney);
-  });
+    props.database.saveUserData(localStorage.getItem("token"), {
+      day,
+      hasMoney,
+      haveStocks,
+    });
+  }, [haveStocks, hasMoney, day]);
 
   if (title === "매수")
     return (

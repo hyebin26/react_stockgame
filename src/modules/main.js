@@ -2,9 +2,6 @@ import { createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { users, stocks } from "./object";
-import Database from "../service/database";
-
-const database = new Database();
 
 export const mainSlice = createSlice({
   name: "main",
@@ -43,13 +40,18 @@ export const mainSlice = createSlice({
       const currentHasMoney = state.hasMoney;
       if (currentHasMoney >= amount * price) {
         state.hasMoney = currentHasMoney - price * amount;
-        // state.haveStocks.push({ label, price, amount });
-        // state.haveStocks.map((item) => {
-        //   if (item.label === label) {
-        //     item.amount += amount;
-        //     state.haveStocks.pop();
-        //   }
-        // });
+        const checkHaveStocks = state.haveStocks.find(
+          (item) => item.label === label
+        );
+        if (!checkHaveStocks) {
+          state.haveStocks.push({ label, price, amount });
+        } else {
+          state.haveStocks.map((item) => {
+            if (item.label === label) {
+              item.amount += amount;
+            }
+          });
+        }
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;

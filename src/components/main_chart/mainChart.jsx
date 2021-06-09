@@ -20,6 +20,7 @@ const MainChart = (props) => {
     }));
   };
   useEffect(() => {
+    console.log(stock);
     setData(stock);
   }, [stock]);
   return (

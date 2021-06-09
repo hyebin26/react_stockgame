@@ -1,7 +1,7 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
-import { users, stocks } from "./object";
+import { users } from "./object";
 
 export const mainSlice = createSlice({
   name: "main",
@@ -16,7 +16,7 @@ export const mainSlice = createSlice({
     sellClickedTotal: 0,
     sellClickedAmount: 0,
     clickedLebel: "H전자",
-    haveStocks: [{ label: "H전자", amount: 5, price: 15000 }],
+    haveStocks: [],
     stocks: [],
     isLoading: true,
   },
@@ -65,13 +65,17 @@ export const mainSlice = createSlice({
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
       const price = [];
-      stocks.map((item) => {
+      state.stocks.map((item) => {
         if (item.label === action.payload) {
           item.price.map((item2) => price.push(item2));
         }
       });
       state.chartStock.datasets[0].data = price;
 
+      state.clickedTotal = 0;
+      state.clickedAmount = 0;
+      state.sellClickedAmount = 0;
+      state.sellClickedTotal = 0;
       state.clickedLebel = action.payload;
       state.clickedStockPrice = price[price.length - 1];
     },
@@ -94,28 +98,17 @@ export const mainSlice = createSlice({
       state.sellClickedTotal = state.clickedStockPrice * amount;
     },
     clickSellBtn: (state) => {
-      const currentUser = state.user;
-      users[currentUser].haveStock.map((item, index) => {
+      state.haveStocks.map((item, index) => {
         if (item.label === state.clickedLebel) {
           if (item.amount === state.sellClickedAmount) {
-            users[currentUser].haveStock.splice(index, 1);
+            state.haveStocks.splice(index, 1);
             state.hasMoney += state.sellClickedTotal;
-            currentUser.money += state.sellClickedTotal;
             state.sellClickedAmount = 0;
             state.sellClickedTotal = 0;
-            if (currentUser === "default") {
-              users[localStorage.getItem("token")] = users.default;
-              currentUser = localStorage.getItem("token");
-            }
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
           } else if (item.amount > state.sellClickedAmount) {
             item.amount -= state.sellClickedAmount;
-            currentUser.money += state.sellClickedTotal;
             state.hasMoney += state.sellClickedTotal;
-            if (currentUser === "default") {
-              users[localStorage.getItem("token")] = users.default;
-              currentUser = localStorage.getItem("token");
-            }
             return swal({ title: "판매를 성공하였습니다.", icon: "success" });
           } else if (item.amount < state.sellClickedAmount) {
             return swal({
@@ -129,13 +122,13 @@ export const mainSlice = createSlice({
         }
       });
     },
-    //
     onLoadData: (state, action) => {
       state.stocks = action.payload.stocks;
       state.day = action.payload.user.day;
       state.hasMoney = action.payload.user.hasMoney;
       state.user = localStorage.getItem("token");
       state.isLoading = false;
+      state.haveStocks = action.payload.user.haveStocks;
     },
   },
 });

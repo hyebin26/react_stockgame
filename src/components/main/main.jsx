@@ -28,11 +28,6 @@ const Main = ({ database }) => {
   }, [localStorage.getItem("token")]);
 
   useEffect(() => {
-    database.saveUserData("default", {
-      hasMoney: 100000000,
-      haveStocks: [],
-      day: 1,
-    });
     database.loadData(localStorage.getItem("token"), updateData);
   }, []);
 

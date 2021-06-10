@@ -1,9 +1,16 @@
 import React from "react";
-import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainBuySection.module.css";
 import MainBtnContainer from "../../containers/main_btnCotaniner/mainBtnContainer";
+import MainPerBtnContainer from "../../containers/main_perBtnContainer/mainPerBtnContainer";
 
-const MainBuySection = ({ database }) => {
+const MainBuySection = ({
+  database,
+  onChangeTotal,
+  onChangeAmount,
+  clickedTotal,
+  clickedAmount,
+  clickedStockPrice,
+}) => {
   return (
     <>
       <p className={styles.title}>매수</p>
@@ -27,7 +34,7 @@ const MainBuySection = ({ database }) => {
           value={clickedTotal.toLocaleString("ko-KR")}
           onChange={onChangeTotal}
         />
-        <MainPerBtn />
+        <MainPerBtnContainer />
       </div>
       <div className={styles.itemContainer}>
         <MainBtnContainer title="매수" database={database} />

@@ -3,7 +3,7 @@ import Header from "../header/header";
 import styles from "./login.module.css";
 import LoginBtn from "../login_btn/loginBtn";
 
-const Login = ({ auth, database }) => {
+const Login = ({ auth }) => {
   return (
     <section className={styles.container}>
       <Header login="login" />

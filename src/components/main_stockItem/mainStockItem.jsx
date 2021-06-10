@@ -13,7 +13,7 @@ import {
   SiIcon,
 } from "react-icons/si";
 
-const MainStockItem = ({ stocks }) => {
+const MainStockItem = ({ stocks, onClickLabel }) => {
   const icons = [
     <SiAzurefunctions />,
     <SiCivicrm />,
@@ -33,6 +33,7 @@ const MainStockItem = ({ stocks }) => {
           price={item.price}
           icon={icons[index]}
           key={index}
+          onClickLabel={onClickLabel}
         />
       ))}
     </ul>

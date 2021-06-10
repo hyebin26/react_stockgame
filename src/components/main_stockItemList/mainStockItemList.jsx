@@ -1,18 +1,13 @@
 import React from "react";
-import { FaBeer } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { clickLabel } from "../../modules/main";
 import MainHintBtn from "../main_hintBtn/mainHintBtn";
 import styles from "./mainStockItemList.module.css";
 
-const MainStockItemList = (props) => {
-  const { price, label, icon } = props;
-  const dispatch = useDispatch();
-  const onClickLabel = () => {
-    dispatch(clickLabel(label));
+const MainStockItemList = ({ price, label, icon, onClickLabel }) => {
+  const clickLabel = () => {
+    onClickLabel(label);
   };
   return (
-    <li className={styles.itemContainer} onClick={onClickLabel}>
+    <li className={styles.itemContainer} onClick={clickLabel}>
       <div className={styles.iconContainer}>{icon}</div>
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>

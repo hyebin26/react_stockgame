@@ -1,6 +1,6 @@
 import React from "react";
 import MainBuySectionContainer from "../../containers/mainBuySectionContainer/mainBuySectionContainer";
-import MainSellSection from "../main_sellSection/mainSellSection";
+import MainSellSectionContainer from "../../containers/mainSellSectionContainer/mainSellSectionContainer";
 import styles from "./mainTrading.module.css";
 
 const MainTrading = ({ database }) => {
@@ -10,7 +10,7 @@ const MainTrading = ({ database }) => {
         <MainBuySectionContainer database={database} />
       </div>
       <div className={styles.sell}>
-        <MainSellSection database={database} />
+        <MainSellSectionContainer database={database} />
       </div>
     </div>
   );

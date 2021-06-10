@@ -2,19 +2,15 @@ import React from "react";
 import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainSellSection.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { changeSellAmount } from "../../modules/main";
 
-const MainSellSection = ({ database }) => {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.sell);
-  const { clickedStockPrice, sellClickedAmount, sellClickedTotal } =
-    useSelector((state) => state.main);
-
-  const onChangeAmount = (e) => {
-    dispatch(changeSellAmount(e.target.value));
-  };
-  const onChangeTotal = (e) => {};
+const MainSellSection = ({
+  database,
+  clickedStockPrice,
+  sellClickedAmount,
+  sellClickedTotal,
+  onChangeAmount,
+  onChangeTotal,
+}) => {
   return (
     <>
       <p className={styles.title}>매도</p>

@@ -1,11 +1,9 @@
 ## Stock Game
 
-1. container로 component
-
 ### next to do
 
-2. 랜덤숫자변경
+1. percent 증가
+2. 힌트주기
+3. 나의정보 section
 
 ### memo
-
-1. mainBuySection 해야됨

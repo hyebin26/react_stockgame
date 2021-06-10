@@ -2,26 +2,14 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import React from "react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
-import { handlePercent } from "../../service/percent";
-import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clickNextDay } from "../../modules/main";
 
 const Header = (props) => {
+  const dispatch = useDispatch();
   const handleNextBtn = () => {
-    swal({
-      text: "다음 스테이지로 넘아가겠습니까?",
-      icon: "success",
-      buttons: true,
-    }).then((agree) => {
-      if (agree) {
-        const stockPer = handlePercent();
-        const currentPrice = Math.floor(150000 * (1 + stockPer / 100));
-        console.log("전일대비", stockPer);
-        console.log("현재가격", currentPrice);
-      } else {
-        console.log("noob");
-      }
-    });
+    dispatch(clickNextDay());
   };
 
   if (props.login) {

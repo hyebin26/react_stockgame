@@ -1,6 +1,7 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
+import { handlePercentAPI } from "../service/percent";
 
 export const mainSlice = createSlice({
   name: "main",
@@ -60,7 +61,6 @@ export const mainSlice = createSlice({
         state.clickedTotal = 0;
       }
     },
-
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
       const price = [];
@@ -78,7 +78,6 @@ export const mainSlice = createSlice({
       state.clickedLebel = action.payload;
       state.clickedStockPrice = price[price.length - 1];
     },
-    //
     clickPerSellBtn: (state, action) => {
       const label = state.clickedLebel;
       const percent = action.payload;
@@ -132,6 +131,18 @@ export const mainSlice = createSlice({
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
     },
+    clickNextDay: (state, action) => {
+      let stockPer = 0;
+      const lastDay = 7;
+      state.stocks.map((item, index) => {
+        stockPer = handlePercentAPI();
+        for (let i = 1; i <= lastDay - 1; i++) {
+          state.stocks[index].price.push(
+            Math.floor(item.price[item.price.length - 1] * (1 + stockPer / 100))
+          );
+        }
+      });
+    },
   },
 });
 
@@ -145,6 +156,7 @@ export const {
   clickSellBtn,
   saveStockData,
   onLoadData,
+  clickNextDay,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

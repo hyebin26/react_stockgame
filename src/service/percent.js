@@ -41,7 +41,7 @@ const makeStockPer = (percent) => {
     return getRandomInt(-41, -51);
   }
 };
-export const handlePercent = () => {
+export const handlePercentAPI = () => {
   let percent = getRandomInt(0, 100);
   const stockPer = makeStockPer(percent);
   //const stockPrice = 15000;

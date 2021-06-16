@@ -2,7 +2,7 @@ import React from "react";
 import MainHintBtn from "../main_hintBtn/mainHintBtn";
 import styles from "./mainStockItemList.module.css";
 
-const MainStockItemList = ({ price, label, icon, onClickLabel }) => {
+const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
   const clickLabel = () => {
     onClickLabel(label);
   };
@@ -16,7 +16,7 @@ const MainStockItemList = ({ price, label, icon, onClickLabel }) => {
           <MainHintBtn hintPoint={1} />
         </div>
         <div className={styles.priceContainer}>
-          <p>가격: {price}</p>
+          <p>가격: {price[day - 1]}</p>
           <p>전일대비: 2.3%</p>
         </div>
       </div>

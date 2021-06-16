@@ -3,12 +3,13 @@ import React from "react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clickNextDay } from "../../modules/main";
 
 const Header = (props) => {
   const dispatch = useDispatch();
-  const handleNextBtn = () => {
+  const { day } = useSelector((state) => state.main);
+  const onClickNextBtn = () => {
     dispatch(clickNextDay());
   };
 
@@ -33,9 +34,9 @@ const Header = (props) => {
           Stock Game
         </Link>
         <ul className={styles.info}>
-          <li>day 3</li>
+          <li>day {day}</li>
           <li>현재 이익률 10%</li>
-          <button className={styles.nextBtn} onClick={handleNextBtn}>
+          <button className={styles.nextBtn} onClick={onClickNextBtn}>
             Next day
           </button>
         </ul>

@@ -13,7 +13,7 @@ import {
   SiIcon,
 } from "react-icons/si";
 
-const MainStockItem = ({ stocks, onClickLabel }) => {
+const MainStockItem = ({ stocks, onClickLabel, day }) => {
   const icons = [
     <SiAzurefunctions />,
     <SiCivicrm />,
@@ -34,6 +34,7 @@ const MainStockItem = ({ stocks, onClickLabel }) => {
           icon={icons[index]}
           key={index}
           onClickLabel={onClickLabel}
+          day={day}
         />
       ))}
     </ul>

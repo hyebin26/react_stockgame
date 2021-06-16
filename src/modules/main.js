@@ -19,6 +19,7 @@ export const mainSlice = createSlice({
     haveStocks: [],
     stocks: [],
     isLoading: true,
+    increasePercent: 0,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -66,17 +67,18 @@ export const mainSlice = createSlice({
       const price = [];
       state.stocks.map((item) => {
         if (item.label === action.payload) {
-          item.price.map((item2) => price.push(item2));
+          price.push(...item.price.slice(0, state.day));
         }
       });
       state.chartStock.datasets[0].data = price;
-
+      
       state.clickedTotal = 0;
       state.clickedAmount = 0;
       state.sellClickedAmount = 0;
       state.sellClickedTotal = 0;
       state.clickedLebel = action.payload;
       state.clickedStockPrice = price[price.length - 1];
+      console.log(current(state.chartStock));
     },
     clickPerSellBtn: (state, action) => {
       const label = state.clickedLebel;
@@ -131,15 +133,31 @@ export const mainSlice = createSlice({
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
     },
-    clickNextDay: (state, action) => {
+    clickNextDay: (state) => {
       let stockPer = 0;
       const lastDay = 7;
-      state.stocks.map((item, index) => {
-        stockPer = handlePercentAPI();
-        for (let i = 1; i <= lastDay - 1; i++) {
-          state.stocks[index].price.push(
-            Math.floor(item.price[item.price.length - 1] * (1 + stockPer / 100))
-          );
+      if (state.stocks[0].price.length < 2) {
+        state.stocks.map((item, index) => {
+          for (let i = 1; i <= lastDay - 1; i++) {
+            stockPer = handlePercentAPI();
+            state.stocks[index].price.push(
+              Math.floor(
+                item.price[item.price.length - 1] * (1 + stockPer / 100)
+              )
+            );
+          }
+        });
+      }
+      if (state.day !== 7) {
+        state.day = ++state.day;
+      } else {
+        swal("마지막 날입니다. 다시 하고 싶으시면 리셋을 눌러주세요!");
+      }
+    },
+    changeChartData: (state, action) => {
+      state.stocks.map((item) => {
+        if (item.label === state.chartStock.datasets[0].label) {
+          state.chartStock.datasets[0].data.push(item.price[state.day - 1]);
         }
       });
     },
@@ -157,6 +175,7 @@ export const {
   saveStockData,
   onLoadData,
   clickNextDay,
+  changeChartData,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

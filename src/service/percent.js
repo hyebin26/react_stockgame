@@ -44,8 +44,5 @@ const makeStockPer = (percent) => {
 export const handlePercentAPI = () => {
   let percent = getRandomInt(0, 100);
   const stockPer = makeStockPer(percent);
-  //const stockPrice = 15000;
-  //console.log("전날대비", stockPer + "%");
-  //console.log("현재가격", Math.floor(stockPrice * (1 + stockPer / 100)));
   return stockPer;
 };

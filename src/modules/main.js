@@ -64,6 +64,8 @@ export const mainSlice = createSlice({
     },
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
+      console.log(current(state.chartStock.datasets[0]));
+      state.clickedLebel = action.payload;
       const price = [];
       state.stocks.map((item) => {
         if (item.label === action.payload) {
@@ -71,14 +73,11 @@ export const mainSlice = createSlice({
         }
       });
       state.chartStock.datasets[0].data = price;
-      
       state.clickedTotal = 0;
       state.clickedAmount = 0;
       state.sellClickedAmount = 0;
       state.sellClickedTotal = 0;
-      state.clickedLebel = action.payload;
       state.clickedStockPrice = price[price.length - 1];
-      console.log(current(state.chartStock));
     },
     clickPerSellBtn: (state, action) => {
       const label = state.clickedLebel;
@@ -154,12 +153,13 @@ export const mainSlice = createSlice({
         swal("마지막 날입니다. 다시 하고 싶으시면 리셋을 눌러주세요!");
       }
     },
-    changeChartData: (state, action) => {
+    changeCurrentChart: (state, action) => {
       state.stocks.map((item) => {
         if (item.label === state.chartStock.datasets[0].label) {
           state.chartStock.datasets[0].data.push(item.price[state.day - 1]);
         }
       });
+      console.log(current(state.stocks));
     },
   },
 });
@@ -175,7 +175,7 @@ export const {
   saveStockData,
   onLoadData,
   clickNextDay,
-  changeChartData,
+  changeCurrentChart,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

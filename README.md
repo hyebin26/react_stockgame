@@ -1,5 +1,8 @@
 ## Stock Game
 
+1. nextDay 클릭시 chartData변경
+2. Label 클릭시 chartData변경
+
 ### next to do
 
 1. percent 증가

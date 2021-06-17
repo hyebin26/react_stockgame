@@ -4,13 +4,14 @@ import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { clickNextDay } from "../../modules/main";
+import { clickNextDay, changeCurrentChart } from "../../modules/main";
 
 const Header = (props) => {
   const dispatch = useDispatch();
   const { day } = useSelector((state) => state.main);
   const onClickNextBtn = () => {
     dispatch(clickNextDay());
+    dispatch(changeCurrentChart());
   };
 
   if (props.login) {

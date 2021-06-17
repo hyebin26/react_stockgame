@@ -1,7 +1,6 @@
 ## Stock Game
 
-1. nextDay 클릭시 chartData변경
-2. Label 클릭시 chartData변경
+1. header, mainChart 컴포넌트 각각의 container로 분리
 
 ### next to do
 

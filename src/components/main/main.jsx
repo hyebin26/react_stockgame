@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../header/header";
-import MainChart from "../main_chart/mainChart";
 import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
 import MainStockItemContainer from "../../containers/main_stockItemContainer/mainStockItemContainer";
+import MainChartContainer from "../../containers/mainChartContainer/mainChartContainer";
+import HeaderContainer from "../../containers/headerContainer/headerContainer";
 
 const Main = ({ isLoading, database }) => {
   if (isLoading === true)
@@ -14,10 +14,10 @@ const Main = ({ isLoading, database }) => {
     );
   return (
     <div className={styles.container}>
-      <Header />
+      <HeaderContainer />
       <section className={styles.mainTrading}>
         <div className={styles.trading_container}>
-          <MainChart />
+          <MainChartContainer />
           <MainTrading database={database} />
         </div>
       </section>

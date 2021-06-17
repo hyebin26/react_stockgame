@@ -3,18 +3,9 @@ import React from "react";
 import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { clickNextDay, changeCurrentChart } from "../../modules/main";
 
-const Header = (props) => {
-  const dispatch = useDispatch();
-  const { day } = useSelector((state) => state.main);
-  const onClickNextBtn = () => {
-    dispatch(clickNextDay());
-    dispatch(changeCurrentChart());
-  };
-
-  if (props.login) {
+const Header = ({ login, day, onClickNextBtn }) => {
+  if (login) {
     return (
       <header className={styles.header}>
         <div className={styles.container}>
@@ -22,7 +13,6 @@ const Header = (props) => {
           <Link to="/" className={styles.logo}>
             Stock Game
           </Link>
-          <h2></h2>
         </div>
       </header>
     );

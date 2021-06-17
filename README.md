@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. header, mainChart 컴포넌트 각각의 container로 분리
+1. main화면으로 처음 들어왔을 시 useEffect로 chart변경되게 하기
 
 ### next to do
 

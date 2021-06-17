@@ -64,7 +64,6 @@ export const mainSlice = createSlice({
     },
     clickLabel: (state, action) => {
       state.chartStock.datasets[0].label = action.payload;
-      console.log(current(state.chartStock.datasets[0]));
       state.clickedLebel = action.payload;
       const price = [];
       state.stocks.map((item) => {
@@ -156,10 +155,10 @@ export const mainSlice = createSlice({
     changeCurrentChart: (state, action) => {
       state.stocks.map((item) => {
         if (item.label === state.chartStock.datasets[0].label) {
-          state.chartStock.datasets[0].data.push(item.price[state.day - 1]);
+          console.log(current(item));
+          state.chartStock.datasets[0].data = item.price.slice(0, state.day);
         }
       });
-      console.log(current(state.stocks));
     },
   },
 });

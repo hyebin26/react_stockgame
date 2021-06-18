@@ -1,7 +1,6 @@
 ## Stock Game
 
-1. fix error => mainPerBtn not working and mainBuyBtn not working
-2. add changeCurrentHasStocks in main.js
+1. add per in mainStockItemList.jsx
 
 ### next to do
 
@@ -11,6 +10,5 @@
 
 ### memo
 
-- 소유하고 있는 주식의 가격을 변경해야됨
 - 전일 대비 퍼센트 변경하기
 - Reset Btn 만들기

@@ -164,7 +164,6 @@ export const mainSlice = createSlice({
       });
     },
     changeCurrentHasStocks: (state, action) => {
-      // 클릭을 할 때 hasStocks의 값이 있다면? hasStocks의 값이 변겨오디게 그럼 저장은? useEffect
       state.haveStocks.map((item) => {
         state.stocks.map((item2) => {
           if (state.haveStocks.length !== 0 && item.label === item2.label) {

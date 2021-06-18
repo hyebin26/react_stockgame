@@ -6,6 +6,7 @@ const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
   const clickLabel = () => {
     onClickLabel(label);
   };
+  let per = ((price[day - 1] - price[day - 2]) / 100).toFixed(1);
   return (
     <li className={styles.itemContainer} onClick={clickLabel}>
       <div className={styles.iconContainer}>{icon}</div>
@@ -17,7 +18,7 @@ const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
         </div>
         <div className={styles.priceContainer}>
           <p>가격: {price[day - 1]}</p>
-          <p>전일대비: 2.3%</p>
+          <p>전일대비 : {per}%</p>
         </div>
       </div>
     </li>

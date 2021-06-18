@@ -1,4 +1,4 @@
-@value color_itemColor from "../../common/common.css";
+@value color_itemColor,color_red_btn,color_blue_btn from "../../common/common.css";
 
 .itemContainer {
   background-color: rgb(50, 50, 50);
@@ -18,4 +18,12 @@
 }
 .textContainer {
   padding-left: 0.5rem;
+}
+.perRed {
+  color: #c34042;
+  /*#c34042*/
+}
+.perBlue {
+  color: #0966c6;
+  /*#0966c6*/
 }

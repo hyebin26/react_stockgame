@@ -14,6 +14,9 @@ class Database {
       updateData(data);
     });
   }
+  async deleteData(userId) {
+    await firebaseDB.ref(`users/${userId}`).remove();
+  }
 }
 
 export default Database;

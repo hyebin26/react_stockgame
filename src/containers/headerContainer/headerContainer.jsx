@@ -8,7 +8,7 @@ import {
 } from "../../modules/main";
 import swal from "sweetalert";
 
-const HeaderContainer = (props) => {
+const HeaderContainer = ({ database }) => {
   const dispatch = useDispatch();
   const { day } = useSelector((state) => state.main);
   const onClickNextBtn = () => {
@@ -20,8 +20,13 @@ const HeaderContainer = (props) => {
       }
     });
   };
+  const onResetBtn = () => {
+    database.deleteData(localStorage.getItem("token"));
+  };
 
-  return <Header day={day} onClickNextBtn={onClickNextBtn} />;
+  return (
+    <Header day={day} onClickNextBtn={onClickNextBtn} onResetBtn={onResetBtn} />
+  );
 };
 
 export default HeaderContainer;

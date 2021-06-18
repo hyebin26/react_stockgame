@@ -14,7 +14,7 @@ const Main = ({ isLoading, database }) => {
     );
   return (
     <div className={styles.container}>
-      <HeaderContainer />
+      <HeaderContainer database={database} />
       <section className={styles.mainTrading}>
         <div className={styles.trading_container}>
           <MainChartContainer />

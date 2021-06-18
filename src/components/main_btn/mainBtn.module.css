@@ -13,8 +13,8 @@
 }
 
 .buyBtn {
-  background-color: color_blue_btn;
+  background-color: color_red_btn;
 }
 .sellBtn {
-  background-color: color_red_btn;
+  background-color: color_blue_btn;
 }

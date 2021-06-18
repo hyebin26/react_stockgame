@@ -6,8 +6,8 @@ import { clickLabel } from "../../modules/main";
 const MainStockItemContainer = (props) => {
   const { stocks, day } = useSelector((state) => state.main);
   const dispatch = useDispatch();
-  const onClickLabel = (label) => {
-    dispatch(clickLabel(label));
+  const onClickLabel = (target) => {
+    dispatch(clickLabel(target));
   };
   return (
     <MainStockItem stocks={stocks} day={day} onClickLabel={onClickLabel} />

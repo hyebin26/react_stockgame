@@ -47,7 +47,14 @@
 }
 
 .nextBtn {
-  background-color: rgb(46, 172, 174);
+  background-color: rgb(230, 126, 34);
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 0.4rem;
+}
+.resetBtn {
+  background-color: rgb(44, 62, 80);
   border: none;
   color: white;
   cursor: pointer;

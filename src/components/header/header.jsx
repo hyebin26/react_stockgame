@@ -4,7 +4,7 @@ import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 
-const Header = ({ login, day, onClickNextBtn }) => {
+const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
   if (login) {
     return (
       <header className={styles.header}>
@@ -26,9 +26,11 @@ const Header = ({ login, day, onClickNextBtn }) => {
         </Link>
         <ul className={styles.info}>
           <li>day {day}</li>
-          <li>현재 이익률 10%</li>
           <button className={styles.nextBtn} onClick={onClickNextBtn}>
             Next day
+          </button>
+          <button className={styles.resetBtn} onClick={onResetBtn}>
+            Reset
           </button>
         </ul>
         <ul className={styles.nav}>

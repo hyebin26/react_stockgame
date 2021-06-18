@@ -1,4 +1,4 @@
-@value color_red_btn,color_background,color_container,width_container_1,padding_container,height_main from "../../common/common.css";
+@value color_blue_btn,color_background,color_container,width_container_1,padding_container,height_main from "../../common/common.css";
 
 .mainTrading {
   max-width: width_container_1;
@@ -32,7 +32,7 @@
   width: 20px;
   height: 20px;
   border: 5px solid rgb(255, 255, 255);
-  border-top: 5px solid color_red_btn;
+  border-top: 5px solid color_blue_btn;
   border-radius: 50%;
   animation: spin 1s infinite linear;
 }

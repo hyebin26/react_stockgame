@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. main화면으로 처음 들어왔을 시 useEffect로 chart변경되게 하기
+1. nextBtn 클릭 시 alert가 나오고 동의할 떄만 진행되게 하기
 
 ### next to do
 
@@ -11,6 +11,5 @@
 ### memo
 
 - Reset Btn 만들기
-- next btn 확인 버튼 누를 시 적용되게
-- useEffect로 chartData를 변경해야 됨
 - percent 증가, stockData에 저장해야됨
+- 소유하고 있는 주식의 가격을 변경해야됨

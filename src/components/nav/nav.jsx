@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./nav.module.css";
 
 const Nav = (props) => {
   return (
@@ -10,7 +12,9 @@ const Nav = (props) => {
         <a href="#">거래소</a>
       </li>
       <li>
-        <a href="#">투자내역</a>
+        <Link to="/profile" className={styles.link}>
+          투자내역
+        </Link>
       </li>
       <li>
         <a href="#">로그아웃</a>

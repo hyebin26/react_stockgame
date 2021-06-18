@@ -21,7 +21,11 @@ const HeaderContainer = ({ database }) => {
     });
   };
   const onResetBtn = () => {
-    database.deleteData(localStorage.getItem("token"));
+    swal({ text: "초기화를 하시겠습니까?", buttons: true }).then((agree) => {
+      if (agree) {
+        database.deleteData(localStorage.getItem("token"));
+      }
+    });
   };
 
   return (

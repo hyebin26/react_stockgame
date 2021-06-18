@@ -32,7 +32,11 @@ const MainSellSection = ({
       </div>
       <div className={styles.itemContainer}>
         <p>주문총액</p>
-        <input type="text" value={sellClickedTotal} onChange={onChangeTotal} />
+        <input
+          type="text"
+          value={sellClickedTotal.toLocaleString("ko-KR")}
+          onChange={onChangeTotal}
+        />
         <MainPerBtnContainer title="매도" />
       </div>
       <div className={styles.itemContainer}>

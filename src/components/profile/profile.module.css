@@ -1,0 +1,52 @@
+@value color_blue_btn,color_background,color_container,width_container_1,padding_container,height_main from "../../common/common.css";
+
+.myProfileContainer {
+  max-width: width_container_1;
+  height: height_main;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: padding_container;
+  border-bottom: 1px solid color_header_font;
+}
+.container {
+  width: 100%;
+  min-height: 100%;
+  background-color: color_background;
+}
+
+.myProfileBox {
+  background-color: color_container;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.itemContainer {
+  max-width: width_container_1;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: padding_container;
+  border-bottom: 1px solid color_header_font;
+}
+
+.loading {
+  width: 20px;
+  height: 20px;
+  border: 5px solid rgb(255, 255, 255);
+  border-top: 5px solid color_blue_btn;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: color_background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

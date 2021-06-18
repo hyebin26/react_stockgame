@@ -1,12 +1,15 @@
 ## Stock Game
 
-1. change per color in mainStockItemList
-2. change nextDayBtn color
-3. add ResetBtn
+1. add profile_pieChart and profile_text
+2. add nav hover link color
 
 ### next to do
 
-1. 힌트주기
-2. 나의정보 section
+1. 나의정보 section
+2. 힌트주기
 
 ### memo
+
+1. main 과 profile를 하나의 컴포넌트로 합치고 props를 다른 정보로 준다면 ?
+
+- ex) <section> <Content props={content}/></section>

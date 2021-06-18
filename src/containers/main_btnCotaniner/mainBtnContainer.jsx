@@ -22,10 +22,12 @@ const MainBtnContainer = (props) => {
   };
 
   const onClickSellBtn = () => {
+    alert("test");
     if (sellClickedAmount === 0) {
       return swal({ title: "갯수를 설정해주세요!", icon: "warning" });
+    } else {
+      dispatch(clickSellBtn());
     }
-    dispatch(clickSellBtn());
   };
 
   useEffect(() => {
@@ -34,14 +36,16 @@ const MainBtnContainer = (props) => {
       hasMoney,
       haveStocks: haveStocks.length === 0 ? [0] : haveStocks,
     });
-    props.database.saveStockData(localStorage.getItem("token"), stocks);
   }, [haveStocks, hasMoney, day]);
-  
+  useEffect(() => {
+    props.database.saveStockData(localStorage.getItem("token"), stocks);
+  }, [stocks]);
+
   return (
     <MainBtn
       title={props.title}
       onClickBuyBtn={onClickBuyBtn}
-      onClickSellBtn={onClickBuyBtn}
+      onClickSellBtn={onClickSellBtn}
     />
   );
 };

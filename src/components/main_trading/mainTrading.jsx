@@ -10,7 +10,7 @@ const MainTrading = ({ database }) => {
         <MainBuySectionContainer database={database} />
       </div>
       <div className={styles.sell}>
-        <MainSellSectionContainer database={database} />
+        <MainSellSectionContainer database={database} title={"매도"} />
       </div>
     </div>
   );

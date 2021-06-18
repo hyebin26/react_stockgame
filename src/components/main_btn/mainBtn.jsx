@@ -8,7 +8,6 @@ const MainBtn = ({ title, onClickBuyBtn, onClickSellBtn }) => {
         매수
       </button>
     );
-
   return (
     <button className={styles.sellBtn} onClick={onClickSellBtn}>
       매도

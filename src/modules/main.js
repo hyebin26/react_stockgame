@@ -39,11 +39,14 @@ export const mainSlice = createSlice({
       const amount = parseInt(state.clickedAmount);
       const label = state.clickedLebel;
       const currentHasMoney = state.hasMoney;
+      let checkHaveStocks = false;
       if (currentHasMoney >= amount * price) {
         state.hasMoney = currentHasMoney - price * amount;
-        const checkHaveStocks = state.haveStocks.find(
-          (item) => item.label === label
-        );
+        if (state.haveStocks.length !== 1) {
+          checkHaveStocks = state.haveStocks.find(
+            (item) => item.label === label
+          );
+        }
         if (!checkHaveStocks) {
           state.haveStocks.push({ label, price, amount });
         } else {
@@ -130,6 +133,7 @@ export const mainSlice = createSlice({
       state.user = localStorage.getItem("token");
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
+      console.log(action.payload);
     },
     clickNextDay: (state) => {
       let stockPer = 0;
@@ -155,14 +159,22 @@ export const mainSlice = createSlice({
     changeCurrentChart: (state, action) => {
       state.stocks.map((item) => {
         if (item.label === state.chartStock.datasets[0].label) {
-          console.log(current(item));
           state.chartStock.datasets[0].data = item.price.slice(0, state.day);
         }
       });
     },
+    changeCurrentHasStocks: (state, action) => {
+      // 클릭을 할 때 hasStocks의 값이 있다면? hasStocks의 값이 변겨오디게 그럼 저장은? useEffect
+      state.haveStocks.map((item) => {
+        state.stocks.map((item2) => {
+          if (state.haveStocks.length !== 0 && item.label === item2.label) {
+            item.price = item2.price[state.day - 1];
+          }
+        });
+      });
+    },
   },
 });
-
 export const {
   clickBuyPerBtn,
   changeAmount,
@@ -175,6 +187,7 @@ export const {
   onLoadData,
   clickNextDay,
   changeCurrentChart,
+  changeCurrentHasStocks,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

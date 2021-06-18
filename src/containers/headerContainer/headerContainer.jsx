@@ -1,7 +1,11 @@
 import React from "react";
 import Header from "../../components/header/header";
 import { useDispatch, useSelector } from "react-redux";
-import { clickNextDay, changeCurrentChart } from "../../modules/main";
+import {
+  clickNextDay,
+  changeCurrentChart,
+  changeCurrentHasStocks,
+} from "../../modules/main";
 import swal from "sweetalert";
 
 const HeaderContainer = (props) => {
@@ -12,6 +16,7 @@ const HeaderContainer = (props) => {
       if (agree) {
         dispatch(clickNextDay());
         dispatch(changeCurrentChart());
+        dispatch(changeCurrentHasStocks());
       }
     });
   };

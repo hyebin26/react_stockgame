@@ -1,6 +1,7 @@
 ## Stock Game
 
-1. nextBtn 클릭 시 alert가 나오고 동의할 떄만 진행되게 하기
+1. fix error => mainPerBtn not working and mainBuyBtn not working
+2. add changeCurrentHasStocks in main.js
 
 ### next to do
 
@@ -10,6 +11,6 @@
 
 ### memo
 
-- Reset Btn 만들기
-- percent 증가, stockData에 저장해야됨
 - 소유하고 있는 주식의 가격을 변경해야됨
+- 전일 대비 퍼센트 변경하기
+- Reset Btn 만들기

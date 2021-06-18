@@ -3,15 +3,15 @@ import MainPerBtn from "../../components/main_perBtn/mainPerBtn";
 import { useDispatch } from "react-redux";
 import { clickBuyPerBtn, clickPerSellBtn } from "../../modules/main";
 
-const MainPerBtnContainer = (props) => {
+const MainPerBtnContainer = ({ title }) => {
   const dispatch = useDispatch();
-  const onClickBuyBtn = (e) => {
+  const onClickPerBuyBtn = (e) => {
     const btnVal = e.target.innerText;
     const regex = /[^0-9]/g;
     const result = btnVal.replace(regex, "");
     dispatch(clickBuyPerBtn(result));
   };
-  const onClickSellBtn = (e) => {
+  const onClickPerSellBtn = (e) => {
     const btnVal = e.target.innerText;
     const regex = /[^0-9]/g;
     const result = btnVal.replace(regex, "");
@@ -20,9 +20,9 @@ const MainPerBtnContainer = (props) => {
 
   return (
     <MainPerBtn
-      title="매도"
-      onClickSellBtn={onClickSellBtn}
-      onClickBuyBtn={onClickBuyBtn}
+      title={title}
+      onClickPerBuyBtn={onClickPerBuyBtn}
+      onClickPerSellBtn={onClickPerSellBtn}
     />
   );
 };

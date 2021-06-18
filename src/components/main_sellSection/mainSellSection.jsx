@@ -1,4 +1,6 @@
 import React from "react";
+import MainBtnContainer from "../../containers/main_btnCotaniner/mainBtnContainer";
+import MainPerBtnContainer from "../../containers/main_perBtnContainer/mainPerBtnContainer";
 import MainBtn from "../main_btn/mainBtn";
 import MainPerBtn from "../main_perBtn/mainPerBtn";
 import styles from "./mainSellSection.module.css";
@@ -11,6 +13,7 @@ const MainSellSection = ({
   onChangeAmount,
   onChangeTotal,
 }) => {
+  console.log("sell");
   return (
     <>
       <p className={styles.title}>매도</p>
@@ -30,10 +33,10 @@ const MainSellSection = ({
       <div className={styles.itemContainer}>
         <p>주문총액</p>
         <input type="text" value={sellClickedTotal} onChange={onChangeTotal} />
-        <MainPerBtn title="매도" />
+        <MainPerBtnContainer title="매도" />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtn title="매도" database={database} />
+        <MainBtnContainer title="매도" database={database} />
       </div>
     </>
   );

@@ -1,0 +1,21 @@
+.container {
+  flex: 0 0 50%;
+}
+.moneyBox {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+
+.haveMoney {
+  font-size: 0.8rem;
+  color: grey;
+  padding-right: 2rem;
+}
+.money {
+  color: white;
+  font-size: 1rem;
+}
+.titleBox {
+  padding-bottom: 1.8rem;
+}

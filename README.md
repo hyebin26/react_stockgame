@@ -1,7 +1,6 @@
 ## Stock Game
 
-1. add profile_pieChart and profile_text
-2. add nav hover link color
+1. add profiletext, profileStock
 
 ### next to do
 

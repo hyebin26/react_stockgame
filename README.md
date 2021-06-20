@@ -1,7 +1,5 @@
 ## Stock Game
 
-1. add profiletext, profileStock
-
 ### next to do
 
 1. 나의정보 section

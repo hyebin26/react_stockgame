@@ -3,6 +3,6 @@
 .container {
   flex: 1 1 65%;
 }
-canvas {
+.container canvas {
   width: 100% !important;
 }

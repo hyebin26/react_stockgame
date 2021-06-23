@@ -1,5 +1,7 @@
 ## Stock Game
 
+1. change doughnut style
+
 ### next to do
 
 1. 나의정보 section

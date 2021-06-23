@@ -1,8 +1,8 @@
-@value color_blue_btn,color_background,color_container,width_container_1,padding_container,height_main from "../../common/common.css";
+@value color_blue_btn,color_background,color_container,width_container_1,padding_container,height_pie from "../../common/common.css";
 
 .myProfileContainer {
   max-width: width_container_1;
-  height: height_main;
+  height: height_pie;
   margin: 0 auto;
   margin-top: 2rem;
   padding: padding_container;

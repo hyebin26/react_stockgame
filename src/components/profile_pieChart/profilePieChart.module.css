@@ -4,9 +4,10 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .container canvas {
-  width: 91% !important;
-  height: 91% !important;
+  width: 85% !important;
+  height: 85% !important;
 }

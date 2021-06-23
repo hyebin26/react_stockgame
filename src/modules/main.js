@@ -66,7 +66,8 @@ export const mainSlice = createSlice({
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;
-      } else {
+      }// 
+      else {
         swal({ title: "돈이 부족해요!", icon: "warning" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;

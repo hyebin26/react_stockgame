@@ -1,6 +1,7 @@
 ## Stock Game
 
-1. add spendMoney in main.js
+1. divide profileTextMoney to profileTextMoneyContainer
+2. add spendMoney logic
 
 ### next to do
 

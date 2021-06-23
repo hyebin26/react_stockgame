@@ -23,9 +23,11 @@ const MainBtnContainer = (props) => {
       text: `${clickedLebel} ${clickedAmount}개를 구매하시겠습니까?`,
     }).then((agree) => {
       if (agree) {
-        if (clickedAmount === 0)
+        if (clickedAmount === 0) {
           return swal({ title: "갯수를 설정해주세요!", icon: "warning" });
-        else dispatch(clickBuyBtn());
+        } else {
+          dispatch(clickBuyBtn());
+        }
       }
     });
   };

@@ -20,6 +20,7 @@ export const mainSlice = createSlice({
     stocks: [],
     isLoading: true,
     increasePercent: 0,
+    spendMoney: 0,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -49,10 +50,16 @@ export const mainSlice = createSlice({
         }
         if (!checkHaveStocks) {
           state.haveStocks.push({ label, price, amount });
+          state.spendMoney.push({ label, price: price * amount });
         } else {
           state.haveStocks.map((item) => {
             if (item.label === label) {
               item.amount += amount;
+            }
+          });
+          state.spendMoney.map((item) => {
+            if (item.label === label) {
+              item.price += price * amount;
             }
           });
         }
@@ -100,31 +107,45 @@ export const mainSlice = createSlice({
     },
     clickSellBtn: (state) => {
       const cellClickedAmount = parseInt(state.sellClickedAmount);
-      state.haveStocks.map((item, index) => {
-        if (item.label === state.clickedLebel) {
+      let checkHaveStock = false;
+      state.haveStocks.find((item) => {
+        if (item.label === state.clickedLebel) checkHaveStock = true;
+      });
+      if (checkHaveStock) {
+        state.haveStocks.map((item, index) => {
           if (item.amount === cellClickedAmount) {
             state.haveStocks.splice(index, 1);
             state.hasMoney += state.sellClickedTotal;
             state.sellClickedAmount = 0;
             state.sellClickedTotal = 0;
-            return swal({ title: "판매를 성공하였습니다.", icon: "success" });
+            state.spendMoney.map((item, index) => {
+              if (item.label === state.clickedLebel) {
+                state.spendMoney.splice(index, 1);
+              }
+            });
+            return swal({ title: "판매 성공!", icon: "success" });
           } else if (item.amount > cellClickedAmount) {
             item.amount -= cellClickedAmount;
             state.hasMoney += state.sellClickedTotal;
             state.sellClickedAmount = 0;
             state.sellClickedTotal = 0;
-            return swal({ title: "판매를 성공하였습니다.", icon: "success" });
+            state.spendMoney.map((item, index) => {
+              if (item.label === state.clickedLebel) {
+                item.price -= state.sellClickedTotal;
+              }
+            });
+            return swal({ title: "판매 성공!", icon: "success" });
           } else if (item.amount < cellClickedAmount) {
             return swal({
               title: "갯수를 다시 설정해주세요!",
               icon: "warning",
             });
           }
-        } //
-        else {
-          return swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
-        }
-      });
+        });
+      } //
+      else {
+        return swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
+      }
     },
     onLoadData: (state, action) => {
       state.stocks = action.payload.stocks;
@@ -133,7 +154,7 @@ export const mainSlice = createSlice({
       state.user = localStorage.getItem("token");
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
-      console.log(action.payload);
+      state.spendMoney = action.payload.user.spendMoney;
     },
     clickNextDay: (state) => {
       let stockPer = 0;

@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. change doughnut style
+1. add spendMoney in main.js
 
 ### next to do
 
@@ -12,3 +12,5 @@
 1. main 과 profile를 하나의 컴포넌트로 합치고 props를 다른 정보로 준다면 ?
 
 - ex) <section> <Content props={content}/></section>
+
+2. clickedAmount nextDay, 혹은 새로고침 시 가격 변경되게 하기

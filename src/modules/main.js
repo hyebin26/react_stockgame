@@ -66,7 +66,7 @@ export const mainSlice = createSlice({
         swal({ title: "매수성공", icon: "success" });
         state.clickedAmount = 0;
         state.clickedTotal = 0;
-      }// 
+      } //
       else {
         swal({ title: "돈이 부족해요!", icon: "warning" });
         state.clickedAmount = 0;
@@ -157,6 +157,15 @@ export const mainSlice = createSlice({
       state.haveStocks = action.payload.user.haveStocks;
       state.spendMoney = action.payload.user.spendMoney;
     },
+    loadProfileData: (state, action) => {
+      state.stocks = action.payload.stocks;
+      state.day = action.payload.user.day;
+      state.hasMoney = action.payload.user.hasMoney;
+      state.user = localStorage.getItem("token");
+      state.isLoading = false;
+      state.haveStocks = action.payload.user.haveStocks;
+      state.spendMoney = action.payload.user.spendMoney;
+    },
     clickNextDay: (state) => {
       let stockPer = 0;
       const lastDay = 7;
@@ -199,6 +208,7 @@ export const mainSlice = createSlice({
 export const {
   clickBuyPerBtn,
   changeAmount,
+  loadProfileData,
   clickBuyBtn,
   clickLabel,
   clickPerSellBtn,

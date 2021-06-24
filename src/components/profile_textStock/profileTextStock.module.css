@@ -1,3 +1,5 @@
+@value color_increase,color_decrease from "../../common/common.css";
+
 .container {
   flex: 0 0 50%;
 }
@@ -15,7 +17,14 @@
 .money {
   color: white;
   font-size: 1rem;
+  padding-right: 0.5rem;
 }
 .titleBox {
   padding-bottom: 1.8rem;
+}
+.increase {
+  color: color_increase;
+}
+.decrease {
+  color: color_decrease;
 }

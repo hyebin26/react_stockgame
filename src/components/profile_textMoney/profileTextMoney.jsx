@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./profileTextMoney.module.css";
 
-const ProfileTextMoney = ({ hasMoney, buying, currentBuyingPrice }) => {
+const ProfileTextMoney = ({
+  hasMoney,
+  totalBuyingPrice,
+  currentBuyingPrice,
+}) => {
   return (
     <div className={styles.moneyContainer}>
       <div className={`${styles.moneyBox} ${styles.titleBox}`}>
@@ -17,7 +21,7 @@ const ProfileTextMoney = ({ hasMoney, buying, currentBuyingPrice }) => {
         <p>총매수</p>
         <p className={styles.haveMoney}>
           <strong className={styles.money}>
-            {buying.toLocaleString("ko-KR")}
+            {totalBuyingPrice.toLocaleString("ko-KR")}
           </strong>
           KRW
         </p>

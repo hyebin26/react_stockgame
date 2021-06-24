@@ -1,4 +1,4 @@
-@value color_itemColor,color_red_btn,color_blue_btn from "../../common/common.css";
+@value color_itemColor,color_red_btn,color_blue_btn,color_increase,color_decrease from "../../common/common.css";
 
 .itemContainer {
   background-color: rgb(50, 50, 50);
@@ -20,10 +20,10 @@
   padding-left: 0.5rem;
 }
 .perRed {
-  color: #c34042;
+  color: color_increase;
   /*#c34042*/
 }
 .perBlue {
-  color: #0966c6;
+  color: color_decrease;
   /*#0966c6*/
 }

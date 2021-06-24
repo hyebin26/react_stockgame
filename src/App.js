@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/login/login";
 import MainContainer from "./containers/mainContainer/mainContainer";
-import Profile from "./components/profile/profile";
+import ProfileContainer from "./containers/profileContainer/profileContainer";
 function App({ auth, database }) {
   return (
     <BrowserRouter>
@@ -13,7 +13,7 @@ function App({ auth, database }) {
           <MainContainer database={database} />
         </Route>
         <Route path="/profile">
-          <Profile database={database} />
+          <ProfileContainer database={database} />
         </Route>
       </Switch>
     </BrowserRouter>

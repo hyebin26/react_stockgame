@@ -2,6 +2,7 @@ import { createSlice, current } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { handlePercentAPI } from "../service/percent";
+import { data } from "../service/doughnut";
 
 export const mainSlice = createSlice({
   name: "main",
@@ -21,6 +22,7 @@ export const mainSlice = createSlice({
     isLoading: true,
     increasePercent: 0,
     spendMoney: [],
+    isDoughnut: true,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -157,7 +159,6 @@ export const mainSlice = createSlice({
       state.haveStocks = action.payload.user.haveStocks;
       state.spendMoney = action.payload.user.spendMoney;
     },
-
     clickNextDay: (state) => {
       let stockPer = 0;
       const lastDay = 7;
@@ -195,6 +196,17 @@ export const mainSlice = createSlice({
         });
       });
     },
+    changeDoughnut: (state, action) => {
+      if (state.haveStocks.length === 1) {
+        state.isDoughnut = false;
+      } else {
+        state.haveStocks.map((item) => {
+          if (typeof item.label === "string") data.labels.push(item.label);
+          if (typeof item.amount === "number")
+            data.datasets[0].data.push(item.amount * item.price);
+        });
+      }
+    },
   },
 });
 export const {
@@ -210,6 +222,7 @@ export const {
   clickNextDay,
   changeCurrentChart,
   changeCurrentHasStocks,
+  changeDoughnut,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

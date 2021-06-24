@@ -1,8 +1,6 @@
 import React from "react";
-import MainBtnContainer from "../../containers/main_btnCotaniner/mainBtnContainer";
-import MainPerBtnContainer from "../../containers/main_perBtnContainer/mainPerBtnContainer";
-import MainBtn from "../main_btn/mainBtn";
-import MainPerBtn from "../main_perBtn/mainPerBtn";
+import MainBtnContainer from "../../containers/mainBtnCotaniner/mainBtnContainer";
+import MainPerBtnContainer from "../../containers/mainPerBtnContainer/mainPerBtnContainer";
 import styles from "./mainSellSection.module.css";
 
 const MainSellSection = ({

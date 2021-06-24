@@ -10,6 +10,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "chart.js": "^3.2.1",
+    "chart.piecelabel.js": "^0.15.0",
+    "chartjs-plugin-datalabels": "^1.0.0",
     "firebase": "^8.6.2",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.3",
@@ -46,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@reduxjs/toolkit": "^1.5.1"
+    "@reduxjs/toolkit": "^1.5.1",
+    "chartjs-plugin-labels": "^1.1.0"
   }
 }

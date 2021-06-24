@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./mainBuySection.module.css";
-import MainBtnContainer from "../../containers/main_btnCotaniner/mainBtnContainer";
-import MainPerBtnContainer from "../../containers/main_perBtnContainer/mainPerBtnContainer";
+import MainBtnContainer from "../../containers/mainBtnCotaniner/mainBtnContainer";
+import MainPerBtnContainer from "../../containers/mainPerBtnContainer/mainPerBtnContainer";
 
 const MainBuySection = ({
   database,

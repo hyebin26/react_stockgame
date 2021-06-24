@@ -1,7 +1,7 @@
 import React from "react";
 import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
-import MainStockItemContainer from "../../containers/main_stockItemContainer/mainStockItemContainer";
+import MainStockItemContainer from "../../containers/mainStockItemContainer/mainStockItemContainer";
 import MainChartContainer from "../../containers/mainChartContainer/mainChartContainer";
 import HeaderContainer from "../../containers/headerContainer/headerContainer";
 

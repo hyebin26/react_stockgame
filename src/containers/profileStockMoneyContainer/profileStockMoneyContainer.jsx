@@ -21,12 +21,12 @@ const ProfileStockMoneyContainer = (props) => {
   let totalPer = ((total / totalBuyingPrice) * 100).toFixed(1);
   return (
     <>
-      <ProfileTextStock asset={asset} total={total} totalPer={totalPer} />
       <ProfileTextMoney
         hasMoney={hasMoney}
         totalBuyingPrice={totalBuyingPrice}
         currentBuyingPrice={currentBuyingPrice}
       />
+      <ProfileTextStock asset={asset} total={total} totalPer={totalPer} />
     </>
   );
 };

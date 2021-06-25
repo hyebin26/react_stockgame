@@ -1,7 +1,9 @@
+@value color_border from "../../common/common.css";
+
 .container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-top: 1px solid rgb(58, 58, 58);
+  border-top: 1px solid color_border;
   padding: 2rem 0;
 }

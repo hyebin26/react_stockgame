@@ -1,0 +1,11 @@
+@value color_itemColor,color_border from "../../common/common.css";
+
+.container {
+  border-top: 1px solid color_border;
+}
+.standard {
+  display: flex;
+}
+.itemContainer {
+  background-color: color_itemColor;
+}

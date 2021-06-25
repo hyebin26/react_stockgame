@@ -3,6 +3,7 @@ import HeaderContainer from "../../containers/headerContainer/headerContainer";
 import ProfileText from "../profile_text/profileText";
 import styles from "./profile.module.css";
 import ProfilePieChart from "../profile_pieChart/profilePieChart";
+import ProfileItem from "../profile_item/profileItem";
 
 const Profile = ({ database, isLoading }) => {
   if (isLoading === true)
@@ -21,7 +22,7 @@ const Profile = ({ database, isLoading }) => {
         </div>
       </section>
       <section className={styles.itemContainer}>
-        <div>ee</div>
+        <ProfileItem />
       </section>
     </div>
   );

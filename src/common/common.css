@@ -20,5 +20,6 @@
 @value color_itemColor rgb(80, 80, 80);
 @value color_increase #c34042;
 @value color_decrease #0966c6;
+@value color_border rgba(255, 255, 255, 0.292);
 
 @value fontSize_header 1.1em;

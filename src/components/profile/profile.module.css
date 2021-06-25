@@ -9,8 +9,8 @@
   border-bottom: 1px solid color_header_font;
 }
 .container {
-  width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  min-height: 100vh;
   background-color: color_background;
 }
 

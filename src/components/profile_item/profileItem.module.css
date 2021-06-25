@@ -6,6 +6,21 @@
 .standard {
   display: flex;
 }
+
 .itemContainer {
   background-color: color_itemColor;
+  text-align: center;
+}
+.title,
+.currentPrice {
+  flex: 0 1 20%;
+}
+.amount,
+.currentPricePer {
+  flex: 0 1 10%;
+}
+
+.average,
+.buying {
+  flex: 0 1 15%;
 }

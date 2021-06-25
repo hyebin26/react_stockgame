@@ -13,7 +13,7 @@ const ProfileItem = (props) => {
           <p className={styles.average}>매수평균가</p>
           <p className={styles.buying}>매수금액</p>
           <p className={styles.currentPrice}>평가금액</p>
-          <p className={styles.currentPricePer}>평가손익</p>
+          <p className={styles.currentPricePer}>평가손익(%)</p>
         </li>
         <ProfileItemList />
       </ul>

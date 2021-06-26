@@ -1,10 +1,10 @@
-@value color_itemColor,color_red_btn,color_blue_btn,color_increase,color_decrease from "../../common/common.css";
+@value color_item,color_white_font,color_increase,color_decrease from "../../common/common.css";
 
 .itemContainer {
-  background-color: rgb(50, 50, 50);
+  background-color: color_item;
   flex: 0 1 31%;
   border-radius: 1.4%;
-  color: rgba(238, 238, 238);
+  color: color_white_font;
   padding: 0.8rem 0.5rem;
   display: flex;
   margin-bottom: 1.5rem;
@@ -21,9 +21,7 @@
 }
 .perRed {
   color: color_increase;
-  /*#c34042*/
 }
 .perBlue {
   color: color_decrease;
-  /*#0966c6*/
 }

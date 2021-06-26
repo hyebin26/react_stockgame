@@ -1,9 +1,9 @@
-@value color_white from "../../common/common.css";
+@value color_white_font from "../../common/common.css";
 
 .container {
   flex: 1 1 35%;
   display: flex;
-  color: color_white;
+  color: color_white_font;
   padding: 0.4rem 0;
 }
 .buy,

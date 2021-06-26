@@ -1,4 +1,4 @@
-@value color_resetBtn,color_white from "../../common/common.css";
+@value color_resetBtn,color_white_font from "../../common/common.css";
 
 .container {
   display: flex;
@@ -10,7 +10,7 @@
 .container button {
   width: 19%;
   background-color: color_resetBtn;
-  color: color_white;
+  color: color_white_font;
   border: none;
   cursor: pointer;
 }

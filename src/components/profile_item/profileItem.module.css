@@ -1,15 +1,25 @@
-@value color_itemColor,color_border from "../../common/common.css";
+@value height_profileItem,color_container,color_category,color_border,color_white_font from "../../common/common.css";
 
 .container {
   border-top: 1px solid color_border;
 }
-.standard {
-  display: flex;
-}
 
+.stock {
+  color: color_white_font;
+  padding: 0.4rem 0;
+}
 .itemContainer {
-  background-color: color_itemColor;
+  background-color: color_container;
   text-align: center;
+  color: rgba(255, 255, 255, 0.823);
+  height: height_profileItem;
+}
+.category {
+  display: flex;
+  background-color: color_category;
+  padding: 0.3rem 0;
+  color: rgb(164, 164, 164);
+  font-size: 0.9rem;
 }
 .title,
 .currentPrice {

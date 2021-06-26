@@ -4,6 +4,7 @@
 @value height_header 70px;
 @value height_main 280px;
 @value height_pie 220px;
+@value height_profileItem 300px;
 
 @value padding_container 0 2rem;
 
@@ -13,13 +14,15 @@
 @value color_red_btn rgb(192, 57, 43);
 @value color_hint_btn rgb(0,0,0);
 @value color_item_box rgb(225,225,225);
-@value color_header_font rgba(255, 255, 255, 0.53);
-@value color_white rgb(238, 238, 238);
 @value color_container rgb(58, 58, 58);
 @value color_resetBtn rgb(80, 80, 80);
-@value color_itemColor rgb(80, 80, 80);
+@value color_item rgb(50, 50, 50);
 @value color_increase #c34042;
 @value color_decrease #0966c6;
 @value color_border rgba(255, 255, 255, 0.292);
+@value color_category rgb(80, 80, 80);
+
+@value color_white_font rgb(238, 238, 238);
+@value color_lightGrey rgba(255, 255, 255, 0.53);
 
 @value fontSize_header 1.1em;

@@ -1,7 +1,7 @@
-@value width_container_1,padding_container,color_header_font,color_nav,height_header,fontSize_header from "../../common/common.css";
+@value width_container_1,padding_container,color_lightGrey,color_nav,height_header,fontSize_header from "../../common/common.css";
 
 .header {
-  color: color_header_font;
+  color: color_lightGrey;
   background-color: color_nav;
   height: height_header;
   font-size: fontSize_header;

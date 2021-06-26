@@ -3,7 +3,7 @@ import styles from "./profileItemList.module.css";
 
 const ProfileItemList = (props) => {
   return (
-    <li className={styles.standard}>
+    <li className={styles.item}>
       <p className={styles.title}>H전자</p>
       <p className={styles.amount}>10개</p>
       <p className={styles.average}>15000</p>

@@ -5,9 +5,9 @@ import styles from "./profileItem.module.css";
 const ProfileItem = (props) => {
   return (
     <div className={styles.container}>
-      <h2>보유주식 목록</h2>
+      <p className={styles.stock}>보유주식 목록</p>
       <ul className={styles.itemContainer}>
-        <li className={styles.standard}>
+        <li className={styles.category}>
           <p className={styles.title}>보유주식</p>
           <p className={styles.amount}>보유수량</p>
           <p className={styles.average}>매수평균가</p>

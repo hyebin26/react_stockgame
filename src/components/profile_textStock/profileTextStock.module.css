@@ -1,4 +1,4 @@
-@value color_increase,color_decrease from "../../common/common.css";
+@value color_increase,color_decrease,color_white_font from "../../common/common.css";
 
 .container {
   flex: 0 0 50%;
@@ -15,7 +15,7 @@
   padding-right: 2rem;
 }
 .money {
-  color: white;
+  color: color_white_font;
   font-size: 1rem;
   padding-right: 0.5rem;
 }

@@ -4,7 +4,7 @@ export const data = {
   labels: [],
   datasets: [
     {
-      data: [],
+    data: [],
       backgroundColor: [
         "rgb(255, 99, 132)",
         "rgb(54, 162, 235)",

@@ -9,7 +9,6 @@ const ProfileItemList = ({
   label,
   totalPer,
 }) => {
-  console.log(totalPer);
   return (
     <li className={styles.item}>
       <p className={styles.title}>{label}</p>

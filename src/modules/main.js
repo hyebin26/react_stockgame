@@ -22,6 +22,7 @@ export const mainSlice = createSlice({
     isLoading: true,
     spendMoney: [],
     isDoughnutLoading: true,
+    doughnutData: data,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -200,9 +201,10 @@ export const mainSlice = createSlice({
         state.isDoughnutLoading = false;
       } else {
         state.haveStocks.map((item) => {
-          if (typeof item.label === "string") data.labels.push(item.label);
+          if (typeof item.label === "string")
+            state.doughnutData.labels.push(item.label);
           if (typeof item.amount === "number")
-            data.datasets[0].data.push(item.amount * item.price);
+            state.doughnutData.datasets[0].data.push(item.amount * item.price);
         });
       }
     },

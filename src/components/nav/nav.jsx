@@ -6,15 +6,17 @@ const Nav = (props) => {
   return (
     <>
       <li>
-        <a href="#">힌트저장소</a>
-      </li>
-      <li>
-        <a href="#">거래소</a>
+        <Link to="/main" className={styles.link}>
+          거래소
+        </Link>
       </li>
       <li>
         <Link to="/profile" className={styles.link}>
           투자내역
         </Link>
+      </li>
+      <li>
+        <a href="#">힌트저장소</a>
       </li>
       <li>
         <a href="#">로그아웃</a>

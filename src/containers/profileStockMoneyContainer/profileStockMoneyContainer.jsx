@@ -18,7 +18,7 @@ const ProfileStockMoneyContainer = (props) => {
   });
   let asset = hasMoney + currentBuyingPrice;
   let total = currentBuyingPrice - totalBuyingPrice;
-  let totalPer = ((total / totalBuyingPrice) * 100).toFixed(1);
+  let totalPer = ((total / totalBuyingPrice) * 100).toFixed(2);
   return (
     <>
       <ProfileTextMoney

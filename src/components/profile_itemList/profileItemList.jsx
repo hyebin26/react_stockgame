@@ -9,6 +9,7 @@ const ProfileItemList = ({
   label,
   totalPer,
 }) => {
+  console.log(totalPer);
   return (
     <li className={styles.item}>
       <p className={styles.title}>{label}</p>
@@ -17,7 +18,9 @@ const ProfileItemList = ({
       <p className={styles.crtPrice}>{crtPrice.toLocaleString("ko-KR")}원</p>
       <p
         className={
-          statement > 0
+          statement === 0
+            ? `${styles.statement}`
+            : statement > 0
             ? `${styles.statement} ${styles.increase}`
             : `${styles.statement} ${styles.decrease}`
         }
@@ -29,7 +32,9 @@ const ProfileItemList = ({
       </p>
       <p
         className={
-          totalPer > 0
+          totalPer === "0.00"
+            ? `${styles.totalPer}`
+            : totalPer > 0
             ? `${styles.totalPer} ${styles.increase}`
             : `${styles.totalPer} ${styles.decrease}`
         }

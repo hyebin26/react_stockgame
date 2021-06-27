@@ -18,7 +18,9 @@ const ProfileTextStock = ({ asset, total, totalPer }) => {
         <p className={styles.haveMoney}>
           <strong
             className={
-              total > 0
+              total === 0
+                ? `${styles.money}`
+                : total > 0
                 ? `${styles.money} ${styles.increase}`
                 : `${styles.money} ${styles.decrease}`
             }
@@ -35,12 +37,16 @@ const ProfileTextStock = ({ asset, total, totalPer }) => {
         <p className={styles.haveMoney}>
           <strong
             className={
-              total > 0
+              total === 0
+                ? `${styles.money}`
+                : total > 0
                 ? `${styles.money} ${styles.increase}`
                 : `${styles.money} ${styles.decrease}`
             }
           >
-            {totalPer > 0
+            {isNaN(totalPer)
+              ? 0
+              : totalPer > 0
               ? "+" + totalPer.toLocaleString("ko-KR")
               : totalPer.toLocaleString("ko-KR")}
             %

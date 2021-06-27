@@ -2,8 +2,8 @@ import React from "react";
 import HeaderContainer from "../../containers/headerContainer/headerContainer";
 import ProfileText from "../profile_text/profileText";
 import styles from "./profile.module.css";
-import ProfilePieChart from "../profile_pieChart/profilePieChart";
 import ProfileItem from "../profile_item/profileItem";
+import ProfileChartContainer from "../../containers/profileChartContainer/profileChartContainer";
 
 const Profile = ({ database, isLoading }) => {
   if (isLoading === true)
@@ -18,7 +18,7 @@ const Profile = ({ database, isLoading }) => {
       <section className={styles.myProfileContainer}>
         <div className={styles.myProfileBox}>
           <ProfileText />
-          <ProfilePieChart />
+          <ProfileChartContainer />
         </div>
       </section>
       <section className={styles.itemContainer}>

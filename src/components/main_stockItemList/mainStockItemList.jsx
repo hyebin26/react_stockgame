@@ -19,7 +19,15 @@ const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
         <div className={styles.priceContainer}>
           <p>가격: {price[day - 1]}</p>
           <span>전일대비: </span>
-          <span className={per > 0 ? styles.perRed : styles.perBlue}>
+          <span
+            className={
+              isNaN(per)
+                ? styles.zero
+                : per > 0
+                ? styles.perRed
+                : styles.perBlue
+            }
+          >
             {isNaN(per) ? 0 : per > 0 ? `+${per}` : per}%
           </span>
         </div>

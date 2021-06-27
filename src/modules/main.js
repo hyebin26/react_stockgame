@@ -21,7 +21,7 @@ export const mainSlice = createSlice({
     stocks: [],
     isLoading: true,
     spendMoney: [],
-    isDoughnut: true,
+    isDoughnutLoading: true,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -197,7 +197,7 @@ export const mainSlice = createSlice({
     },
     changeDoughnut: (state, action) => {
       if (state.haveStocks.length === 1) {
-        state.isDoughnut = false;
+        state.isDoughnutLoading = false;
       } else {
         state.haveStocks.map((item) => {
           if (typeof item.label === "string") data.labels.push(item.label);

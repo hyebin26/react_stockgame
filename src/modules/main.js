@@ -20,7 +20,6 @@ export const mainSlice = createSlice({
     haveStocks: [],
     stocks: [],
     isLoading: true,
-    increasePercent: 0,
     spendMoney: [],
     isDoughnut: true,
   },

@@ -14,7 +14,7 @@ const ProfileTextStock = ({ asset, total, totalPer }) => {
         </p>
       </div>
       <div className={styles.moneyBox}>
-        <p>총평가손일</p>
+        <p>총평가손익</p>
         <p className={styles.haveMoney}>
           <strong
             className={

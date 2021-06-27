@@ -23,15 +23,15 @@
   font-size: 0.9rem;
 }
 .title,
-.currentPrice {
+.statement {
   flex: 0 1 20%;
 }
 .amount,
-.currentPricePer {
+.totalPer {
   flex: 0 1 10%;
 }
 
-.average,
-.buying {
+.price,
+.crtPrice {
   flex: 0 1 15%;
 }

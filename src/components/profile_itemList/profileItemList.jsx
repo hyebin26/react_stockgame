@@ -1,15 +1,41 @@
 import React from "react";
 import styles from "./profileItemList.module.css";
 
-const ProfileItemList = (props) => {
+const ProfileItemList = ({
+  crtPrice,
+  statement,
+  price,
+  amount,
+  label,
+  totalPer,
+}) => {
   return (
     <li className={styles.item}>
-      <p className={styles.title}>H전자</p>
-      <p className={styles.amount}>10개</p>
-      <p className={styles.average}>15000</p>
-      <p className={styles.buying}>150000</p>
-      <p className={styles.currentPrice}>160000</p>
-      <p className={styles.currentPricePer}>10%</p>
+      <p className={styles.title}>{label}</p>
+      <p className={styles.amount}>{amount}개</p>
+      <p className={styles.price}>{price.toLocaleString("ko-KR")}원</p>
+      <p className={styles.crtPrice}>{crtPrice.toLocaleString("ko-KR")}원</p>
+      <p
+        className={
+          statement > 0
+            ? `${styles.statement} ${styles.increase}`
+            : `${styles.statement} ${styles.decrease}`
+        }
+      >
+        {statement > 0
+          ? "+" + statement.toLocaleString("ko-KR")
+          : statement.toLocaleString("ko-KR")}
+        원
+      </p>
+      <p
+        className={
+          totalPer > 0
+            ? `${styles.totalPer} ${styles.increase}`
+            : `${styles.totalPer} ${styles.decrease}`
+        }
+      >
+        {totalPer > 0 ? "+" + totalPer : totalPer}%
+      </p>
     </li>
   );
 };

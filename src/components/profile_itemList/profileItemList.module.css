@@ -1,18 +1,27 @@
+@value color_increase,color_decrease,color_white_font from "../../common/common.css";
+
 .item {
   display: flex;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.292);
 }
 .title,
-.currentPrice {
+.statement {
   flex: 0 1 20%;
 }
 .amount,
-.currentPricePer {
+.totalPer {
   flex: 0 1 10%;
 }
 
-.average,
-.buying {
+.price,
+.crtPrice {
   flex: 0 1 15%;
+}
+
+.increase {
+  color: color_increase;
+}
+.decrease {
+  color: color_decrease;
 }

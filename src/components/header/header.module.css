@@ -1,10 +1,10 @@
-@value width_container_1,padding_container,color_lightGrey,color_nav,height_header,fontSize_header from "../../common/common.css";
+@value color_white_font,width_container_1,padding_container,color_lightGrey,color_nav,height_header from "../../common/common.css";
 
 .header {
   color: color_lightGrey;
   background-color: color_nav;
   height: height_header;
-  font-size: fontSize_header;
+  font-size: 1.1rem;
 }
 .header svg {
   font-size: 1.9rem;
@@ -22,7 +22,7 @@
 }
 .logo {
   font-size: 1.4rem;
-  color: white;
+  color: color_white_font;
   padding-left: 0.2rem;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .nav a {
-  color: color_header_font;
+  color: color_lightGrey;
   margin-left: 1.4rem;
 }
 

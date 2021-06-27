@@ -6,13 +6,14 @@
 
 .stock {
   color: color_white_font;
-  padding: 0.4rem 0;
+  padding: 0.3rem 0;
 }
 .itemContainer {
   background-color: color_container;
   text-align: center;
   color: rgba(255, 255, 255, 0.823);
   height: height_profileItem;
+  overflow-y: auto;
 }
 .category {
   display: flex;

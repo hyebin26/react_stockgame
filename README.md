@@ -1,8 +1,7 @@
 ## Stock Game
 
-1. nav에 hint추가, hint.jsx 추가
-2. main.js 에 clickResetBtn 추가
-3. resetBtn 로직변경
+1. 도넛 background color 변경
+2. changeDoughtnut 로직 변경
 
 ### next to do
 
@@ -13,6 +12,5 @@
 ### memo
 
 1. profile doughnut 그래프에 percent쓰기
-2. nav 에 link 주기
-3. 투자내역에 다시 들어왔을 때 도넛에 주식들이 한번 더 추가됨
-4. reset, nextday btn hover event effect 추가하기
+2. reset, nextday btn hover event effect 추가하기
+3. profile next btn 클릭 시 데이터가 저장이 안됨

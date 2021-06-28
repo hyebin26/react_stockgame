@@ -197,14 +197,20 @@ export const mainSlice = createSlice({
       });
     },
     changeDoughnut: (state, action) => {
+      let labelArr = [];
+      let priceArr = [];
       if (state.haveStocks.length === 1) {
         state.isDoughnutLoading = false;
       } else {
         state.haveStocks.map((item) => {
-          if (typeof item.label === "string")
-            state.doughnutData.labels.push(item.label);
-          if (typeof item.amount === "number")
-            state.doughnutData.datasets[0].data.push(item.amount * item.price);
+          if (typeof item.label === "string") {
+            labelArr.push(item.label);
+            state.doughnutData.labels = labelArr;
+          }
+          if (typeof item.amount === "number") {
+            priceArr.push(item.amount * item.price);
+            state.doughnutData.datasets[0].data = priceArr;
+          }
         });
         state.isDoughnutLoading = true;
       }

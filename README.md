@@ -1,8 +1,6 @@
 ## Stock Game
 
-1. mainChartContainer 리팩토링
-2. profileItemList 매수금액을 매수평균으로 교체
-3. clickNextDay 로직 변경
+1. hint Counting, threePoint, onePoint 추가
 
 ### next to do
 

@@ -17,7 +17,7 @@ function App({ auth, database }) {
           <ProfileContainer database={database} />
         </Route>
         <Route path="/hint">
-          <Hint />
+          <Hint database={database} />
         </Route>
       </Switch>
     </BrowserRouter>

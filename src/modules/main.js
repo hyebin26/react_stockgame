@@ -176,6 +176,10 @@ export const mainSlice = createSlice({
       }
       if (state.day !== 7) {
         state.day = ++state.day;
+        state.clickedAmount = 0;
+        state.clickedTotal = 0;
+        state.sellClickedAmount = 0;
+        state.sellClickedTotal = 0;
       } else {
         swal("마지막 날입니다. 다시 하고 싶으시면 리셋을 눌러주세요!");
       }
@@ -183,6 +187,7 @@ export const mainSlice = createSlice({
     changeCurrentChart: (state, action) => {
       state.stocks.map((item) => {
         if (item.label === state.chartStock.datasets[0].label) {
+          state.clickedStockPrice = item.price[state.day - 1];
           state.chartStock.datasets[0].data = item.price.slice(0, state.day);
         }
       });

@@ -10,7 +10,6 @@ const ProfileItemList = ({
   totalPer,
   isDoughnutLoading,
 }) => {
-  console.log(isDoughnutLoading);
   if (isDoughnutLoading === false) {
     return (
       <div className={styles.loadingContainer}>

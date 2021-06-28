@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import ProfileItemList from "../../components/profile_itemList/profileItemList";
 
@@ -16,7 +14,7 @@ const ProfileItemListContainer = (props) => {
           label={item.label}
           amount={item.amount}
           crtPrice={item.price}
-          price={spendMoney[index].price / item.amount}
+          price={Math.floor(spendMoney[index].price / item.amount)}
           statement={
             (item.price - spendMoney[index].price / item.amount) * item.amount
           }

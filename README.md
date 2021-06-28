@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. hint Counting, threePoint, onePoint 추가
+1. hint css 추가
 
 ### next to do
 

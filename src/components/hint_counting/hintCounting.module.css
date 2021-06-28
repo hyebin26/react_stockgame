@@ -1,0 +1,14 @@
+@value width_container_1,padding_container,color_white_font from "../../common/common.css";
+
+.container {
+  color: color_white_font;
+  max-width: width_container_1;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: padding_container;
+  display: flex;
+}
+
+.container h2 {
+  flex: 0 1 50%;
+}

@@ -3,8 +3,9 @@ import styles from "./hintOnePoint.module.css";
 
 const HintOnePoint = (props) => {
   return (
-    <section>
+    <section className={styles.container}>
       <h3>One Point</h3>
+      <ul></ul>
     </section>
   );
 };

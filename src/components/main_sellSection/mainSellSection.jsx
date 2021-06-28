@@ -4,14 +4,12 @@ import MainPerBtnContainer from "../../containers/mainPerBtnContainer/mainPerBtn
 import styles from "./mainSellSection.module.css";
 
 const MainSellSection = ({
-  database,
   clickedStockPrice,
   sellClickedAmount,
   sellClickedTotal,
   onChangeAmount,
   onChangeTotal,
 }) => {
-  console.log("sell");
   return (
     <>
       <p className={styles.title}>매도</p>
@@ -38,7 +36,7 @@ const MainSellSection = ({
         <MainPerBtnContainer title="매도" />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtnContainer title="매도" database={database} />
+        <MainBtnContainer title="매도" />
       </div>
     </>
   );

@@ -1,20 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MainBtn from "../../components/main_btn/mainBtn";
 import { clickBuyBtn, clickSellBtn } from "../../modules/main";
 import swal from "sweetalert";
 
 const MainBtnContainer = (props) => {
-  const {
-    clickedAmount,
-    day,
-    hasMoney,
-    haveStocks,
-    spendMoney,
-    sellClickedAmount,
-    stocks,
-    clickedLebel,
-  } = useSelector((state) => state.main);
+  const { clickedAmount, sellClickedAmount, clickedLebel } = useSelector(
+    (state) => state.main
+  );
   const dispatch = useDispatch();
 
   const onClickBuyBtn = () => {
@@ -46,18 +39,6 @@ const MainBtnContainer = (props) => {
       }
     });
   };
-
-  useEffect(() => {
-    props.database.saveUserData(localStorage.getItem("token"), {
-      day,
-      hasMoney,
-      spendMoney,
-      haveStocks: haveStocks.length === 0 ? [0] : haveStocks,
-    });
-  }, [haveStocks, hasMoney, day]);
-  useEffect(() => {
-    props.database.saveStockData(localStorage.getItem("token"), stocks);
-  }, [stocks]);
 
   return (
     <MainBtn

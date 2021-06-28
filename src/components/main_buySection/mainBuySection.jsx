@@ -4,7 +4,6 @@ import MainBtnContainer from "../../containers/mainBtnCotaniner/mainBtnContainer
 import MainPerBtnContainer from "../../containers/mainPerBtnContainer/mainPerBtnContainer";
 
 const MainBuySection = ({
-  database,
   onChangeTotal,
   onChangeAmount,
   clickedTotal,
@@ -37,7 +36,7 @@ const MainBuySection = ({
         <MainPerBtnContainer />
       </div>
       <div className={styles.itemContainer}>
-        <MainBtnContainer title="매수" database={database} />
+        <MainBtnContainer title="매수" />
       </div>
     </>
   );

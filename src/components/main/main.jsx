@@ -18,7 +18,7 @@ const Main = ({ isLoading, database }) => {
       <section className={styles.mainTrading}>
         <div className={styles.trading_container}>
           <MainChartContainer />
-          <MainTrading database={database} />
+          <MainTrading />
         </div>
       </section>
       <section className={styles.mainItemContainer}>

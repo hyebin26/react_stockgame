@@ -8,10 +8,13 @@ import {
   clickResetBtn,
 } from "../../modules/main";
 import swal from "sweetalert";
+import { useEffect } from "react";
 
 const HeaderContainer = ({ database }) => {
   const dispatch = useDispatch();
-  const { day } = useSelector((state) => state.main);
+  const { day, hasMoney, stocks, haveStocks, spendMoney } = useSelector(
+    (state) => state.main
+  );
   const onClickNextBtn = () => {
     swal({ text: "다음 날로 넘어가겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
@@ -29,6 +32,18 @@ const HeaderContainer = ({ database }) => {
       }
     });
   };
+
+  useEffect(() => {
+    database.saveUserData(localStorage.getItem("token"), {
+      day,
+      hasMoney,
+      spendMoney,
+      haveStocks: haveStocks.length === 0 ? [0] : haveStocks,
+    });
+  }, [haveStocks, hasMoney, day]);
+  useEffect(() => {
+    database.saveStockData(localStorage.getItem("token"), stocks);
+  }, [stocks]);
 
   return (
     <Header day={day} onClickNextBtn={onClickNextBtn} onResetBtn={onResetBtn} />

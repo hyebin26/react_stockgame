@@ -3,14 +3,14 @@ import MainBuySectionContainer from "../../containers/mainBuySectionContainer/ma
 import MainSellSectionContainer from "../../containers/mainSellSectionContainer/mainSellSectionContainer";
 import styles from "./mainTrading.module.css";
 
-const MainTrading = ({ database }) => {
+const MainTrading = () => {
   return (
     <div className={styles.container}>
       <div className={styles.buy}>
-        <MainBuySectionContainer database={database} />
+        <MainBuySectionContainer />
       </div>
       <div className={styles.sell}>
-        <MainSellSectionContainer database={database} title={"매도"} />
+        <MainSellSectionContainer title={"매도"} />
       </div>
     </div>
   );

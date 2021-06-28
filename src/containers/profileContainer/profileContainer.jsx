@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const ProfileContainer = ({ database }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { isLoading, haveStocks } = useSelector((state) => state.main);
+  const { isLoading } = useSelector((state) => state.main);
   const updateDefaultData = (data) => {
     dispatch(onLoadData(data));
   };
@@ -25,6 +25,7 @@ const ProfileContainer = ({ database }) => {
   useEffect(() => {
     if (!localStorage.getItem("token")) history.push("/");
   }, [localStorage.getItem("token")]);
+
   return <Profile database={database} isLoading={isLoading} />;
 };
 

@@ -3,7 +3,7 @@ import MainSellSection from "../../components/main_sellSection/mainSellSection";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSellAmount } from "../../modules/main";
 
-const MainSellSectionContainer = ({ database }) => {
+const MainSellSectionContainer = () => {
   const dispatch = useDispatch();
   const { clickedStockPrice, sellClickedAmount, sellClickedTotal } =
     useSelector((state) => state.main);
@@ -19,7 +19,6 @@ const MainSellSectionContainer = ({ database }) => {
       sellClickedTotal={sellClickedTotal}
       onChangeAmount={onChangeAmount}
       onChangeTotal={onChangeTotal}
-      database={database}
     />
   );
 };

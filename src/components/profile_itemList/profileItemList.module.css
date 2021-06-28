@@ -1,4 +1,4 @@
-@value color_increase,color_decrease,color_white_font from "../../common/common.css";
+@value color_lightGrey,color_increase,color_decrease,color_white_font from "../../common/common.css";
 
 .item {
   display: flex;
@@ -24,4 +24,10 @@
 }
 .decrease {
   color: color_decrease;
+}
+
+.loadingText {
+  font-size: 0.9rem;
+  color: color_lightGrey;
+  padding-top: 7rem;
 }

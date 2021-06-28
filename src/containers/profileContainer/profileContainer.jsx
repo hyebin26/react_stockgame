@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const ProfileContainer = ({ database }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { isLoading } = useSelector((state) => state.main);
+  const { isLoading, haveStocks } = useSelector((state) => state.main);
   const updateDefaultData = (data) => {
     dispatch(onLoadData(data));
   };

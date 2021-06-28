@@ -16,7 +16,9 @@ const Nav = (props) => {
         </Link>
       </li>
       <li>
-        <a href="#">힌트저장소</a>
+        <Link to="/hint" className={styles.link}>
+          힌트저장소
+        </Link>
       </li>
       <li>
         <a href="#">로그아웃</a>

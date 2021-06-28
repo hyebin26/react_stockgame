@@ -5,6 +5,7 @@ import {
   clickNextDay,
   changeCurrentChart,
   changeCurrentHasStocks,
+  clickResetBtn,
 } from "../../modules/main";
 import swal from "sweetalert";
 
@@ -24,6 +25,7 @@ const HeaderContainer = ({ database }) => {
     swal({ text: "초기화를 하시겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
         database.deleteData(localStorage.getItem("token"));
+        dispatch(clickResetBtn());
       }
     });
   };

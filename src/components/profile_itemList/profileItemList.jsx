@@ -8,7 +8,16 @@ const ProfileItemList = ({
   amount,
   label,
   totalPer,
+  isDoughnutLoading,
 }) => {
+  console.log(isDoughnutLoading);
+  if (isDoughnutLoading === false) {
+    return (
+      <div className={styles.loadingContainer}>
+        <p className={styles.loadingText}>보유 주식이 없습니다.</p>
+      </div>
+    );
+  }
   return (
     <li className={styles.item}>
       <p className={styles.title}>{label}</p>

@@ -6,7 +6,7 @@ const ProfileChart = ({ data, options, isDoughnutLoading }) => {
   if (!isDoughnutLoading) {
     return (
       <div className={styles.loadingContainer}>
-        <p className={styles.loadingTitle}>보유 주식이 없습니다.</p>
+        <p className={styles.loadingText}>보유 주식이 없습니다.</p>
       </div>
     );
   }

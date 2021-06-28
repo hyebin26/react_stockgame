@@ -21,7 +21,7 @@ export const mainSlice = createSlice({
     stocks: [],
     isLoading: true,
     spendMoney: [],
-    isDoughnutLoading: true,
+    isDoughnutLoading: false,
     doughnutData: data,
   },
   reducers: {
@@ -206,7 +206,23 @@ export const mainSlice = createSlice({
           if (typeof item.amount === "number")
             state.doughnutData.datasets[0].data.push(item.amount * item.price);
         });
+        state.isDoughnutLoading = true;
       }
+    },
+    clickResetBtn: (state, action) => {
+      let price = 0;
+      state.isDoughnutLoading = false;
+      state.clickedAmount = 0;
+      state.sellClickedAmount = 0;
+      state.sellClickedTotal = 0;
+      state.clickedTotal = 0;
+      state.stocks.map((item) => {
+        if (item.label === state.clickedLebel) {
+          price = item.price[0];
+          state.clickedStockPrice = price;
+        }
+      });
+      state.chartStock.datasets[0].data = [price];
     },
   },
 });
@@ -224,6 +240,7 @@ export const {
   changeCurrentChart,
   changeCurrentHasStocks,
   changeDoughnut,
+  clickResetBtn,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

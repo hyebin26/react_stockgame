@@ -1,8 +1,7 @@
 import React from "react";
 import HeaderContainer from "../../containers/headerContainer/headerContainer";
 import HintCounting from "../hint_counting/hintCounting";
-import HintOnePoint from "../hint_onePoint/hintOnePoint";
-import HintThreePoint from "../hint_threePoint/hintThreePoint";
+import HintItem from "../hint_item/hintItem";
 import styles from "./hint.module.css";
 
 const Hint = ({ database }) => {
@@ -10,8 +9,8 @@ const Hint = ({ database }) => {
     <div className={styles.container}>
       <HeaderContainer database={database} />
       <HintCounting />
-      <HintThreePoint />
-      <HintOnePoint />
+      <HintItem title="Three Point" />
+      <HintItem title="One Point" />
     </div>
   );
 };

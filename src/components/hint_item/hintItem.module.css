@@ -1,0 +1,15 @@
+@value color_background,width_container_1,padding_container,color_white_font from "../../common/common.css";
+
+.container {
+  color: color_white_font;
+  max-width: width_container_1;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.title {
+  padding-bottom: 0.5rem;
+}
+.listContainer {
+  display: flex;
+}

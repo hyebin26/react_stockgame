@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. add post-it in hintThreePoint
+1. hint_item ,hint_list
 
 ### next to do
 

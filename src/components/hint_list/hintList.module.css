@@ -1,0 +1,39 @@
+@value color_background,width_container_1,padding_container,color_white_font from "../../common/common.css";
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+/* 
+#ffa 베이지
+#88d16 녹색 
+#e981c1 핑크
+#a7dbf1 블루
+#ffbf66 주황 
+*/
+.container {
+  width: 200px;
+  height: 170px;
+  position: relative;
+  color: black;
+  background-color: #ffa;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  box-shadow: 0px 15px 10px -6px #000000;
+  margin-right: 2rem;
+}
+.text {
+  font-family: "Jua", sans-serif;
+  word-break: break-word;
+  padding: 0 0.5rem;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 1rem solid color_background;
+  border-bottom: 1rem solid rgba(90, 90, 90, 0.3);
+  border-right: 1rem solid color_background;
+  border-left: 1rem solid rgba(90, 90, 90, 0.3);
+}

@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. hint css 추가
+1. add post-it in hintThreePoint
 
 ### next to do
 

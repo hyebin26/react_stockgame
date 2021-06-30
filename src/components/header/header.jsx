@@ -25,7 +25,7 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
           Stock Game
         </Link>
         <ul className={styles.info}>
-          <li>day {day}</li>
+          <li>Day {day}</li>
           <button className={styles.nextBtn} onClick={onClickNextBtn}>
             Next day
           </button>

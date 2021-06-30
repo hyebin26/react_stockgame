@@ -247,6 +247,7 @@ export const mainSlice = createSlice({
       });
       const point = action.payload;
       const text = makeHintAPI(per, point, label.split(" ")[1]);
+      console.log(text);
     },
   },
 });

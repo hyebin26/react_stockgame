@@ -1,5 +1,5 @@
 import React from "react";
-import MainHintBtn from "../main_hintBtn/mainHintBtn";
+import MainHintBtnContainer from "../../containers/mainHintBtnContainer/mainHintBtnContainer";
 import styles from "./mainStockItemList.module.css";
 
 const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
@@ -13,8 +13,8 @@ const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>
           <span className={styles.hintTitle}>{label}</span>
-          <MainHintBtn hintPoint={3} />
-          <MainHintBtn hintPoint={1} />
+          <MainHintBtnContainer point={3} />
+          <MainHintBtnContainer point={1} />
         </div>
         <div className={styles.priceContainer}>
           <p>가격: {price[day - 1]}</p>

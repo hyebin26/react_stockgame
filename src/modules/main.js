@@ -3,6 +3,7 @@ import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { handlePercentAPI } from "../service/percent";
 import { data } from "../service/doughnut";
+import { makeHintAPI } from "../service/hint";
 
 export const mainSlice = createSlice({
   name: "main",
@@ -235,6 +236,18 @@ export const mainSlice = createSlice({
       });
       state.chartStock.datasets[0].data = [price];
     },
+    clickHintBtn: (state, action) => {
+      const label = state.clickedLebel;
+      const day = state.day;
+      let per = 0;
+      state.stocks.map((item) => {
+        if (item.label === label) {
+          per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
+        }
+      });
+      const point = action.payload;
+      const text = makeHintAPI(per, point, label.split(" ")[1]);
+    },
   },
 });
 export const {
@@ -252,6 +265,7 @@ export const {
   changeCurrentHasStocks,
   changeDoughnut,
   clickResetBtn,
+  clickHintBtn,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

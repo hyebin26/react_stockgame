@@ -7,6 +7,9 @@ class Database {
   async saveStockData(userId, stocks) {
     await firebaseDB.ref(`users/${userId}/stocks`).set(stocks);
   }
+  async saveHintData(userId, hint) {
+    await firebaseDB.ref(`users/${userId}/hint`).set(hint);
+  }
   async loadData(userId, updateData) {
     const dataRef = await firebaseDB.ref(`users/${userId}`);
     dataRef.on("value", (snapshot) => {

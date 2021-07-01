@@ -25,6 +25,7 @@ export const mainSlice = createSlice({
     isDoughnutLoading: false,
     doughnutData: data,
     haveHints: [{ "": "" }],
+    hintPoint: 15,
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -238,7 +239,7 @@ export const mainSlice = createSlice({
       state.chartStock.datasets[0].data = [price];
     },
     clickHintBtn: (state, action) => {
-      const label = state.clickedLebel;
+      const label = action.payload.label;
       const day = state.day;
       let per = 0;
       if (day === 1 || day === 7) {
@@ -252,7 +253,7 @@ export const mainSlice = createSlice({
             per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
           }
         });
-        const point = action.payload;
+        const point = action.payload.point;
         const text = makeHintAPI(per, point, label.split(" ")[1]);
         state.haveHints.push({ day, text });
         swal(`${label} ${text}`);

@@ -1,11 +1,9 @@
 ## Stock Game
 
-1. add saveHintData in database.js
-2. clickHintBtn main.js에 상태인 clickedState가 아니라 dispatch할 때 payload로 받아오기로 변경
+1. saveHintData 추가
+2. clickHIntBtn에 hintPoint, haveHints 추가
 
 ### next to do
-
-### 다음할것
 
 ### memo
 

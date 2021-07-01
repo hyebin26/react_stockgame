@@ -6,10 +6,11 @@ import { clickHintBtn } from "../../modules/main";
 
 const MainHintBtnContainer = ({ point, label }) => {
   const dispatch = useDispatch();
+  const { hintPoint } = useSelector((state) => state.main);
   const onClickHintBtn = (num) => {
     swal({
       buttons: true,
-      text: `${label} ${num}point 힌트를 확인하겠습니까? (현재 포인트 : 15)`,
+      text: `${label} ${num}point 힌트를 확인하겠습니까? (현재 포인트 : ${hintPoint})`,
     }).then((agree) => {
       if (agree) {
         return dispatch(clickHintBtn({ label, point }));

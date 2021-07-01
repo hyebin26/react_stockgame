@@ -24,7 +24,7 @@ export const mainSlice = createSlice({
     spendMoney: [],
     isDoughnutLoading: false,
     doughnutData: data,
-    haveHints: [{ "": "" }],
+    haveHints: [],
     hintPoint: 15,
   },
   reducers: {
@@ -161,6 +161,8 @@ export const mainSlice = createSlice({
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
       state.spendMoney = action.payload.user.spendMoney;
+      state.hintPoint = action.payload.hint.hintPoint;
+      state.haveHints = action.payload.hint.haveHints;
     },
     clickNextDay: (state) => {
       let stockPer = 0;
@@ -239,7 +241,7 @@ export const mainSlice = createSlice({
       state.chartStock.datasets[0].data = [price];
     },
     clickHintBtn: (state, action) => {
-      const label = action.payload.label;
+      const { label, point } = action.payload;
       const day = state.day;
       let per = 0;
       if (day === 1 || day === 7) {
@@ -248,15 +250,19 @@ export const mainSlice = createSlice({
           : swal("마지막 날은 힌트가 제공되지 않습니다.");
       } //
       else {
-        state.stocks.map((item) => {
-          if (item.label === label) {
-            per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
-          }
-        });
-        const point = action.payload.point;
-        const text = makeHintAPI(per, point, label.split(" ")[1]);
-        state.haveHints.push({ day, text });
-        swal(`${label} ${text}`);
+        if (point > state.hintPoint) {
+          swal({ icon: "error", text: "포인트가 부족합니다." });
+        } else {
+          state.stocks.map((item) => {
+            if (item.label === label) {
+              per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
+            }
+          });
+          const text = makeHintAPI(per, point, label.split(" ")[1]);
+          state.haveHints.push({ day, label, text });
+          state.hintPoint -= point;
+          swal({ title: `${label}`, text: `${text}` });
+        }
       }
     },
   },

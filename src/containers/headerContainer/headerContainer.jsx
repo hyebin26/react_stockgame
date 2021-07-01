@@ -12,9 +12,15 @@ import { useEffect } from "react";
 
 const HeaderContainer = ({ database }) => {
   const dispatch = useDispatch();
-  const { day, hasMoney, stocks, haveStocks, spendMoney } = useSelector(
-    (state) => state.main
-  );
+  const {
+    day,
+    hasMoney,
+    stocks,
+    haveStocks,
+    spendMoney,
+    haveHints,
+    hintPoint,
+  } = useSelector((state) => state.main);
   const onClickNextBtn = () => {
     swal({ text: "다음 날로 넘어가겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
@@ -45,6 +51,12 @@ const HeaderContainer = ({ database }) => {
     database.saveStockData(localStorage.getItem("token"), stocks);
   }, [stocks]);
 
+  useEffect(() => {
+    database.saveHintData(localStorage.getItem("token"), {
+      haveHints,
+      hintPoint,
+    });
+  }, [haveHints, hintPoint]);
   return (
     <Header day={day} onClickNextBtn={onClickNextBtn} onResetBtn={onResetBtn} />
   );

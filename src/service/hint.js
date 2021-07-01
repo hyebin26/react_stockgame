@@ -183,21 +183,23 @@ const Hint = {
   },
 };
 
-export const makeHintAPI = (per, point, label) => {
+export const makeHintAPI = (percent, point, label) => {
   let text = "";
   let item = Hint[label];
-  let change = point >= 0 ? "increase" : "decrease";
+  let per = parseInt(percent);
+  let change = parseInt(per) >= 0 ? "increase" : "decrease";
   if (per >= 30) {
     if (point === 1) {
       text =
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   } //
   else if (per >= 10 && per < 30) {
     if (point === 1) {
@@ -205,11 +207,12 @@ export const makeHintAPI = (per, point, label) => {
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   } //
   else if (per < 10 && per > 0) {
     if (point === 1) {
@@ -217,11 +220,12 @@ export const makeHintAPI = (per, point, label) => {
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   } //
   else if (per < 0 && per > -10) {
     if (point === 1) {
@@ -229,11 +233,12 @@ export const makeHintAPI = (per, point, label) => {
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   } //
   else if (per <= -10 && per > -30) {
     if (point === 1) {
@@ -241,11 +246,12 @@ export const makeHintAPI = (per, point, label) => {
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   } //
   else if (per <= -30) {
     if (point === 1) {
@@ -253,11 +259,12 @@ export const makeHintAPI = (per, point, label) => {
         item[change].onePoint[
           Math.floor(Math.random() * item[change].onePoint.length)
         ];
+    } else {
+      text =
+        item[change].threePoint[
+          Math.floor(Math.random() * item[change].threePoint.length)
+        ];
     }
-    text =
-      item[change].threePoint[
-        Math.floor(Math.random() * item[change].threePoint.length)
-      ];
   }
   return text;
 };

@@ -1,12 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import swal from "sweetalert";
 import MainHintBtn from "../../components/main_hintBtn/mainHintBtn";
 import { clickHintBtn } from "../../modules/main";
 
 const MainHintBtnContainer = ({ point }) => {
   const dispatch = useDispatch();
-  const onClickHintBtn = () => {
-    dispatch(clickHintBtn());
+  const { clickedLebel } = useSelector((state) => state.main);
+  const onClickHintBtn = (num) => {
+    swal({
+      buttons: true,
+      text: `${clickedLebel} ${num}point 힌트를 확인하겠습니까? (현재 포인트 : 15)`,
+    }).then((agree) => {
+      if (agree) {
+        return dispatch(clickHintBtn(num));
+      }
+    });
   };
   return <MainHintBtn point={point} onClickHintBtn={onClickHintBtn} />;
 };

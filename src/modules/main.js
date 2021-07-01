@@ -24,6 +24,7 @@ export const mainSlice = createSlice({
     spendMoney: [],
     isDoughnutLoading: false,
     doughnutData: data,
+    haveHints: [{ "": "" }],
   },
   reducers: {
     clickBuyPerBtn: (state, action) => {
@@ -240,14 +241,22 @@ export const mainSlice = createSlice({
       const label = state.clickedLebel;
       const day = state.day;
       let per = 0;
-      state.stocks.map((item) => {
-        if (item.label === label) {
-          per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
-        }
-      });
-      const point = action.payload;
-      const text = makeHintAPI(per, point, label.split(" ")[1]);
-      console.log(text);
+      if (day === 1 || day === 7) {
+        day === 1
+          ? swal("첫날은 힌트가 제공되지 않습니다.")
+          : swal("마지막 날은 힌트가 제공되지 않습니다.");
+      } //
+      else {
+        state.stocks.map((item) => {
+          if (item.label === label) {
+            per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
+          }
+        });
+        const point = action.payload;
+        const text = makeHintAPI(per, point, label.split(" ")[1]);
+        state.haveHints.push({ day, text });
+        swal(`${label} ${text}`);
+      }
     },
   },
 });

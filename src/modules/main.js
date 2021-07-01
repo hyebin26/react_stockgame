@@ -161,8 +161,8 @@ export const mainSlice = createSlice({
       state.isLoading = false;
       state.haveStocks = action.payload.user.haveStocks;
       state.spendMoney = action.payload.user.spendMoney;
-      state.hintPoint = action.payload.hint.hintPoint;
       state.haveHints = action.payload.hint.haveHints;
+      state.hintPoint = action.payload.hint.hintPoint;
     },
     clickNextDay: (state) => {
       let stockPer = 0;
@@ -259,7 +259,7 @@ export const mainSlice = createSlice({
             }
           });
           const text = makeHintAPI(per, point, label.split(" ")[1]);
-          state.haveHints.push({ day, label, text });
+          state.haveHints.push({ day, label, point, text });
           state.hintPoint -= point;
           swal({ title: `${label}`, text: `${text}` });
         }

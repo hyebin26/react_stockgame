@@ -1,8 +1,8 @@
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import React from "react";
-import Nav from "../nav/nav";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
+import HeaderNavContainer from "../../containers/headerNavContainer/headerNavContainer";
 
 const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
   if (login) {
@@ -34,7 +34,7 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
           </button>
         </ul>
         <ul className={styles.nav}>
-          <Nav />
+          <HeaderNavContainer />
         </ul>
       </div>
     </header>

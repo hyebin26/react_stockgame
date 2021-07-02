@@ -1,0 +1,26 @@
+@value color_lightGrey from "../../common/common.css";
+
+.link {
+  color: color_lightGrey;
+  margin-left: 1.4rem;
+}
+
+.link:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.button {
+  background-color: transparent;
+  color: grey;
+  border: none;
+  margin-left: 1.4rem;
+  color: rgba(255, 255, 255, 0.53);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.button:hover {
+  color: white;
+  transition: 0.3s;
+}

@@ -41,11 +41,6 @@
   margin-left: auto;
 }
 
-.nav a {
-  color: color_lightGrey;
-  margin-left: 1.4rem;
-}
-
 .nextBtn {
   background-color: rgb(230, 126, 34);
   border: none;

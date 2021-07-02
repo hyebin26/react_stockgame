@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./nav.module.css";
+import styles from "./headerNav.module.css";
 
-const Nav = (props) => {
+const HeaderNav = ({ onClickLogout }) => {
   return (
     <>
       <li>
@@ -21,10 +21,12 @@ const Nav = (props) => {
         </Link>
       </li>
       <li>
-        <a href="#">로그아웃</a>
+        <button onClick={onClickLogout} className={styles.button}>
+          로그아웃
+        </button>
       </li>
     </>
   );
 };
 
-export default Nav;
+export default HeaderNav;

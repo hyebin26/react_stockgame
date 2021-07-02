@@ -250,7 +250,17 @@ export const mainSlice = createSlice({
       const { label, point } = action.payload;
       const day = state.day;
       let per = 0;
-      if (day === 1 || day === 7) {
+      let hintCheck = true;
+      state.haveHints.map((item) => {
+        if (item.label === label && item.day === day) hintCheck = false;
+      });
+      if (!hintCheck) {
+        swal({
+          icon: "error",
+          text: "날마다 같은 라벨의 힌트는 한개만 가능합니다.",
+        });
+      } //
+      else if (day === 1 || day === 7) {
         day === 1
           ? swal("첫날은 힌트가 제공되지 않습니다.")
           : swal("마지막 날은 힌트가 제공되지 않습니다.");

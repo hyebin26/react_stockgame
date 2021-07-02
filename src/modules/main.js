@@ -154,15 +154,21 @@ export const mainSlice = createSlice({
       }
     },
     onLoadData: (state, action) => {
-      state.stocks = action.payload.stocks;
-      state.day = action.payload.user.day;
-      state.hasMoney = action.payload.user.hasMoney;
-      state.user = localStorage.getItem("token");
+      if (action.payload.hint !== undefined) {
+        state.haveHints = action.payload.hint.haveHints;
+        state.hintPoint = action.payload.hint.hintPoint;
+      }
+      if (action.payload.stocks !== undefined) {
+        state.stocks = action.payload.stocks;
+      }
+      if (action.payload.user !== undefined) {
+        state.day = action.payload.user.day;
+        state.hasMoney = action.payload.user.hasMoney;
+        state.user = localStorage.getItem("token");
+        state.haveStocks = action.payload.user.haveStocks;
+        state.spendMoney = action.payload.user.spendMoney;
+      }
       state.isLoading = false;
-      state.haveStocks = action.payload.user.haveStocks;
-      state.spendMoney = action.payload.user.spendMoney;
-      state.haveHints = action.payload.hint.haveHints;
-      state.hintPoint = action.payload.hint.hintPoint;
     },
     clickNextDay: (state) => {
       let stockPer = 0;

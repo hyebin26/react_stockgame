@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. add hintListContainer
+1. 이전에 접속하지 않은 아이디로 로그인 할 때 undefined 에러 나오던거 해결
 
 ### next to do
 

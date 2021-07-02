@@ -26,7 +26,7 @@ const MainContainer = ({ database }) => {
 
   useEffect(() => {
     database.loadData(localStorage.getItem("token"), updateData);
-  }, [localStorage.getItem("token")]);
+  }, []);
 
   return <Main isLoading={isLoading} database={database} />;
 };

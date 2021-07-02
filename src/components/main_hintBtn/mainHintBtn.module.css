@@ -8,7 +8,15 @@
 
 .oneBtn {
   background-color: rgb(44, 62, 80);
+  color: rgb(238, 238, 238);
+  opacity: 0.8;
 }
 .threeBtn {
   background-color: rgb(230, 126, 34);
+  color: rgb(238, 238, 238);
+  opacity: 0.8;
+}
+.threeBtn:hover,
+.oneBtn:hover {
+  opacity: 1;
 }

@@ -8,12 +8,12 @@ const MainHintBtn = ({ point, onClickHintBtn }) => {
   if (point === 1)
     return (
       <button className={styles.oneBtn} onClick={onClickHint}>
-        {point}Point
+        {point}점 힌트
       </button>
     );
   return (
     <button className={styles.threeBtn} onClick={onClickHint}>
-      {point}Point
+      {point}점 힌트
     </button>
   );
 };

@@ -1,4 +1,4 @@
-@value color_background from "../../common/common.css";
+@value color_background,color_blue_btn from "../../common/common.css";
 
 .container {
   width: 100%;
@@ -7,4 +7,25 @@
 }
 .test {
   color: white;
+}
+.loading {
+  width: 20px;
+  height: 20px;
+  border: 5px solid rgb(255, 255, 255);
+  border-top: 5px solid color_blue_btn;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: color_background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }

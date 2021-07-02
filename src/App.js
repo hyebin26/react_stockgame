@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Hint from "./components/hint/hint";
 import Login from "./components/login/login";
+import HintContainer from "./containers/hintContainer/hintContainer";
 import MainContainer from "./containers/mainContainer/mainContainer";
 import ProfileContainer from "./containers/profileContainer/profileContainer";
 function App({ auth, database }) {
@@ -17,7 +18,7 @@ function App({ auth, database }) {
           <ProfileContainer database={database} />
         </Route>
         <Route path="/hint">
-          <Hint database={database} />
+          <HintContainer database={database} />
         </Route>
       </Switch>
     </BrowserRouter>

@@ -6,7 +6,7 @@ const ProfileItemListContainer = (props) => {
   const { haveStocks, spendMoney, isDoughnutLoading } = useSelector(
     (state) => state.main
   );
-
+  console.log(haveStocks);
   return haveStocks.map((item, index) => {
     if (typeof item === "object") {
       return (

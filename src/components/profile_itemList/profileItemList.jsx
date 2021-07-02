@@ -10,7 +10,11 @@ const ProfileItemList = ({
   totalPer,
   isDoughnutLoading,
 }) => {
-  if (isDoughnutLoading === false) {
+  if (
+    isDoughnutLoading === false &&
+    price === undefined &&
+    crtPrice === undefined
+  ) {
     return (
       <div className={styles.loadingContainer}>
         <p className={styles.loadingText}>보유 주식이 없습니다.</p>
@@ -21,8 +25,12 @@ const ProfileItemList = ({
     <li className={styles.item}>
       <p className={styles.title}>{label}</p>
       <p className={styles.amount}>{amount}개</p>
-      <p className={styles.price}>{price.toLocaleString("ko-KR")}원</p>
-      <p className={styles.crtPrice}>{crtPrice.toLocaleString("ko-KR")}원</p>
+      <p className={styles.price}>
+        {price !== undefined ? price.toLocaleString("ko-KR") : ""}원
+      </p>
+      <p className={styles.crtPrice}>
+        {crtPrice !== undefined ? crtPrice.toLocaleString("ko-KR") : ""}원
+      </p>
       <p
         className={
           statement === 0
@@ -32,7 +40,9 @@ const ProfileItemList = ({
             : `${styles.statement} ${styles.decrease}`
         }
       >
-        {statement > 0
+        {statement === undefined
+          ? ""
+          : statement > 0
           ? "+" + statement.toLocaleString("ko-KR")
           : statement.toLocaleString("ko-KR")}
         원

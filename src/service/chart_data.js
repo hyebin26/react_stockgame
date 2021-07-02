@@ -2,7 +2,7 @@ export const stock = {
   labels: ["1day", "2day", "3day", "4day", "5day", "6day", "7day"],
   datasets: [
     {
-      label: "H전자",
+      label: "B IT",
       data: [15000],
       borderColor: "rgb(75, 192, 192)",
       backgroundColor: "rgb(75, 192, 192)",

@@ -17,7 +17,7 @@ export const mainSlice = createSlice({
     chartStock: stock,
     sellClickedTotal: 0,
     sellClickedAmount: 0,
-    clickedLebel: "H전자",
+    clickedLebel: "B IT",
     haveStocks: [],
     stocks: [],
     isLoading: true,

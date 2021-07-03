@@ -12,7 +12,7 @@
   width: 200px;
   height: 170px;
   position: relative;
-  color: black;
+  color: #2a2a2a;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -39,16 +39,16 @@
   border-radius: 0 0 0 20%;
 }
 .green {
-  background-color: #9bca3e;
+  background-color: #bbee57;
 }
 .pink {
   background-color: #e981c1;
 }
 .blue {
-  background-color: #3abbc9;
+  background-color: #c9dae1;
 }
 .orange {
-  background-color: #ffb92a;
+  background-color: #ff9232;
 }
 .beige {
   background-color: #feeb51;

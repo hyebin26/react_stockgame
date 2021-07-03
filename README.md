@@ -1,6 +1,7 @@
 ## Stock Game
 
-1. add headerNavContainer
+1. hintItem color 변경
+2. 소유하고 있지 않은 주식을 판매할 때 에러나오는거 해결
 
 ### next to do
 

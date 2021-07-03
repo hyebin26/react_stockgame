@@ -1,5 +1,3 @@
-import "chart.piecelabel.js";
-
 export const data = {
   labels: [],
   datasets: [
@@ -21,16 +19,9 @@ export const data = {
       ],
     },
   ],
+  text: "Good",
 };
 export const options = {
-  aspectRatio: 1,
-  maintainAspectRatio: false,
-  datasets: {
-    doughnut: {
-      borderColor: "rgb(242 242 242 / 68%)",
-    },
-  },
-  events: [],
   plugins: {
     legend: {
       position: "left",
@@ -46,4 +37,12 @@ export const options = {
       },
     },
   },
+  aspectRatio: 1,
+  maintainAspectRatio: false,
+  datasets: {
+    doughnut: {
+      borderColor: "rgb(242 242 242 / 68%)",
+    },
+  },
+  events: [],
 };

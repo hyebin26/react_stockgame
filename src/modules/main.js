@@ -150,7 +150,7 @@ export const mainSlice = createSlice({
         });
       } //
       else {
-        return swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
+        swal({ title: "소유하고 있지 않습니다!", icon: "warning" });
       }
     },
     onLoadData: (state, action) => {
@@ -257,7 +257,7 @@ export const mainSlice = createSlice({
       if (!hintCheck) {
         swal({
           icon: "error",
-          text: "날마다 같은 라벨의 힌트는 한개만 가능합니다.",
+          text: "하루에 같은 라벨의 힌트를 중복으로 볼 수 없습니다.",
         });
       } //
       else if (day === 1 || day === 7) {

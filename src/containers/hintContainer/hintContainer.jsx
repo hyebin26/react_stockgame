@@ -24,7 +24,7 @@ const HintContainer = ({ database }) => {
   }, [database]);
   useEffect(() => {
     if (!localStorage.getItem("token")) history.push("/");
-  }, [localStorage.getItem("token")]);
+  }, [history]);
   return <Hint database={database} isLoading={isLoading} />;
 };
 

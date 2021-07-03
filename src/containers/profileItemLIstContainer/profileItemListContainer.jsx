@@ -6,11 +6,11 @@ const ProfileItemListContainer = (props) => {
   const { haveStocks, spendMoney, isDoughnutLoading } = useSelector(
     (state) => state.main
   );
-  console.log(haveStocks);
   return haveStocks.map((item, index) => {
     if (typeof item === "object") {
       return (
         <ProfileItemList
+          key={index}
           label={item.label}
           amount={item.amount}
           crtPrice={item.price}
@@ -28,6 +28,7 @@ const ProfileItemListContainer = (props) => {
     } else if (haveStocks.length === 1) {
       return <ProfileItemList isDoughnutLoading={isDoughnutLoading} />;
     }
+    return null;
   });
 };
 

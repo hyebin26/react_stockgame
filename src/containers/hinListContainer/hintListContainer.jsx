@@ -31,6 +31,7 @@ const HintListContainer = ({ point }) => {
         );
       }
     }
+    return null;
   });
 };
 

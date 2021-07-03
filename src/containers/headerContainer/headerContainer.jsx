@@ -46,17 +46,17 @@ const HeaderContainer = ({ database }) => {
       spendMoney,
       haveStocks: haveStocks.length === 0 ? [0] : haveStocks,
     });
-  }, [haveStocks, hasMoney, day]);
+  }, [haveStocks, hasMoney, day, spendMoney, database]);
   useEffect(() => {
     database.saveStockData(localStorage.getItem("token"), stocks);
-  }, [stocks]);
+  }, [stocks, database]);
 
   useEffect(() => {
     database.saveHintData(localStorage.getItem("token"), {
       haveHints,
       hintPoint,
     });
-  }, [haveHints, hintPoint]);
+  }, [haveHints, hintPoint, database]);
   return (
     <Header day={day} onClickNextBtn={onClickNextBtn} onResetBtn={onResetBtn} />
   );

@@ -6,7 +6,7 @@ import { onLoadData } from "../../modules/main";
 
 const MainContainer = ({ database }) => {
   const dispatch = useDispatch();
-  const hisotry = useHistory();
+  const history = useHistory();
   const { isLoading } = useSelector((state) => state.main);
 
   const updateDefaultData = (data) => {
@@ -21,12 +21,12 @@ const MainContainer = ({ database }) => {
   };
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) hisotry.replace("/");
-  }, [localStorage.getItem("token")]);
+    if (!localStorage.getItem("token")) history.replace("/");
+  }, [history]);
 
   useEffect(() => {
     database.loadData(localStorage.getItem("token"), updateData);
-  }, []);
+  }, [database]);
 
   return <Main isLoading={isLoading} database={database} />;
 };

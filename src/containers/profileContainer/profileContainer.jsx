@@ -21,10 +21,10 @@ const ProfileContainer = ({ database }) => {
   };
   useEffect(() => {
     database.loadData(localStorage.getItem("token"), updateData);
-  }, []);
+  }, [database]);
   useEffect(() => {
     if (!localStorage.getItem("token")) history.push("/");
-  }, [localStorage.getItem("token")]);
+  }, [history]);
 
   return <Profile database={database} isLoading={isLoading} />;
 };

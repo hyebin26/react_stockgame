@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
 import { handlePercentAPI } from "../service/percent";
@@ -61,11 +61,13 @@ export const mainSlice = createSlice({
             if (item.label === label) {
               item.amount += amount;
             }
+            return null;
           });
           state.spendMoney.map((item) => {
             if (item.label === label) {
               item.price += price * amount;
             }
+            return null;
           });
         }
         swal({ title: "매수성공", icon: "success" });
@@ -86,6 +88,7 @@ export const mainSlice = createSlice({
         if (item.label === action.payload) {
           price.push(...item.price.slice(0, state.day));
         }
+        return null;
       });
       state.chartStock.datasets[0].data = price;
       state.clickedTotal = 0;
@@ -104,6 +107,7 @@ export const mainSlice = createSlice({
           state.sellClickedTotal =
             state.sellClickedAmount * state.clickedStockPrice;
         }
+        return null;
       });
     },
     changeSellAmount: (state, action) => {
@@ -116,6 +120,7 @@ export const mainSlice = createSlice({
       let checkHaveStock = false;
       state.haveStocks.find((item) => {
         if (item.label === state.clickedLebel) checkHaveStock = true;
+        return null;
       });
       if (checkHaveStock) {
         state.haveStocks.map((item, index) => {
@@ -128,6 +133,7 @@ export const mainSlice = createSlice({
               if (item.label === state.clickedLebel) {
                 state.spendMoney.splice(index, 1);
               }
+              return null;
             });
             return swal({ title: "판매 성공!", icon: "success" });
           } else if (item.amount > cellClickedAmount) {
@@ -139,6 +145,7 @@ export const mainSlice = createSlice({
               if (item.label === state.clickedLebel) {
                 item.price -= state.sellClickedTotal;
               }
+              return null;
             });
             return swal({ title: "판매 성공!", icon: "success" });
           } else if (item.amount < cellClickedAmount) {
@@ -147,6 +154,7 @@ export const mainSlice = createSlice({
               icon: "warning",
             });
           }
+          return null;
         });
       } //
       else {
@@ -183,6 +191,7 @@ export const mainSlice = createSlice({
               )
             );
           }
+          return null;
         });
       }
       if (state.day !== 7) {
@@ -201,6 +210,7 @@ export const mainSlice = createSlice({
           state.clickedStockPrice = item.price[state.day - 1];
           state.chartStock.datasets[0].data = item.price.slice(0, state.day);
         }
+        return null;
       });
     },
     changeCurrentHasStocks: (state, action) => {
@@ -209,7 +219,9 @@ export const mainSlice = createSlice({
           if (state.haveStocks.length !== 0 && item.label === item2.label) {
             item.price = item2.price[state.day - 1];
           }
+          return null;
         });
+        return null;
       });
     },
     changeDoughnut: (state, action) => {
@@ -227,6 +239,7 @@ export const mainSlice = createSlice({
             priceArr.push(item.amount * item.price);
             state.doughnutData.datasets[0].data = priceArr;
           }
+          return null;
         });
         state.isDoughnutLoading = true;
       }
@@ -243,6 +256,7 @@ export const mainSlice = createSlice({
           price = item.price[0];
           state.clickedStockPrice = price;
         }
+        return null;
       });
       state.chartStock.datasets[0].data = [price];
     },
@@ -253,6 +267,7 @@ export const mainSlice = createSlice({
       let hintCheck = true;
       state.haveHints.map((item) => {
         if (item.label === label && item.day === day) hintCheck = false;
+        return null;
       });
       if (!hintCheck) {
         swal({
@@ -273,6 +288,7 @@ export const mainSlice = createSlice({
             if (item.label === label) {
               per = ((item.price[day] - item.price[day - 1]) / 100).toFixed(1);
             }
+            return null;
           });
           const text = makeHintAPI(per, point, label.split(" ")[1]);
           state.haveHints.push({ day, label, point, text });

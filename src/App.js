@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Hint from "./components/hint/hint";
 import Login from "./components/login/login";
 import HintContainer from "./containers/hintContainer/hintContainer";
 import MainContainer from "./containers/mainContainer/mainContainer";

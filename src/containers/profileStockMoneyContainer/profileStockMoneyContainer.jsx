@@ -11,10 +11,12 @@ const ProfileStockMoneyContainer = (props) => {
   let currentBuyingPrice = 0;
   spendMoney.map((item) => {
     if (typeof item.price === "number") totalBuyingPrice += item.price;
+    return null;
   });
   haveStocks.map((item) => {
     if (typeof item.price === "number")
       currentBuyingPrice += item.price * item.amount;
+    return null;
   });
   let asset = hasMoney + currentBuyingPrice;
   let total = currentBuyingPrice - totalBuyingPrice;

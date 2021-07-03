@@ -15,7 +15,11 @@ const MainBuySection = ({
       <p className={styles.title}>매수</p>
       <div className={styles.itemContainer}>
         <p>매수가격</p>
-        <input type="text" value={clickedStockPrice.toLocaleString("ko-KR")} />
+        <input
+          type="text"
+          value={clickedStockPrice.toLocaleString("ko-KR")}
+          readOnly
+        />
       </div>
       <div className={styles.itemContainer}>
         <p>주문수량</p>
@@ -31,7 +35,7 @@ const MainBuySection = ({
         <input
           type="text"
           value={clickedTotal.toLocaleString("ko-KR")}
-          onChange={onChangeTotal}
+          readOnly
         />
         <MainPerBtnContainer />
       </div>

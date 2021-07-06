@@ -1,10 +1,12 @@
-@value color_white_font,width_container_1,padding_container,color_lightGrey,color_nav,height_header from "../../common/common.css";
+@value color_hideContainer,color_white_font,width_container_1,padding_container,color_lightGrey,color_nav,height_header from "../../common/common.css";
 
 .header {
   color: color_lightGrey;
   background-color: color_nav;
   height: height_header;
   font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
 }
 .header svg {
   font-size: 1.9rem;
@@ -55,11 +57,62 @@
   cursor: pointer;
 }
 
+.hideContainer {
+  height: 100%;
+  position: fixed;
+  right: -200px;
+  width: 200px;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s;
+  background-color: color_hideContainer;
+}
+.showHideContainer {
+  right: 0;
+}
+.hamburger {
+  cursor: pointer;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+
+.hamburgerLine {
+  width: 24px;
+  height: 0.1px;
+  padding: 0.1rem 0;
+  margin-top: 0.3rem;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+  background-color: color_white_font;
+}
+.top {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+}
+.bot {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+}
+.mid {
+  opacity: 0;
+}
+
 @media (max-width: 900px) {
   .header {
     font-size: 1rem;
   }
-  .info {
+  .nav {
     display: none;
   }
+  .hamburger {
+    display: block;
+  }
+}
+
+.hey {
+  display: none;
 }

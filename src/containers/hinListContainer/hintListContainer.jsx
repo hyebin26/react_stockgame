@@ -4,6 +4,7 @@ import HintList from "../../components/hint_list/hintList";
 
 const HintListContainer = ({ point }) => {
   const { haveHints } = useSelector((state) => state.main);
+  let checkHaveHint = false;
   return haveHints.map((item, index) => {
     if (typeof item === "object") {
       if (item.point === point) {

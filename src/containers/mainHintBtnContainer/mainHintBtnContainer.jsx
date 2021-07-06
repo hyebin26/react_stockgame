@@ -20,7 +20,7 @@ const MainHintBtnContainer = memo(({ point, label }) => {
         }
       });
     },
-    [dispatch, label, point]
+    [dispatch, label, point, hintPoint]
   );
   return <MainHintBtn point={point} onClickHintBtn={onClickHintBtn} />;
 });

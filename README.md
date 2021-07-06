@@ -1,9 +1,8 @@
 ## Stock Game
 
-### next to do
+1. add Hamburger menu
 
-1. remove warning in mainContainer, hintContainer, profileContainer
-2. add memo, useCallback
+### next to do
 
 ### memo
 
@@ -12,3 +11,4 @@
 3. 힌트가 중복이 안되게 하기 => 재귀
 4. useMemo and callback
 5. memo hintBtnContainer 왜?
+6. 힌트 없을 때 css?

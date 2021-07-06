@@ -3,8 +3,13 @@ import React from "react";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 import HeaderNavContainer from "../../containers/headerNavContainer/headerNavContainer";
+import { useState } from "react";
 
 const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
+  const [toggle, setToggle] = useState(true);
+  const clickHambuger = () => {
+    setToggle(!toggle);
+  };
   if (login) {
     return (
       <header className={styles.header}>
@@ -36,6 +41,38 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
         <ul className={styles.nav}>
           <HeaderNavContainer />
         </ul>
+        <ul className={styles.hamburger} onClick={clickHambuger}>
+          <div
+            className={
+              toggle
+                ? styles.hamburgerLine
+                : `${styles.hamburgerLine} ${styles.top}`
+            }
+          ></div>
+          <div
+            className={
+              toggle
+                ? styles.hamburgerLine
+                : `${styles.hamburgerLine} ${styles.mid}`
+            }
+          ></div>
+          <div
+            className={
+              toggle
+                ? styles.hamburgerLine
+                : `${styles.hamburgerLine} ${styles.bot}`
+            }
+          ></div>
+        </ul>
+        <div
+          className={
+            toggle
+              ? styles.hideContainer
+              : `${styles.hideContainer} ${styles.showHideContainer}`
+          }
+        >
+          <HeaderNavContainer hide={true} />
+        </div>
       </div>
     </header>
   );

@@ -24,3 +24,9 @@
   color: white;
   transition: 0.3s;
 }
+.list {
+  padding: 1rem 0;
+}
+.top {
+  padding-top: 4.5rem;
+}

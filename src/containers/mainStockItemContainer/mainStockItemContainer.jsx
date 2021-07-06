@@ -1,5 +1,4 @@
 import React from "react";
-import { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MainStockItem from "../../components/main_stockItem/mainStockItem";
 import { clickLabel } from "../../modules/main";

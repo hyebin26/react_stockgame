@@ -21,6 +21,7 @@
 @value color_decrease #0966c6;
 @value color_border rgba(255, 255, 255, 0.292);
 @value color_category rgb(80, 80, 80);
+@value color_hideContainer #3a3a3a;
 
 @value color_white_font rgb(238, 238, 238);
 @value color_lightGrey rgba(255, 255, 255, 0.53);

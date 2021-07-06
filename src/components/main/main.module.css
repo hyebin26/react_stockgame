@@ -12,6 +12,8 @@
   width: 100%;
   min-height: 100%;
   background-color: color_background;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .trading_container {

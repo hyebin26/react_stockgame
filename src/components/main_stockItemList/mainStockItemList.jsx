@@ -1,8 +1,9 @@
 import React from "react";
+import { memo } from "react";
 import MainHintBtnContainer from "../../containers/mainHintBtnContainer/mainHintBtnContainer";
 import styles from "./mainStockItemList.module.css";
 
-const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
+const MainStockItemList = memo(({ price, label, icon, onClickLabel, day }) => {
   const clickLabel = () => {
     onClickLabel(label);
   };
@@ -34,6 +35,6 @@ const MainStockItemList = ({ price, label, icon, onClickLabel, day }) => {
       </div>
     </li>
   );
-};
+});
 
 export default MainStockItemList;

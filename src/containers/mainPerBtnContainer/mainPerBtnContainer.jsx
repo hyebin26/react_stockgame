@@ -2,21 +2,29 @@ import React from "react";
 import MainPerBtn from "../../components/main_perBtn/mainPerBtn";
 import { useDispatch } from "react-redux";
 import { clickBuyPerBtn, clickPerSellBtn } from "../../modules/main";
+import { useCallback } from "react/cjs/react.development";
+import { memo } from "react";
 
-const MainPerBtnContainer = ({ title }) => {
+const MainPerBtnContainer = memo(({ title }) => {
   const dispatch = useDispatch();
-  const onClickPerBuyBtn = (e) => {
-    const btnVal = e.target.innerText;
-    const regex = /[^0-9]/g;
-    const result = btnVal.replace(regex, "");
-    dispatch(clickBuyPerBtn(result));
-  };
-  const onClickPerSellBtn = (e) => {
-    const btnVal = e.target.innerText;
-    const regex = /[^0-9]/g;
-    const result = btnVal.replace(regex, "");
-    dispatch(clickPerSellBtn(result));
-  };
+  const onClickPerBuyBtn = useCallback(
+    (e) => {
+      const btnVal = e.target.innerText;
+      const regex = /[^0-9]/g;
+      const result = btnVal.replace(regex, "");
+      dispatch(clickBuyPerBtn(result));
+    },
+    [dispatch]
+  );
+  const onClickPerSellBtn = useCallback(
+    (e) => {
+      const btnVal = e.target.innerText;
+      const regex = /[^0-9]/g;
+      const result = btnVal.replace(regex, "");
+      dispatch(clickPerSellBtn(result));
+    },
+    [dispatch]
+  );
 
   return (
     <MainPerBtn
@@ -25,6 +33,6 @@ const MainPerBtnContainer = ({ title }) => {
       onClickPerSellBtn={onClickPerSellBtn}
     />
   );
-};
+});
 
 export default MainPerBtnContainer;

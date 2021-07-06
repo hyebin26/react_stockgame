@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
 import MainStockItemContainer from "../../containers/mainStockItemContainer/mainStockItemContainer";
 import MainChartContainer from "../../containers/mainChartContainer/mainChartContainer";
 import HeaderContainer from "../../containers/headerContainer/headerContainer";
 
-const Main = ({ isLoading, database }) => {
+const Main = memo(({ isLoading, database }) => {
   if (isLoading === true)
     return (
       <section className={styles.loadingContainer}>
@@ -26,6 +26,6 @@ const Main = ({ isLoading, database }) => {
       </section>
     </div>
   );
-};
+});
 
 export default Main;

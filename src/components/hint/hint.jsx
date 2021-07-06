@@ -1,10 +1,11 @@
 import React from "react";
+import { memo } from "react";
 import HeaderContainer from "../../containers/headerContainer/headerContainer";
 import HintCountingContainer from "../../containers/hintCountingContainer/hintCountingContainer";
 import HintItem from "../hint_item/hintItem";
 import styles from "./hint.module.css";
 
-const Hint = ({ database, isLoading }) => {
+const Hint = memo(({ database, isLoading }) => {
   if (isLoading === true)
     return (
       <section className={styles.loadingContainer}>
@@ -19,6 +20,6 @@ const Hint = ({ database, isLoading }) => {
       <HintItem title="One Point" />
     </div>
   );
-};
+});
 
 export default Hint;

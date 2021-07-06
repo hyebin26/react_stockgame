@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MainBtn from "../../components/main_btn/mainBtn";
 import { clickBuyBtn, clickSellBtn } from "../../modules/main";
 import swal from "sweetalert";
+import { memo } from "react";
 
 const MainBtnContainer = (props) => {
   const { clickedAmount, sellClickedAmount, clickedLebel } = useSelector(

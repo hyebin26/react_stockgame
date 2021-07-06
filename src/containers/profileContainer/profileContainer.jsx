@@ -9,19 +9,21 @@ const ProfileContainer = ({ database }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { isLoading } = useSelector((state) => state.main);
-  const updateDefaultData = (data) => {
-    dispatch(onLoadData(data));
-  };
-  const updateData = (data) => {
-    if (data === null) {
-      database.loadData("default", updateDefaultData);
-    } else {
-      dispatch(onLoadData(data));
-    }
-  };
+
   useEffect(() => {
+    const updateDefaultData = (data) => {
+      dispatch(onLoadData(data));
+    };
+    const updateData = (data) => {
+      if (data === null) {
+        database.loadData("default", updateDefaultData);
+      } else {
+        dispatch(onLoadData(data));
+      }
+    };
     database.loadData(localStorage.getItem("token"), updateData);
-  }, [database]);
+  }, [database, dispatch]);
+
   useEffect(() => {
     if (!localStorage.getItem("token")) history.push("/");
   }, [history]);

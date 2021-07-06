@@ -9,6 +9,7 @@ import {
 } from "../../modules/main";
 import swal from "sweetalert";
 import { useEffect } from "react";
+import { useCallback } from "react";
 
 const HeaderContainer = ({ database }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const HeaderContainer = ({ database }) => {
     haveHints,
     hintPoint,
   } = useSelector((state) => state.main);
-  const onClickNextBtn = () => {
+  const onClickNextBtn = useCallback(() => {
     swal({ text: "다음 날로 넘어가겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
         dispatch(clickNextDay());
@@ -29,15 +30,15 @@ const HeaderContainer = ({ database }) => {
         dispatch(changeCurrentHasStocks());
       }
     });
-  };
-  const onResetBtn = () => {
+  }, [dispatch]);
+  const onResetBtn = useCallback(() => {
     swal({ text: "초기화를 하시겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
         database.deleteData(localStorage.getItem("token"));
         dispatch(clickResetBtn());
       }
     });
-  };
+  }, [database, dispatch]);
 
   useEffect(() => {
     database.saveUserData(localStorage.getItem("token"), {

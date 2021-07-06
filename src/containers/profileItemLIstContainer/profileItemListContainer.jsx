@@ -26,7 +26,9 @@ const ProfileItemListContainer = (props) => {
         />
       );
     } else if (haveStocks.length === 1) {
-      return <ProfileItemList isDoughnutLoading={isDoughnutLoading} />;
+      return (
+        <ProfileItemList isDoughnutLoading={isDoughnutLoading} key={index} />
+      );
     }
     return null;
   });

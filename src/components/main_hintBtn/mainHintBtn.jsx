@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./mainHintBtn.module.css";
 
-const MainHintBtn = ({ point, onClickHintBtn }) => {
+const MainHintBtn = memo(({ point, onClickHintBtn }) => {
   const onClickHint = () => {
     onClickHintBtn(point);
   };
@@ -16,6 +16,6 @@ const MainHintBtn = ({ point, onClickHintBtn }) => {
       {point}점 힌트
     </button>
   );
-};
+});
 
 export default MainHintBtn;

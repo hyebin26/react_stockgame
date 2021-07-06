@@ -4,7 +4,6 @@ import MainBtnContainer from "../../containers/mainBtnCotaniner/mainBtnContainer
 import MainPerBtnContainer from "../../containers/mainPerBtnContainer/mainPerBtnContainer";
 
 const MainBuySection = ({
-  onChangeTotal,
   onChangeAmount,
   clickedTotal,
   clickedAmount,

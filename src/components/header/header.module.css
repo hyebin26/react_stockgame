@@ -33,7 +33,7 @@
 .info {
   display: flex;
   margin-left: 4rem;
-  z-index: -1;
+  z-index: 1;
 }
 .info li {
   padding: 0 0.8rem;
@@ -66,7 +66,7 @@
   right: -200px;
   width: 200px;
   top: 0;
-  z-index: -1;
+  z-index: 2;
   transition: 0.3s;
   background-color: color_hideContainer;
 }
@@ -78,6 +78,7 @@
   margin-left: auto;
   position: relative;
   display: none;
+  z-index: 999;
 }
 
 .hamburgerLine {
@@ -114,8 +115,14 @@
     display: block;
   }
 }
-@media (max-width: 695px) {
+@media (max-width: 707px) {
   .info {
     margin-left: 1rem;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  .header svg {
+    font-size: 1.2rem;
   }
 }

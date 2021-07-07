@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-left: 1px solid color_lightGrey;
 }
 
 .container canvas {
@@ -23,4 +24,12 @@
 .loadingText {
   font-size: 0.9rem;
   color: color_lightGrey;
+}
+@media (max-width: 783px) {
+  .container {
+    height: 150px;
+    padding: 0.3rem 0;
+    border-left: none;
+    border-top: 1px solid color_lightGrey;
+  }
 }

@@ -12,4 +12,5 @@
 }
 .listContainer {
   display: flex;
+  flex-wrap: wrap;
 }

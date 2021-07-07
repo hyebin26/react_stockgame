@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. add responsive css in main.js
+1. add responsive css in hint.jsx, profile.jsx
 
 ### next to do
 

@@ -35,3 +35,9 @@
 .crtPrice {
   flex: 0 1 15%;
 }
+
+@media (max-width: 566px) {
+  .category {
+    font-size: 0.7rem;
+  }
+}

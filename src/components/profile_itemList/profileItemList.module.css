@@ -31,3 +31,8 @@
   color: color_lightGrey;
   padding-top: 7rem;
 }
+@media (max-width: 566px) {
+  .item {
+    font-size: 0.8rem;
+  }
+}

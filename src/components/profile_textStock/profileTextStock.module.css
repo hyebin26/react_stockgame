@@ -1,7 +1,7 @@
 @value color_increase,color_decrease,color_white_font from "../../common/common.css";
 
 .container {
-  flex: 0 0 50%;
+  flex: 0 0 47%;
 }
 .moneyBox {
   display: flex;
@@ -12,7 +12,6 @@
 .haveMoney {
   font-size: 0.8rem;
   color: grey;
-  padding-right: 2rem;
 }
 .money {
   color: color_white_font;
@@ -27,4 +26,13 @@
 }
 .decrease {
   color: color_decrease;
+}
+
+@media (max-width: 566px) {
+  .container {
+    font-size: 0.8rem;
+  }
+  .money {
+    font-size: 0.9rem;
+  }
 }

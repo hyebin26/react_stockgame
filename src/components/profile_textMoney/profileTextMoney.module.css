@@ -1,7 +1,7 @@
 @value color_white_font from "../../common/common.css";
 
-.moneyContainer {
-  flex: 0 0 50%;
+.container {
+  flex: 0 0 47%;
 }
 
 .moneyBox {
@@ -13,7 +13,6 @@
 .haveMoney {
   font-size: 0.8rem;
   color: grey;
-  padding-right: 2rem;
 }
 .money {
   color: color_white_font;
@@ -22,4 +21,12 @@
 }
 .titleBox {
   padding-bottom: 1.8rem;
+}
+@media (max-width: 566px) {
+  .moneyContainer {
+    font-size: 0.8rem;
+  }
+  .money {
+    font-size: 0.9rem;
+  }
 }

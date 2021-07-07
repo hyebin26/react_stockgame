@@ -7,7 +7,7 @@ const ProfileTextMoney = ({
   currentBuyingPrice,
 }) => {
   return (
-    <div className={styles.moneyContainer}>
+    <div className={styles.container}>
       <div className={`${styles.moneyBox} ${styles.titleBox}`}>
         <p>보유 KRW</p>
         <p className={styles.haveMoney}>

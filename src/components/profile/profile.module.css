@@ -9,7 +9,6 @@
   border-bottom: 1px solid color_header_font;
 }
 .container {
-  width: 100vw;
   min-height: 100vh;
   background-color: color_background;
 }
@@ -26,6 +25,7 @@
   margin-top: 2rem;
   padding: padding_container;
   border-bottom: 1px solid color_header_font;
+  padding-bottom: 4rem;
 }
 
 .loading {
@@ -48,5 +48,14 @@
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 783px) {
+  .myProfileContainer {
+    height: 100%;
+  }
+  .myProfileBox {
+    display: block;
   }
 }

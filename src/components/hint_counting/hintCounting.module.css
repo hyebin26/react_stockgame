@@ -12,3 +12,9 @@
 .container h2 {
   flex: 0 1 50%;
 }
+
+@media (max-width: 707px) {
+  .container {
+    font-size: 0.7rem;
+  }
+}

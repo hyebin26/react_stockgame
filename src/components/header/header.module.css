@@ -9,8 +9,8 @@
   z-index: 1;
 }
 .header svg {
-  font-size: 1.9rem;
-  padding-right: 0.2rem;
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
 }
 
 .container {
@@ -26,11 +26,14 @@
   font-size: 1.4rem;
   color: color_white_font;
   padding-left: 0.2rem;
+  display: flex;
+  align-items: center;
 }
 
 .info {
   display: flex;
   margin-left: 4rem;
+  z-index: -1;
 }
 .info li {
   padding: 0 0.8rem;
@@ -74,7 +77,6 @@
   cursor: pointer;
   margin-left: auto;
   position: relative;
-  z-index: 1;
   display: none;
 }
 
@@ -112,7 +114,8 @@
     display: block;
   }
 }
-
-.hey {
-  display: none;
+@media (max-width: 695px) {
+  .info {
+    margin-left: 1rem;
+  }
 }

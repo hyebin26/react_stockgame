@@ -14,8 +14,10 @@ const MainStockItemList = memo(({ price, label, icon, onClickLabel, day }) => {
       <div className={styles.textContainer}>
         <div className={styles.hintContainer}>
           <span className={styles.hintTitle}>{label}</span>
-          <MainHintBtnContainer point={3} label={label} />
-          <MainHintBtnContainer point={1} label={label} />
+          <div className={styles.hintBtnContainer}>
+            <MainHintBtnContainer point={3} label={label} />
+            <MainHintBtnContainer point={1} label={label} />
+          </div>
         </div>
         <div className={styles.priceContainer}>
           <p>가격: {price[day - 1]}</p>

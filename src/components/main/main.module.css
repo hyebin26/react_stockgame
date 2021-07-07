@@ -52,3 +52,11 @@
     transform: rotate(360deg);
   }
 }
+@media (max-width: 707px) {
+  .trading_container {
+    display: block;
+  }
+  .mainTrading {
+    height: 100%;
+  }
+}

@@ -14,3 +14,8 @@
   padding: 0.1rem 0;
   cursor: pointer;
 }
+@media (max-width: 707px) {
+  .itemContainer {
+    padding: 0.7rem 0;
+  }
+}

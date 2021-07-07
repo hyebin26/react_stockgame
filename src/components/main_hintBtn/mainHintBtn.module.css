@@ -2,19 +2,17 @@
 .threeBtn {
   border: none;
   padding: 0 0.5rem;
-  margin: 0 0.5rem;
   cursor: pointer;
+  opacity: 0.8;
+  color: rgb(238, 238, 238);
 }
 
 .oneBtn {
   background-color: rgb(44, 62, 80);
-  color: rgb(238, 238, 238);
-  opacity: 0.8;
+  margin-left: 0.5rem;
 }
 .threeBtn {
   background-color: rgb(230, 126, 34);
-  color: rgb(238, 238, 238);
-  opacity: 0.8;
 }
 .threeBtn:hover,
 .oneBtn:hover {

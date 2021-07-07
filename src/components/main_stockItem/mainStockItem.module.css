@@ -7,3 +7,9 @@
   border-top: 1px solid color_border;
   padding: 2rem 0;
 }
+
+@media (max-width: 537px) {
+  .container {
+    display: block;
+  }
+}

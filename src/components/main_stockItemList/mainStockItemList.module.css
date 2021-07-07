@@ -28,3 +28,23 @@
 .zero {
   color: color_white_font;
 }
+.hintContainer {
+  display: flex;
+}
+.hintBtnContainer {
+  margin-left: 0.5rem;
+}
+@media (max-width: 917px) {
+  .hintContainer {
+    display: block;
+  }
+  .hintBtnContainer {
+    margin-left: 0;
+  }
+}
+@media (max-width: 765px) {
+  .itemContainer {
+    flex: 0 1 42%;
+  }
+}
+ 

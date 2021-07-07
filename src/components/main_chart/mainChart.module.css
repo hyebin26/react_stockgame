@@ -1,8 +1,13 @@
-@value color_header_font,padding_container from "../../common/common.css";
+@value height_chart_res,color_header_font,padding_container from "../../common/common.css";
 
 .container {
   flex: 1 1 65%;
 }
 .container canvas {
   width: 100% !important;
+}
+@media (max-width: 707px) {
+  .container {
+    height: height_chart_res;
+  }
 }

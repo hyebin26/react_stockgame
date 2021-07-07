@@ -1,4 +1,4 @@
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { ImCoinDollar } from "react-icons/im";
 import React from "react";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
@@ -14,8 +14,8 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
     return (
       <header className={styles.header}>
         <div className={styles.container}>
-          <FaRegMoneyBillAlt />
           <Link to="/" className={styles.logo}>
+            <ImCoinDollar />
             Stock Game
           </Link>
         </div>
@@ -25,8 +25,8 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <FaRegMoneyBillAlt />
         <Link to="/main" className={styles.logo}>
+          <ImCoinDollar />
           Stock Game
         </Link>
         <ul className={styles.info}>

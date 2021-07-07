@@ -10,8 +10,8 @@ const HeaderNavContainer = memo(({ hide }) => {
   const onClickLogout = useCallback(() => {
     swal({ text: "로그아웃을 하시겠습니까?", buttons: true }).then((agree) => {
       if (agree) {
-        history.replace("/");
         localStorage.removeItem("token");
+        history.replace("/");
       }
     });
   }, [history]);

@@ -3,13 +3,15 @@ import React from "react";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 import HeaderNavContainer from "../../containers/headerNavContainer/headerNavContainer";
-import { useState } from "react";
 
-const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
-  const [toggle, setToggle] = useState(true);
-  const clickHambuger = () => {
-    setToggle(!toggle);
-  };
+const Header = ({
+  login,
+  day,
+  onClickNextBtn,
+  onResetBtn,
+  toggle,
+  onClickHambuger,
+}) => {
   if (login) {
     return (
       <header className={styles.header}>
@@ -41,7 +43,7 @@ const Header = ({ login, day, onClickNextBtn, onResetBtn }) => {
         <ul className={styles.nav}>
           <HeaderNavContainer />
         </ul>
-        <ul className={styles.hamburger} onClick={clickHambuger}>
+        <ul className={styles.hamburger} onClick={onClickHambuger}>
           <div
             className={
               toggle

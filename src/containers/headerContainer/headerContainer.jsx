@@ -10,6 +10,7 @@ import {
 import swal from "sweetalert";
 import { useEffect } from "react";
 import { useCallback } from "react";
+import { useState } from "react";
 
 const HeaderContainer = ({ database }) => {
   const dispatch = useDispatch();
@@ -39,6 +40,10 @@ const HeaderContainer = ({ database }) => {
       }
     });
   }, [database, dispatch]);
+  const [toggle, setToggle] = useState(true);
+  const onClickHambuger = () => {
+    setToggle(!toggle);
+  };
 
   useEffect(() => {
     database.saveUserData(localStorage.getItem("token"), {
@@ -59,7 +64,13 @@ const HeaderContainer = ({ database }) => {
     });
   }, [haveHints, hintPoint, database]);
   return (
-    <Header day={day} onClickNextBtn={onClickNextBtn} onResetBtn={onResetBtn} />
+    <Header
+      day={day}
+      onClickNextBtn={onClickNextBtn}
+      onResetBtn={onResetBtn}
+      onClickHambuger={onClickHambuger}
+      toggle={toggle}
+    />
   );
 };
 

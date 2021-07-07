@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../header/header";
 import styles from "./login.module.css";
-import LoginBtn from "../login_btn/loginBtn";
+import LoginBtnContainer from "../../containers/loginBtnContainer/loginBtnContainer";
 
 const Login = ({ auth }) => {
   return (
     <section className={styles.container}>
       <Header login="login" />
-      <div className={styles.content_container}>
+      <div className={styles.contentContainer}>
         <p className={styles.login}>Login</p>
         <hr></hr>
-        <LoginBtn auth={auth} />
+        <LoginBtnContainer auth={auth} />
       </div>
     </section>
   );

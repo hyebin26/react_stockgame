@@ -4,7 +4,7 @@
   height: 100vh;
 }
 
-.content_container {
+.contentContainer {
   max-width: 25rem;
   margin: 0 auto;
   margin-top: 8rem;
@@ -20,4 +20,10 @@
   font-size: large;
   font-size: 1.3rem;
   padding-bottom: 0.7rem;
+}
+@media (max-width: 650px) {
+  .contentContainer {
+    max-width: 15rem;
+    margin-top: 5rem;
+  }
 }

@@ -10,6 +10,7 @@ const Login = ({ auth }) => {
       <div className={styles.contentContainer}>
         <p className={styles.login}>Login</p>
         <hr></hr>
+        <h2>test5</h2>
         <LoginBtnContainer auth={auth} />
       </div>
     </section>

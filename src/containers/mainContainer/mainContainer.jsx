@@ -10,10 +10,6 @@ const MainContainer = ({ database }) => {
   const { isLoading } = useSelector((state) => state.main);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) history.replace("/");
-  }, [history]);
-
-  useEffect(() => {
     const updateDefaultData = (data) => {
       dispatch(onLoadData(data));
     };
@@ -26,6 +22,10 @@ const MainContainer = ({ database }) => {
     };
     database.loadData(localStorage.getItem("token"), updateData);
   }, [database, dispatch]);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history.push("/");
+  }, [history]);
 
   return <Main isLoading={isLoading} database={database} />;
 };

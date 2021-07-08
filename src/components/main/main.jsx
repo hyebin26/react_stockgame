@@ -1,4 +1,6 @@
-import React, { memo } from "react";
+import React from "react";
+import { memo } from "react";
+
 import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
 import MainStockItemContainer from "../../containers/mainStockItemContainer/mainStockItemContainer";

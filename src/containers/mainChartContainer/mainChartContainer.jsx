@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { options } from "../../service/chart_data";
 import { changeCurrentChart } from "../../modules/main";
 
-const MainChartContainer = (props) => {
+const MainChartContainer = () => {
   const { chartStock } = useSelector((state) => state.main);
   const dispatch = useDispatch();
   useEffect(() => {

@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/login/login";
 import HintContainer from "./containers/hintContainer/hintContainer";
 import MainContainer from "./containers/mainContainer/mainContainer";
 import ProfileContainer from "./containers/profileContainer/profileContainer";
 function App({ auth, database }) {
   return (
-    <BrowserRouter basename="/react_stockgame">
+    <HashRouter>
       <Switch>
         <Route exact path="/">
           <Login auth={auth} />
@@ -20,7 +20,7 @@ function App({ auth, database }) {
           <HintContainer database={database} />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

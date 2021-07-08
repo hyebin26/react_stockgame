@@ -290,7 +290,7 @@ export const mainSlice = createSlice({
             }
             return null;
           });
-          const text = makeHintAPI(per, point, label.split(" ")[1]);
+          const text = makeHintAPI(parseInt(per), point, label.split(" ")[1]);
           state.haveHints.push({ day, label, point, text });
           state.hintPoint -= point;
           swal({ title: `${label}`, text: `${text}` });

@@ -4,6 +4,9 @@ import HintList from "../../components/hint_list/hintList";
 
 const HintListContainer = ({ point }) => {
   const { haveHints } = useSelector((state) => state.main);
+  if (haveHints.length === 1) {
+    return <HintList nothing={true} />;
+  }
   return haveHints.map((item, index) => {
     if (typeof item === "object") {
       if (item.point === point) {
@@ -20,8 +23,6 @@ const HintListContainer = ({ point }) => {
             : category === "항공사"
             ? "orange"
             : "";
-        // item.point가 1인게 하나라도 있으면 checkOnePoint = false;
-        // item.point가 3인게 하나라도 있으면 checkThreePoint = false;
 
         return (
           <HintList
@@ -33,8 +34,6 @@ const HintListContainer = ({ point }) => {
           />
         );
       }
-    } else if (haveHints.length === 1) {
-      <HintList nothing={true} />;
     }
     return null;
   });

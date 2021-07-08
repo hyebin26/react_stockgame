@@ -7,7 +7,7 @@ const Hint = {
         "특별 세무조사 실시 예정",
         "중국 대형 기획사와 협업 관련 대화중",
         "걸그룹 세대 교체 성공적",
-        "백신 확산으로 소속 그룹 공연 매진",
+        "코로나 백신 개발",
         "해외 유명 브랜드와 협업 예정",
       ],
       threePoint: [
@@ -183,11 +183,10 @@ const Hint = {
   },
 };
 
-export const makeHintAPI = (percent, point, label) => {
+export const makeHintAPI = (per, point, label) => {
   let text = "";
   let item = Hint[label];
-  let per = parseInt(percent);
-  let change = parseInt(per) >= 0 ? "increase" : "decrease";
+  let change = per >= 0 ? "increase" : "decrease";
   if (per >= 30) {
     if (point === 1) {
       text =

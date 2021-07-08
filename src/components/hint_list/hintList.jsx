@@ -5,7 +5,7 @@ import styles from "./hintList.module.css";
 const HintList = memo(({ day, label, text, color, nothing }) => {
   if (nothing) {
     return (
-      <li className={`${styles.container} ${styles[color]}`}>
+      <li className={`${styles.container} ${styles.beige}`}>
         <p className={styles.text}>보유한 힌트가 없습니다.</p>
       </li>
     );

@@ -1,6 +1,6 @@
 ## Stock Game
 
-1. deploy#5
+1. deploy#6
 
 ### next to do
 

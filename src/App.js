@@ -5,7 +5,7 @@ import MainContainer from "./containers/mainContainer/mainContainer";
 import ProfileContainer from "./containers/profileContainer/profileContainer";
 function App({ auth, database }) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react_stockgame">
       <Switch>
         <Route exact path="/">
           <Login auth={auth} />

@@ -47,5 +47,5 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.5.1"
   },
-  "homepage": "https://hyebin26.github.io/react_stockgame/"
+  "homepage": "https://hyebin26.github.io/react_stockgame"
 }

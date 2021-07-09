@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react_stockgame/static/css/main.1e25ee50.chunk.css",
-    "main.js": "/react_stockgame/static/js/main.588ae8cc.chunk.js",
-    "main.js.map": "/react_stockgame/static/js/main.588ae8cc.chunk.js.map",
+    "main.js": "/react_stockgame/static/js/main.ca5ecca5.chunk.js",
+    "main.js.map": "/react_stockgame/static/js/main.ca5ecca5.chunk.js.map",
     "runtime-main.js": "/react_stockgame/static/js/runtime-main.18652510.js",
     "runtime-main.js.map": "/react_stockgame/static/js/runtime-main.18652510.js.map",
-    "static/js/2.0c36f60c.chunk.js": "/react_stockgame/static/js/2.0c36f60c.chunk.js",
-    "static/js/2.0c36f60c.chunk.js.map": "/react_stockgame/static/js/2.0c36f60c.chunk.js.map",
+    "static/js/2.c0052773.chunk.js": "/react_stockgame/static/js/2.c0052773.chunk.js",
+    "static/js/2.c0052773.chunk.js.map": "/react_stockgame/static/js/2.c0052773.chunk.js.map",
     "index.html": "/react_stockgame/index.html",
     "static/css/main.1e25ee50.chunk.css.map": "/react_stockgame/static/css/main.1e25ee50.chunk.css.map",
-    "static/js/2.0c36f60c.chunk.js.LICENSE.txt": "/react_stockgame/static/js/2.0c36f60c.chunk.js.LICENSE.txt"
+    "static/js/2.c0052773.chunk.js.LICENSE.txt": "/react_stockgame/static/js/2.c0052773.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.18652510.js",
-    "static/js/2.0c36f60c.chunk.js",
+    "static/js/2.c0052773.chunk.js",
     "static/css/main.1e25ee50.chunk.css",
-    "static/js/main.588ae8cc.chunk.js"
+    "static/js/main.ca5ecca5.chunk.js"
   ]
 }

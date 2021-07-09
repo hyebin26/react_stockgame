@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import swal from "sweetalert";
 import { stock } from "../service/chart_data";
-import { handlePercentAPI } from "../service/percent";
+import { handlePercentAPI } from "../api/percent";
 import { data } from "../service/doughnut";
-import { makeHintAPI } from "../service/hint";
+import { makeHintAPI } from "../api/hint";
 
 export const mainSlice = createSlice({
   name: "main",

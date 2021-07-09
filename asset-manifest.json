@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react_stockgame/static/css/main.1e25ee50.chunk.css",
-    "main.js": "/react_stockgame/static/js/main.4c56f077.chunk.js",
-    "main.js.map": "/react_stockgame/static/js/main.4c56f077.chunk.js.map",
+    "main.js": "/react_stockgame/static/js/main.ff0ab9af.chunk.js",
+    "main.js.map": "/react_stockgame/static/js/main.ff0ab9af.chunk.js.map",
     "runtime-main.js": "/react_stockgame/static/js/runtime-main.18652510.js",
     "runtime-main.js.map": "/react_stockgame/static/js/runtime-main.18652510.js.map",
     "static/js/2.54ded1f3.chunk.js": "/react_stockgame/static/js/2.54ded1f3.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.18652510.js",
     "static/js/2.54ded1f3.chunk.js",
     "static/css/main.1e25ee50.chunk.css",
-    "static/js/main.4c56f077.chunk.js"
+    "static/js/main.ff0ab9af.chunk.js"
   ]
 }

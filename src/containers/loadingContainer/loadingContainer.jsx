@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Main from "../../components/main/main";
 import Profile from "../../components/profile/profile";
-import { useEffect } from "react";
+import Hint from "../../components/hint/hint";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { onLoadData } from "../../modules/main";
-import { useHistory } from "react-router-dom";
 
-const ProfileContainer = ({ database }) => {
+const LoadingContainer = ({ content, database }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { isLoading } = useSelector((state) => state.main);
@@ -28,7 +29,12 @@ const ProfileContainer = ({ database }) => {
     if (!localStorage.getItem("token")) history.push("/");
   }, [history]);
 
-  return <Profile database={database} isLoading={isLoading} />;
+  if (content === "Main")
+    return <Main isLoading={isLoading} database={database} />;
+  if (content === "Profile")
+    return <Profile database={database} isLoading={isLoading} />;
+  if (content === "Hint")
+    return <Hint database={database} isLoading={isLoading} />;
 };
 
-export default ProfileContainer;
+export default LoadingContainer;

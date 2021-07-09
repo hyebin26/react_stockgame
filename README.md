@@ -1,12 +1,11 @@
 ## Stock Game
 
-1. main page만 작동이 안되는 에러
+1. favicon변경
+2. loadingContainer 추가
+3. 삭제 hint,main,profile container
 
 ### next to do
 
 ### memo
 
-1. icon 바꾸기
-2. router공부
-3. 스택,큐 공부
-4. hint,main,profile container 리팩토링
+1. router체크

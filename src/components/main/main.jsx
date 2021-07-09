@@ -18,6 +18,7 @@ const Main = memo(({ isLoading, database }) => {
     <div className={styles.container}>
       <HeaderContainer database={database} />
       <section className={styles.mainTrading}>
+        <h2>Test</h2>
         <div className={styles.trading_container}>
           <MainChartContainer />
           <MainTrading />

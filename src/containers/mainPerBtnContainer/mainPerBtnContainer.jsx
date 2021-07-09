@@ -2,8 +2,8 @@ import React from "react";
 import MainPerBtn from "../../components/main_perBtn/mainPerBtn";
 import { useDispatch } from "react-redux";
 import { clickBuyPerBtn, clickPerSellBtn } from "../../modules/main";
-import { useCallback } from "react/cjs/react.development";
 import { memo } from "react";
+import { useCallback } from "react";
 
 const MainPerBtnContainer = memo(({ title }) => {
   const dispatch = useDispatch();

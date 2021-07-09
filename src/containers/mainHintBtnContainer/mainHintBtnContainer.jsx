@@ -1,7 +1,7 @@
 import React from "react";
+import { useCallback } from "react";
 import { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useCallback } from "react/cjs/react.development";
 import swal from "sweetalert";
 import MainHintBtn from "../../components/main_hintBtn/mainHintBtn";
 import { clickHintBtn } from "../../modules/main";

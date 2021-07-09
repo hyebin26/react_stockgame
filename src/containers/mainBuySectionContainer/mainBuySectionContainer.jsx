@@ -5,12 +5,12 @@ import { changeAmount } from "../../modules/main";
 import { memo } from "react";
 
 const MainBuySectionContainer = memo(() => {
+  const dispatch = useDispatch();
   const clickedTotal = useSelector((state) => state.main.clickedTotal);
   const clickedAmount = useSelector((state) => state.main.clickedAmount);
   const clickedStockPrice = useSelector(
     (state) => state.main.clickedStockPrice
   );
-  const dispatch = useDispatch();
 
   const onChangeAmount = (e) => {
     dispatch(changeAmount(e.target.value));

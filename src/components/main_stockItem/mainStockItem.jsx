@@ -1,30 +1,8 @@
 import React from "react";
 import styles from "./mainStockItem.module.css";
 import MainStockItemList from "../main_stockItemList/mainStockItemList";
-import {
-  SiAzurefunctions,
-  SiCivicrm,
-  SiSpeakerdeck,
-  SiCoronarenderer,
-  SiBadoo,
-  SiEsea,
-  SiFDroid,
-  SiUntangle,
-  SiIcon,
-} from "react-icons/si";
 
-const MainStockItem = ({ stocks, onClickLabel, day }) => {
-  const icons = [
-    <SiAzurefunctions />,
-    <SiCivicrm />,
-    <SiSpeakerdeck />,
-    <SiCoronarenderer />,
-    <SiBadoo />,
-    <SiEsea />,
-    <SiFDroid />,
-    <SiIcon />,
-    <SiUntangle />,
-  ];
+const MainStockItem = ({ stocks, onClickLabel, day, icons }) => {
   return (
     <ul className={styles.container}>
       {stocks.map((item, index) => (

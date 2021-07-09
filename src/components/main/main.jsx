@@ -1,6 +1,5 @@
 import React from "react";
 import { memo } from "react";
-
 import MainTrading from "../main_trading/mainTrading";
 import styles from "./main.module.css";
 import MainStockItemContainer from "../../containers/mainStockItemContainer/mainStockItemContainer";
@@ -18,7 +17,6 @@ const Main = memo(({ isLoading, database }) => {
     <div className={styles.container}>
       <HeaderContainer database={database} />
       <section className={styles.mainTrading}>
-        <h2>Test</h2>
         <div className={styles.trading_container}>
           <MainChartContainer />
           <MainTrading />

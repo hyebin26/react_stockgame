@@ -11,6 +11,7 @@ const Header = ({
   onResetBtn,
   toggle,
   onClickHambuger,
+  hasMoney,
 }) => {
   if (login) {
     return (
@@ -31,15 +32,16 @@ const Header = ({
           <ImCoinDollar />
           Stock Game
         </Link>
-        <ul className={styles.info}>
-          <li>Day {day}</li>
+        <div className={styles.info}>
+          <p>Day {day}</p>
           <button className={styles.nextBtn} onClick={onClickNextBtn}>
             Next day
           </button>
           <button className={styles.resetBtn} onClick={onResetBtn}>
             Reset
           </button>
-        </ul>
+          <p className={styles.money}>{hasMoney.toLocaleString("ko-KR")}</p>
+        </div>
         <ul className={styles.nav}>
           <HeaderNavContainer />
         </ul>

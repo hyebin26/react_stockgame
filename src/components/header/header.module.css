@@ -35,7 +35,7 @@
   margin-left: 4rem;
   z-index: 1;
 }
-.info li {
+.info p {
   padding: 0 0.8rem;
 }
 .info button {
@@ -124,5 +124,10 @@
   }
   .header svg {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 565px) {
+  .money {
+    display: none;
   }
 }

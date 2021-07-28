@@ -65,6 +65,7 @@ const HeaderContainer = ({ database }) => {
   }, [haveHints, hintPoint, database]);
   return (
     <Header
+      hasMoney={hasMoney}
       day={day}
       onClickNextBtn={onClickNextBtn}
       onResetBtn={onResetBtn}

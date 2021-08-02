@@ -187,83 +187,16 @@ export const makeHintAPI = (per, point, label) => {
   let text = "";
   let item = Hint[label];
   let change = per >= 0 ? "increase" : "decrease";
-  if (per >= 30) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
-  } //
-  else if (per >= 10 && per < 30) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
-  } //
-  else if (per < 10 && per > 0) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
-  } //
-  else if (per < 0 && per > -10) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
-  } //
-  else if (per <= -10 && per > -30) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
-  } //
-  else if (per <= -30) {
-    if (point === 1) {
-      text =
-        item[change].onePoint[
-          Math.floor(Math.random() * item[change].onePoint.length)
-        ];
-    } else {
-      text =
-        item[change].threePoint[
-          Math.floor(Math.random() * item[change].threePoint.length)
-        ];
-    }
+  if (point === 1) {
+    text =
+      item[change].onePoint[
+        Math.floor(Math.random() * item[change].onePoint.length)
+      ];
+  } else {
+    text =
+      item[change].threePoint[
+        Math.floor(Math.random() * item[change].threePoint.length)
+      ];
   }
   return text;
 };
